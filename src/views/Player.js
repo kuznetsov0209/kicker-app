@@ -1,0 +1,194 @@
+import React, { Component } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+
+import IconAdd from "./svg/IconAdd";
+import LeftTopCorner from "./svg/LeftTopCorner";
+import LeftBottomCorner from "./svg/LeftBottomCorner";
+import RightTopCorner from "./svg/RightTopCorner";
+import RightBottomCorner from "./svg/RightBottomCorner";
+
+import GoalButton from "./GoalButton";
+import OwnGoalButton from "./OwnGoalButton";
+import UserListModal from "./UserListModal";
+import UserAvatar from "../components/UserAvatar";
+import Button from "../components/Button";
+import { TEAM_BLUE, POSITION_DEFENDER } from "../constants";
+import { gameStore } from "../store";
+
+class Player extends Component {
+  state = { user: null, userListVisible: false };
+
+  selectUser = user => {
+    this.setState({ userListVisible: false });
+    this.props.onSelect(user);
+  };
+
+  closeUserList = () => {
+    this.setState({ userListVisible: false });
+  };
+
+  openUserList = () => {
+    this.setState({ userListVisible: true });
+  };
+
+  addGoal = async () => {
+    const { user } = this.props;
+    gameStore.addGoal(user.id);
+  };
+
+  addOwnGoal = async () => {
+    const { user } = this.props;
+    gameStore.addOwnGoal(user.id);
+  };
+
+  render() {
+    const {
+      user,
+      style,
+      position,
+      team,
+      left,
+      top,
+      right,
+      bottom,
+      ready
+    } = this.props;
+
+    return (
+      <View
+        style={{
+          flex: 1,
+          width: "100%",
+          overflow: "hidden",
+          ...style
+        }}
+      >
+        {left &&
+          top && (
+            <View style={{ position: "absolute", left: 0, top: 0 }}>
+              <LeftTopCorner />
+            </View>
+          )}
+        {left &&
+          bottom && (
+            <View style={{ position: "absolute", left: 0, bottom: 0 }}>
+              <LeftBottomCorner />
+            </View>
+          )}
+        {right &&
+          top && (
+            <View style={{ position: "absolute", right: 0, top: 0 }}>
+              <RightTopCorner />
+            </View>
+          )}
+        {right &&
+          bottom && (
+            <View style={{ position: "absolute", right: 0, bottom: 0 }}>
+              <RightBottomCorner />
+            </View>
+          )}
+
+        <View
+          style={{
+            position: "absolute",
+            left: 48,
+            top: top ? 48 : null,
+            right: 48,
+            bottom: bottom ? 48 : null,
+            flexDirection: left ? "row" : "row-reverse",
+            alignItems: "center"
+          }}
+        >
+          <TouchableOpacity onPress={this.openUserList}>
+            {user ? (
+              <UserAvatar
+                user={user}
+                size={120}
+                color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
+              />
+            ) : (
+              <View
+                style={{
+                  backgroundColor: team === TEAM_BLUE ? "#235cff" : "#ff234a",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: 60,
+                  width: 120,
+                  height: 120
+                }}
+              >
+                <IconAdd />
+              </View>
+            )}
+          </TouchableOpacity>
+          <View style={{ flex: 1 }}>
+            <Text
+              numberOfLines={2}
+              style={{
+                fontFamily: "GothamPro-Black",
+                fontSize: 18,
+                lineHeight: 22,
+                letterSpacing: 1,
+                color: team === TEAM_BLUE ? "#235cff" : "#ff234a",
+                [left ? "marginLeft" : "marginRight"]: 20,
+                textAlign: left ? "left" : "right"
+              }}
+            >
+              {!user &&
+                (position === POSITION_DEFENDER ? "DEFENDER" : "FORWARD")}
+              {user && user.name.toUpperCase()}
+            </Text>
+          </View>
+          <UserListModal
+            visible={this.state.userListVisible}
+            onSelect={this.selectUser}
+            selectedUserIds={this.props.selectedUserIds}
+            close={this.closeUserList}
+          />
+        </View>
+
+        {ready && (
+          <View
+            style={{
+              position: "absolute",
+              left: left ? 72 : null,
+              top: top ? 226 : null,
+              right: right ? 72 : null,
+              bottom: bottom ? 226 : null
+            }}
+          >
+            <Button
+              primary
+              onPress={this.addGoal}
+              color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
+              width={240}
+            >
+              GOAL
+            </Button>
+          </View>
+        )}
+        {ready && (
+          <View
+            style={{
+              position: "absolute",
+              left: left ? 72 : null,
+              top: top ? 320 : null,
+              right: right ? 72 : null,
+              bottom: bottom ? 320 : null
+            }}
+          >
+            <Button
+              onPress={this.addOwnGoal}
+              color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
+              width={240}
+            >
+              OWN
+            </Button>
+          </View>
+        )}
+      </View>
+    );
+  }
+}
+
+export default Player;
