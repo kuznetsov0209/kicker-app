@@ -7,8 +7,6 @@ import LeftBottomCorner from "./svg/LeftBottomCorner";
 import RightTopCorner from "./svg/RightTopCorner";
 import RightBottomCorner from "./svg/RightBottomCorner";
 
-import GoalButton from "./GoalButton";
-import OwnGoalButton from "./OwnGoalButton";
 import UserListModal from "./UserListModal";
 import UserAvatar from "../components/UserAvatar";
 import Button from "../components/Button";
@@ -123,7 +121,7 @@ class Player extends Component {
           </TouchableOpacity>
           <View style={{ flex: 1 }}>
             <Text
-              numberOfLines={2}
+              numberOfLines={1}
               style={{
                 fontFamily: "GothamPro-Black",
                 fontSize: 18,
@@ -138,6 +136,22 @@ class Player extends Component {
                 (position === POSITION_DEFENDER ? "DEFENDER" : "FORWARD")}
               {user && user.name.toUpperCase()}
             </Text>
+            {user && (
+              <Text
+                numberOfLines={1}
+                style={{
+                  fontFamily: "GothamPro-Black",
+                  fontSize: 12,
+                  lineHeight: 22,
+                  letterSpacing: 1,
+                  color: team === TEAM_BLUE ? "#235cff" : "#ff234a",
+                  [left ? "marginLeft" : "marginRight"]: 20,
+                  textAlign: left ? "left" : "right"
+                }}
+              >
+                {position === POSITION_DEFENDER ? "DEFENDER" : "FORWARD"}
+              </Text>
+            )}
           </View>
           <UserListModal
             visible={this.state.userListVisible}
