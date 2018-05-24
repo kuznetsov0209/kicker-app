@@ -303,6 +303,7 @@ const NewGame = observer(
                 top
                 ready={!!game}
                 goals={
+                  this.state.player1 &&
                   game &&
                   game.Goals.filter(
                     goal =>
@@ -323,6 +324,7 @@ const NewGame = observer(
                 bottom
                 ready={!!game}
                 goals={
+                  this.state.player2 &&
                   game &&
                   game.Goals.filter(
                     goal =>
@@ -350,6 +352,7 @@ const NewGame = observer(
                 top
                 ready={!!game}
                 goals={
+                  this.state.player3 &&
                   game &&
                   game.Goals.filter(
                     goal =>
@@ -375,6 +378,7 @@ const NewGame = observer(
                 bottom
                 ready={!!game}
                 goals={
+                  this.state.player4 &&
                   game &&
                   game.Goals.filter(
                     goal =>
