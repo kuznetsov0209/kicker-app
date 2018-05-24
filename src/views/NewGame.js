@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { observer } from "mobx-react";
-import { observable } from "mobx";
 
 import api from "../api";
-import { store } from "../store";
 import {
   TEAM_RED,
   TEAM_BLUE,
@@ -19,7 +17,7 @@ import Logo from "./svg/Logo";
 import Player from "./Player";
 import CongratsModal from "./CongratsModal";
 import FinishModal from "./FinishModal";
-import { gameStore } from "../store";
+import { store, gameStore } from "../store";
 
 const styles = StyleSheet.create({
   score: {
@@ -135,8 +133,11 @@ const initialState = {
 };
 
 const NewGame = observer(
-  class extends Component {
-    state = initialState;
+  class NewGameComponent extends Component {
+    constructor() {
+      super();
+      this.state = initialState;
+    }
 
     componentDidMount() {
       store.loadUsers();
@@ -169,12 +170,7 @@ const NewGame = observer(
     };
 
     startGame = async () => {
-      const {
-        player1,
-        player2,
-        player3,
-        player4
-      } = this.state;
+      const { player1, player2, player3, player4 } = this.state;
       const game = await api.post(`/api/game`);
       await api.post(`/api/game/join`, {
         userId: player1.user.id,
@@ -331,12 +327,7 @@ const NewGame = observer(
                 position={POSITION_FORWARD}
                 user={this.state.player3 && this.state.player3.user}
                 onSelect={player =>
-                  this.selectUser(
-                    "player3",
-                    player,
-                    TEAM_RED,
-                    POSITION_FORWARD
-                  )
+                  this.selectUser("player3", player, TEAM_RED, POSITION_FORWARD)
                 }
                 selectedUserIds={this.selectedUserIds}
                 right

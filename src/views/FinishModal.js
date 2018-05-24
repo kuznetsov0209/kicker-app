@@ -1,46 +1,20 @@
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Modal,
-  FlatList,
-  StyleSheet
-} from "react-native";
+import { View, Text, TouchableOpacity, Modal } from "react-native";
 import { observer } from "mobx-react";
 
 import Button from "../components/Button";
-import UserAvatar from "../components/UserAvatar";
-import { store } from "../store";
 import IconCross from "./svg/IconCross";
-import Stars from "./svg/Stars";
-
-const styles = StyleSheet.create({
-  avatar: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    borderWidth: 2,
-    borderColor: "white",
-    overflow: "hidden"
-  },
-  avatarLeft: {
-    marginRight: -7
-  },
-  avatarRight: {
-    marginLeft: -7
-  }
-});
 
 const FinishModal = observer(
-  class extends Component {
+  class FinishModalComponent extends Component {
     render() {
+      const { visible, onRequestClose } = this.props;
       return (
         <Modal
           animationType="fade"
           transparent={true}
-          visible={this.props.visible}
-          onRequestClose={this.props.onRequestClose}
+          visible={visible}
+          onRequestClose={onRequestClose}
         >
           <View
             style={{
@@ -62,7 +36,7 @@ const FinishModal = observer(
               }}
             >
               <TouchableOpacity
-                onPress={this.props.onRequestClose}
+                onPress={onRequestClose}
                 style={{
                   position: "absolute",
                   right: 27.5,

@@ -1,18 +1,9 @@
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Modal,
-  FlatList,
-  StyleSheet
-} from "react-native";
+import { View, Text, Modal, StyleSheet } from "react-native";
 import { observer } from "mobx-react";
 
 import Button from "../components/Button";
 import UserAvatar from "../components/UserAvatar";
-import { store } from "../store";
-import IconCross from "./svg/IconCross";
 import Stars from "./svg/Stars";
 
 import { gameStore } from "../store";
@@ -36,16 +27,13 @@ const styles = StyleSheet.create({
 });
 
 const CongratsModal = observer(
-  class extends Component {
+  class CongratsModalComponent extends Component {
     render() {
       const { game } = gameStore;
+      const { visible, onRematch, onFinish } = this.props;
 
       return (
-        <Modal
-          animationType="fade"
-          transparent={true}
-          visible={this.props.visible}
-        >
+        <Modal animationType="fade" transparent={true} visible={visible}>
           <View
             style={{
               flex: 1,
@@ -58,7 +46,8 @@ const CongratsModal = observer(
               style={{
                 width: 560,
                 height: 758,
-                backgroundColor: game.winnerTeam === TEAM_BLUE ? "#235cff" : "#ff234a",
+                backgroundColor:
+                  game.winnerTeam === TEAM_BLUE ? "#235cff" : "#ff234a",
                 borderRadius: 6,
                 alignItems: "center"
               }}
@@ -98,12 +87,12 @@ const CongratsModal = observer(
                 </Text>
               </View>
               <View style={{ marginTop: 80 }}>
-                <Button primary color="white" width={280} onPress={this.props.onRematch}>
+                <Button primary color="white" width={280} onPress={onRematch}>
                   REMATCH
                 </Button>
               </View>
               <View style={{ marginTop: 30 }}>
-                <Button color="white" width={280} onPress={this.props.onFinish}>
+                <Button color="white" width={280} onPress={onFinish}>
                   FINISH GAME
                 </Button>
               </View>

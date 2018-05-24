@@ -7,15 +7,13 @@ import { store } from "../store";
 import IconCross from "./svg/IconCross";
 
 const UserListModal = observer(
-  class extends Component {
+  class UserListModalComponent extends Component {
     userKeyExtractor = item => item.id.toString();
     renderUser = ({ item }) => {
-      const disabled = this.props.selectedUserIds.includes(item.id);
+      const { selectedUserIds, onSelect } = this.props;
+      const disabled = selectedUserIds.includes(item.id);
       return (
-        <TouchableOpacity
-          disabled={disabled}
-          onPress={() => this.props.onSelect(item)}
-        >
+        <TouchableOpacity disabled={disabled} onPress={() => onSelect(item)}>
           <View style={{ alignItems: "center", opacity: disabled ? 0.4 : 1 }}>
             <View
               style={{
@@ -44,15 +42,12 @@ const UserListModal = observer(
       );
     };
     render() {
+      const { visible, close } = this.props;
       return (
-        <Modal
-          animationType="fade"
-          transparent={false}
-          visible={this.props.visible}
-        >
+        <Modal animationType="fade" transparent={false} visible={visible}>
           <View style={{ flex: 1, backgroundColor: "#191919" }}>
             <TouchableOpacity
-              onPress={this.props.close}
+              onPress={close}
               style={{
                 position: "absolute",
                 right: 30,
