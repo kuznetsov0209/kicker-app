@@ -150,7 +150,7 @@ class Player extends Component {
           </TouchableOpacity>
           <View style={{ flex: 1 }}>
             <Text
-              numberOfLines={1}
+              numberOfLines={2}
               style={{
                 fontFamily: "GothamPro-Black",
                 fontSize: 18,
