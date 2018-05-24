@@ -255,16 +255,16 @@ const NewGame = observer(
               <View style={styles.scoreContainer}>
                 <View style={styles.scoreTextContainer}>
                   <Text style={[styles.scoreShadow, styles.scoreShadowLeft]}>
-                    {game.blueScore}
+                    {game.redScore}
                   </Text>
-                  <Text style={styles.scoreText}>{game.blueScore}</Text>
+                  <Text style={styles.scoreText}>{game.redScore}</Text>
                 </View>
 
                 <View style={styles.scoreTextContainer}>
                   <Text style={[styles.scoreShadow, styles.scoreShadowRight]}>
-                    {game.redScore}
+                    {game.blueScore}
                   </Text>
-                  <Text style={styles.scoreText}>{game.redScore}</Text>
+                  <Text style={styles.scoreText}>{game.blueScore}</Text>
                 </View>
               </View>
             )}
