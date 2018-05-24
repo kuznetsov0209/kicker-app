@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity, Modal, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Modal,
+  FlatList,
+  ActivityIndicator
+} from "react-native";
 import { observer } from "mobx-react";
 
 import UserAvatar from "../components/UserAvatar";
@@ -57,6 +64,21 @@ const UserListModal = observer(
             >
               <IconCross />
             </TouchableOpacity>
+            {store.users.length === 0 && (
+              <View
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                <ActivityIndicator />
+              </View>
+            )}
             <FlatList
               data={store.users.sort((a, b) => a.name.localeCompare(b.name))}
               keyExtractor={this.userKeyExtractor}
