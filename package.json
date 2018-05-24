@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "precommit": "lint-staged",
     "test": "jest"
   },
   "dependencies": {
@@ -18,17 +19,35 @@
     "react-navigation": "^1.5.11"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "babel-jest": "22.4.3",
     "babel-preset-react-native": "4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-standard": "^3.1.0",
+    "husky": "^0.14.3",
     "jest": "22.4.3",
+    "lint-staged": "^7.1.2",
+    "prettier": "^1.12.1",
     "react-test-renderer": "^16.3.0-alpha.1"
   },
   "jest": {
     "preset": "react-native"
   },
   "rnpm": {
-    "assets": [
-      "./assets/fonts/"
+    "assets": ["./assets/fonts/"]
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "./node_modules/.bin/prettier --write",
+      "./node_modules/.bin/eslint --fix",
+      "git add"
     ]
   }
 }
