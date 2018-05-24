@@ -1,4 +1,13 @@
-import { AppRegistry } from 'react-native';
-import App from './src/views/NewGame';
+import { AppRegistry } from "react-native";
+import codePush from "react-native-code-push";
 
-AppRegistry.registerComponent('kickermasterapp', () => App);
+import App from "./src/views/NewGame";
+
+let codePushOptions = {
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
+  installMode: codePush.InstallMode.IMMEDIATE
+};
+
+AppRegistry.registerComponent("kickermasterapp", () =>
+  codePush(codePushOptions)(App)
+);
