@@ -287,14 +287,14 @@ const NewGame = observer(
           <View style={{ flex: 1, flexDirection: "row" }}>
             <View style={{ flex: 1 }}>
               <Player
-                team={TEAM_BLUE}
+                team={TEAM_RED}
                 position={POSITION_DEFENDER}
                 user={this.state.player1 && this.state.player1.user}
                 onSelect={player =>
                   this.selectUser(
                     "player1",
                     player,
-                    TEAM_BLUE,
+                    TEAM_RED,
                     POSITION_DEFENDER
                   )
                 }
@@ -304,16 +304,11 @@ const NewGame = observer(
                 ready={!!game}
               />
               <Player
-                team={TEAM_BLUE}
+                team={TEAM_RED}
                 position={POSITION_FORWARD}
                 user={this.state.player2 && this.state.player2.user}
                 onSelect={player =>
-                  this.selectUser(
-                    "player2",
-                    player,
-                    TEAM_BLUE,
-                    POSITION_FORWARD
-                  )
+                  this.selectUser("player2", player, TEAM_RED, POSITION_FORWARD)
                 }
                 selectedUserIds={this.selectedUserIds}
                 left
@@ -323,11 +318,16 @@ const NewGame = observer(
             </View>
             <View style={{ flex: 1 }}>
               <Player
-                team={TEAM_RED}
+                team={TEAM_BLUE}
                 position={POSITION_FORWARD}
                 user={this.state.player3 && this.state.player3.user}
                 onSelect={player =>
-                  this.selectUser("player3", player, TEAM_RED, POSITION_FORWARD)
+                  this.selectUser(
+                    "player3",
+                    player,
+                    TEAM_BLUE,
+                    POSITION_FORWARD
+                  )
                 }
                 selectedUserIds={this.selectedUserIds}
                 right
@@ -335,14 +335,14 @@ const NewGame = observer(
                 ready={!!game}
               />
               <Player
-                team={TEAM_RED}
+                team={TEAM_BLUE}
                 position={POSITION_DEFENDER}
                 user={this.state.player4 && this.state.player4.user}
                 onSelect={player =>
                   this.selectUser(
                     "player4",
                     player,
-                    TEAM_RED,
+                    TEAM_BLUE,
                     POSITION_DEFENDER
                   )
                 }

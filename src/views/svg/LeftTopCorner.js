@@ -9,8 +9,8 @@ const LeftTopCorner = () => (
     viewBox="0 0 280 280"
   >
     <G fill="none" fillRule="evenodd">
-      <Path fill="#235CFF" d="M176 0H0v234L176 0z" opacity=".2" />
-      <Path fill="#235CFF" d="M234 0H0v176z" opacity=".2" />
+      <Path fill="#FF234A" d="M176 0H0v234L176 0z" opacity=".2" />
+      <Path fill="#FF234A" d="M234 0H0v176z" opacity=".2" />
     </G>
   </Svg>
 );
