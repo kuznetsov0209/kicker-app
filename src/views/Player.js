@@ -49,7 +49,8 @@ class Player extends Component {
       top,
       right,
       bottom,
-      ready
+      ready,
+      goals
     } = this.props;
 
     return (
@@ -86,6 +87,34 @@ class Player extends Component {
             </View>
           )}
 
+        <View
+          style={{
+            position: "absolute",
+            left: left ? -20 : null,
+            top: top ? 94 : null,
+            right: right ? -20 : null,
+            bottom: bottom ? 94 : null,
+            zIndex: 3,
+            justifyContent: "center"
+          }}
+        >
+          <Text
+            style={{
+              width: 48,
+              fontFamily: "GothamPro-Black",
+              fontSize: 30,
+              letterSpacing: 1,
+              color: team === TEAM_BLUE ? "#235cff" : "#ff234a",
+              [left ? "marginLeft" : "marginRight"]: 20,
+              textAlign: "center",
+              textShadowColor: "rgba(0, 0, 0, 0.3)",
+              textShadowOffset: { width: 2, height: 2 },
+              textShadowRadius: 0
+            }}
+          >
+            {goals}
+          </Text>
+        </View>
         <View
           style={{
             position: "absolute",

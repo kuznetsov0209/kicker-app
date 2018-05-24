@@ -302,6 +302,14 @@ const NewGame = observer(
                 left
                 top
                 ready={!!game}
+                goals={
+                  game &&
+                  game.Goals.filter(
+                    goal =>
+                      goal.UserId === this.state.player1.user.id &&
+                      !goal.ownGoal
+                  ).length
+                }
               />
               <Player
                 team={TEAM_RED}
@@ -314,6 +322,14 @@ const NewGame = observer(
                 left
                 bottom
                 ready={!!game}
+                goals={
+                  game &&
+                  game.Goals.filter(
+                    goal =>
+                      goal.UserId === this.state.player2.user.id &&
+                      !goal.ownGoal
+                  ).length
+                }
               />
             </View>
             <View style={{ flex: 1 }}>
@@ -333,6 +349,14 @@ const NewGame = observer(
                 right
                 top
                 ready={!!game}
+                goals={
+                  game &&
+                  game.Goals.filter(
+                    goal =>
+                      goal.UserId === this.state.player3.user.id &&
+                      !goal.ownGoal
+                  ).length
+                }
               />
               <Player
                 team={TEAM_BLUE}
@@ -350,6 +374,14 @@ const NewGame = observer(
                 right
                 bottom
                 ready={!!game}
+                goals={
+                  game &&
+                  game.Goals.filter(
+                    goal =>
+                      goal.UserId === this.state.player4.user.id &&
+                      !goal.ownGoal
+                  ).length
+                }
               />
             </View>
           </View>
