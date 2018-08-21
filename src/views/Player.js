@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Vibration } from "react-native";
 
 import IconAdd from "./svg/IconAdd";
 import LeftTopCorner from "./svg/LeftTopCorner";
@@ -30,6 +30,7 @@ class Player extends Component {
   };
 
   addGoal = async () => {
+    Vibration.vibrate(100);
     const { user } = this.props;
     gameStore.addGoal(user.id);
   };
