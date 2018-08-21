@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, Vibration } from "react-native";
 import { observer } from "mobx-react";
 
 import api from "../api";
@@ -174,6 +174,7 @@ const NewGame = observer(
     };
 
     startGame = async () => {
+      Vibration.vibrate(100);
       const { player1, player2, player3, player4 } = this.state;
       this.setState({ isStartLoadingGame: true });
       const game = await api.post(`/api/game`);
