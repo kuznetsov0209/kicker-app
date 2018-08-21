@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Vibration } from "react-native";
 
 import IconAdd from "./svg/IconAdd";
 import LeftTopCorner from "./svg/LeftTopCorner";
@@ -10,7 +10,7 @@ import RightBottomCorner from "./svg/RightBottomCorner";
 import UserListModal from "./UserListModal";
 import UserAvatar from "../components/UserAvatar";
 import Button from "../components/Button";
-import { TEAM_BLUE, POSITION_DEFENDER } from "../constants";
+import { TEAM_BLUE, POSITION_DEFENDER, DURATION_VIBRATE } from "../constants";
 import { gameStore } from "../store";
 
 class Player extends Component {
@@ -30,6 +30,7 @@ class Player extends Component {
   };
 
   addGoal = async () => {
+    Vibration.vibrate(DURATION_VIBRATE);
     const { user } = this.props;
     gameStore.addGoal(user.id);
   };

@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ActivityIndicator,
+  Vibration
+} from "react-native";
 import { observer } from "mobx-react";
 
 import api from "../api";
@@ -7,7 +14,8 @@ import {
   TEAM_RED,
   TEAM_BLUE,
   POSITION_FORWARD,
-  POSITION_DEFENDER
+  POSITION_DEFENDER,
+  DURATION_VIBRATE
 } from "../constants";
 import Button from "../components/Button";
 
@@ -75,10 +83,10 @@ const styles = StyleSheet.create({
     top: "50%",
     marginLeft: -120,
     marginTop: -32,
-    zIndex: 1,
+    zIndex: 1
   },
   spinner: {
-    marginLeft: 100,
+    marginLeft: 100
   },
   logoArea: {
     position: "absolute",
@@ -174,6 +182,7 @@ const NewGame = observer(
     };
 
     startGame = async () => {
+      Vibration.vibrate(DURATION_VIBRATE);
       const { player1, player2, player3, player4 } = this.state;
       this.setState({ isStartLoadingGame: true });
       const game = await api.post(`/api/game`);
@@ -280,7 +289,13 @@ const NewGame = observer(
           {this.isReady &&
             !game && (
               <View style={styles.startButton}>
-                {this.state.isStartLoadingGame ? <ActivityIndicator size="large" color="#0000ff" style={styles.spinner} /> : (
+                {this.state.isStartLoadingGame ? (
+                  <ActivityIndicator
+                    size="large"
+                    color="#0000ff"
+                    style={styles.spinner}
+                  />
+                ) : (
                   <Button
                     primary
                     color="white"
@@ -288,7 +303,8 @@ const NewGame = observer(
                     onPress={this.startGame}
                   >
                     START
-                </Button>)}
+                  </Button>
+                )}
               </View>
             )}
           {!this.isReady && !game && <LogoArea style={styles.logoArea} />}
