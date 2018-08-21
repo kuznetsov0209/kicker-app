@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator } from "react-native";
 import { observer } from "mobx-react";
 
 import api from "../api";
@@ -75,7 +75,10 @@ const styles = StyleSheet.create({
     top: "50%",
     marginLeft: -120,
     marginTop: -32,
-    zIndex: 1
+    zIndex: 1,
+  },
+  spinner: {
+    marginLeft: 100,
   },
   logoArea: {
     position: "absolute",
@@ -129,7 +132,8 @@ const initialState = {
   player2: null,
   player3: null,
   player4: null,
-  finishModalVisible: false
+  finishModalVisible: false,
+  isStartLoadingGame: false
 };
 
 const NewGame = observer(
@@ -171,6 +175,7 @@ const NewGame = observer(
 
     startGame = async () => {
       const { player1, player2, player3, player4 } = this.state;
+      this.setState({ isStartLoadingGame: true });
       const game = await api.post(`/api/game`);
       await api.post(`/api/game/join`, {
         userId: player1.user.id,
@@ -202,6 +207,8 @@ const NewGame = observer(
       });
 
       await gameStore.init(game.id);
+
+      this.setState({ isStartLoadingGame: false });
     };
 
     finishGame = async () => {
@@ -269,17 +276,19 @@ const NewGame = observer(
               </View>
             )}
           </View>
+
           {this.isReady &&
             !game && (
               <View style={styles.startButton}>
-                <Button
-                  primary
-                  color="white"
-                  width={240}
-                  onPress={this.startGame}
-                >
-                  START
-                </Button>
+                {this.state.isStartLoadingGame ? <ActivityIndicator size="large" color="#0000ff" style={styles.spinner} /> : (
+                  <Button
+                    primary
+                    color="white"
+                    width={240}
+                    onPress={this.startGame}
+                  >
+                    START
+                </Button>)}
               </View>
             )}
           {!this.isReady && !game && <LogoArea style={styles.logoArea} />}
