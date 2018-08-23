@@ -15,7 +15,9 @@ import {
   TEAM_BLUE,
   POSITION_FORWARD,
   POSITION_DEFENDER,
-  DURATION_VIBRATE_START
+  DURATION_VIBRATE_START,
+  NEW_GAME,
+  LEADERS
 } from "../constants";
 import Button from "../components/Button";
 
@@ -25,6 +27,7 @@ import Logo from "./svg/Logo";
 import Player from "./Player";
 import CongratsModal from "./CongratsModal";
 import FinishModal from "./FinishModal";
+import LeadersPage from "./LeadersPage";
 import { store, gameStore } from "../store";
 
 const styles = StyleSheet.create({
@@ -141,7 +144,8 @@ const initialState = {
   player3: null,
   player4: null,
   finishModalVisible: false,
-  isStartLoadingGame: false
+  isStartLoadingGame: false,
+  currentPage: NEW_GAME
 };
 
 const NewGame = observer(
@@ -242,6 +246,10 @@ const NewGame = observer(
       gameStore.reset();
     };
 
+    switchTab = val => {
+      this.setState({ currentPage: val });
+    };
+
     render() {
       const { game } = gameStore;
 
@@ -307,134 +315,171 @@ const NewGame = observer(
                 )}
               </View>
             )}
-          {!this.isReady && !game && <LogoArea style={styles.logoArea} />}
-          {!this.isReady && !game && <Logo style={styles.logo} />}
-          <View style={{ flex: 1, flexDirection: "row" }}>
-            <View style={{ flex: 1 }}>
-              <Player
-                team={TEAM_RED}
-                position={POSITION_DEFENDER}
-                user={this.state.player1 && this.state.player1.user}
-                onSelect={player =>
-                  this.selectUser(
-                    "player1",
-                    player,
-                    TEAM_RED,
-                    POSITION_DEFENDER
-                  )
-                }
-                selectedUserIds={this.selectedUserIds}
-                left
-                top
-                ready={!!game}
-                goals={
-                  this.state.player1 &&
-                  game &&
-                  game.Goals.filter(
-                    goal =>
-                      goal.UserId === this.state.player1.user.id &&
-                      !goal.ownGoal
-                  ).length
-                }
-              />
-              <Player
-                team={TEAM_RED}
-                position={POSITION_FORWARD}
-                user={this.state.player2 && this.state.player2.user}
-                onSelect={player =>
-                  this.selectUser("player2", player, TEAM_RED, POSITION_FORWARD)
-                }
-                selectedUserIds={this.selectedUserIds}
-                left
-                bottom
-                ready={!!game}
-                goals={
-                  this.state.player2 &&
-                  game &&
-                  game.Goals.filter(
-                    goal =>
-                      goal.UserId === this.state.player2.user.id &&
-                      !goal.ownGoal
-                  ).length
-                }
-              />
+          {!this.isReady &&
+            !game &&
+            this.state.currentPage !== LEADERS && (
+              <LogoArea style={styles.logoArea} />
+            )}
+          {!this.isReady &&
+            !game &&
+            this.state.currentPage !== LEADERS && <Logo style={styles.logo} />}
+          {this.state.currentPage === LEADERS && <LeadersPage />}
+          {this.state.currentPage === NEW_GAME && (
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <View style={{ flex: 1 }}>
+                <Player
+                  team={TEAM_RED}
+                  position={POSITION_DEFENDER}
+                  user={this.state.player1 && this.state.player1.user}
+                  onSelect={player =>
+                    this.selectUser(
+                      "player1",
+                      player,
+                      TEAM_RED,
+                      POSITION_DEFENDER
+                    )
+                  }
+                  selectedUserIds={this.selectedUserIds}
+                  left
+                  top
+                  ready={!!game}
+                  goals={
+                    this.state.player1 &&
+                    game &&
+                    game.Goals.filter(
+                      goal =>
+                        goal.UserId === this.state.player1.user.id &&
+                        !goal.ownGoal
+                    ).length
+                  }
+                />
+                <Player
+                  team={TEAM_RED}
+                  position={POSITION_FORWARD}
+                  user={this.state.player2 && this.state.player2.user}
+                  onSelect={player =>
+                    this.selectUser(
+                      "player2",
+                      player,
+                      TEAM_RED,
+                      POSITION_FORWARD
+                    )
+                  }
+                  selectedUserIds={this.selectedUserIds}
+                  left
+                  bottom
+                  ready={!!game}
+                  goals={
+                    this.state.player2 &&
+                    game &&
+                    game.Goals.filter(
+                      goal =>
+                        goal.UserId === this.state.player2.user.id &&
+                        !goal.ownGoal
+                    ).length
+                  }
+                />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Player
+                  team={TEAM_BLUE}
+                  position={POSITION_FORWARD}
+                  user={this.state.player3 && this.state.player3.user}
+                  onSelect={player =>
+                    this.selectUser(
+                      "player3",
+                      player,
+                      TEAM_BLUE,
+                      POSITION_FORWARD
+                    )
+                  }
+                  selectedUserIds={this.selectedUserIds}
+                  right
+                  top
+                  ready={!!game}
+                  goals={
+                    this.state.player3 &&
+                    game &&
+                    game.Goals.filter(
+                      goal =>
+                        goal.UserId === this.state.player3.user.id &&
+                        !goal.ownGoal
+                    ).length
+                  }
+                />
+                <Player
+                  team={TEAM_BLUE}
+                  position={POSITION_DEFENDER}
+                  user={this.state.player4 && this.state.player4.user}
+                  onSelect={player =>
+                    this.selectUser(
+                      "player4",
+                      player,
+                      TEAM_BLUE,
+                      POSITION_DEFENDER
+                    )
+                  }
+                  selectedUserIds={this.selectedUserIds}
+                  right
+                  bottom
+                  ready={!!game}
+                  goals={
+                    this.state.player4 &&
+                    game &&
+                    game.Goals.filter(
+                      goal =>
+                        goal.UserId === this.state.player4.user.id &&
+                        !goal.ownGoal
+                    ).length
+                  }
+                />
+              </View>
             </View>
-            <View style={{ flex: 1 }}>
-              <Player
-                team={TEAM_BLUE}
-                position={POSITION_FORWARD}
-                user={this.state.player3 && this.state.player3.user}
-                onSelect={player =>
-                  this.selectUser(
-                    "player3",
-                    player,
-                    TEAM_BLUE,
-                    POSITION_FORWARD
-                  )
-                }
-                selectedUserIds={this.selectedUserIds}
-                right
-                top
-                ready={!!game}
-                goals={
-                  this.state.player3 &&
-                  game &&
-                  game.Goals.filter(
-                    goal =>
-                      goal.UserId === this.state.player3.user.id &&
-                      !goal.ownGoal
-                  ).length
-                }
-              />
-              <Player
-                team={TEAM_BLUE}
-                position={POSITION_DEFENDER}
-                user={this.state.player4 && this.state.player4.user}
-                onSelect={player =>
-                  this.selectUser(
-                    "player4",
-                    player,
-                    TEAM_BLUE,
-                    POSITION_DEFENDER
-                  )
-                }
-                selectedUserIds={this.selectedUserIds}
-                right
-                bottom
-                ready={!!game}
-                goals={
-                  this.state.player4 &&
-                  game &&
-                  game.Goals.filter(
-                    goal =>
-                      goal.UserId === this.state.player4.user.id &&
-                      !goal.ownGoal
-                  ).length
-                }
-              />
-            </View>
-          </View>
+          )}
+
           <View style={styles.navbar}>
             {!this.isReady && (
               <View style={styles.navbarContainer}>
-                <TouchableOpacity style={styles.link}>
+                <TouchableOpacity
+                  style={styles.link}
+                  onPress={() => this.switchTab(NEW_GAME)}
+                >
                   <View>
-                    <Text style={[styles.linkText, styles.linkActive]}>
+                    <Text
+                      style={[
+                        styles.linkText,
+                        this.state.currentPage === NEW_GAME
+                          ? styles.linkActive
+                          : ""
+                      ]}
+                    >
                       GAME
                     </Text>
                     <View style={styles.undeline} />
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.link} disabled>
+                {/* <TouchableOpacity style={styles.link} disabled>
                   <View>
                     <Text style={[styles.linkText]}>STATS</Text>
                     {/* <View style={styles.undeline} /> */}
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.link} disabled>
+                {/* </View>
+                </TouchableOpacity> */}
+                <TouchableOpacity
+                  style={styles.link}
+                  onPress={() => this.switchTab(LEADERS)}
+                >
                   <View>
-                    <Text style={[styles.linkText]}>LEADERS</Text>
-                    {/* <View style={styles.undeline} /> */}
+                    <Text
+                      style={[
+                        styles.linkText,
+                        this.state.currentPage === LEADERS
+                          ? styles.linkActive
+                          : ""
+                      ]}
+                    >
+                      LEADERS
+                    </Text>
+                    <View style={styles.undeline} />
                   </View>
                 </TouchableOpacity>
               </View>
