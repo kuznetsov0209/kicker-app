@@ -251,7 +251,6 @@ class Player extends Component {
               onPress={!this.state.isButtonFreeze && this.addOwnGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
               width={240}
-              padding={40}
             >
               OWN
             </Button>
