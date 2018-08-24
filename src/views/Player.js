@@ -36,32 +36,30 @@ class Player extends Component {
     this.setState({ userListVisible: true });
   };
 
-  freezeButton(delay) {
-    return new Promise(() => {
-      setTimeout(() => {
-        this.setState({ isButtonFreeze: false });
-      }, delay);
-    });
-  }
+  freezeButton = async delay => {
+    return new Promise(resolve => setTimeout(resolve, delay));
+  };
 
   addGoal = async () => {
     Vibration.vibrate(DURATION_VIBRATE_GOAL);
     this.setState({ isButtonFreeze: true });
     const { user } = this.props;
-    Promise.all(
-      await gameStore.addGoal(user.id),
+    await Promise.all([
+      gameStore.addGoal(user.id),
       this.freezeButton(FREEZE_GOALS_BUTTON)
-    );
+    ]);
+    this.setState({ isButtonFreeze: false });
   };
 
   addOwnGoal = async () => {
     Vibration.vibrate(DURATION_VIBRATE_OWN_GOAL);
     this.setState({ isButtonFreeze: true });
     const { user } = this.props;
-    Promise.all(
-      await gameStore.addOwnGoal(user.id),
+    await Promise.all([
+      gameStore.addOwnGoal(user.id),
       this.freezeButton(FREEZE_GOALS_BUTTON)
-    );
+    ]);
+    this.setState({ isButtonFreeze: false });
   };
 
   render() {
