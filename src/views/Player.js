@@ -227,7 +227,6 @@ class Player extends Component {
           >
             <Button
               primary
-              disabled={"true"}
               onPress={!this.state.isButtonFreeze && this.addGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
               width={240}
