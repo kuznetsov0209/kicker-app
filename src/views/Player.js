@@ -15,7 +15,8 @@ import {
   POSITION_DEFENDER,
   DURATION_VIBRATE_GOAL,
   DURATION_VIBRATE_OWN_GOAL,
-  FREEZE_GOALS_BUTTON
+  FREEZE_GOALS_BUTTON,
+  PADDIND_GOAL_BUTTON
 } from "../constants";
 import { gameStore } from "../store";
 
@@ -35,24 +36,32 @@ class Player extends Component {
     this.setState({ userListVisible: true });
   };
 
+  freezeButton(delay) {
+    return new Promise(() => {
+      setTimeout(() => {
+        this.setState({ isButtonFreeze: false });
+      }, delay);
+    });
+  }
+
   addGoal = async () => {
     Vibration.vibrate(DURATION_VIBRATE_GOAL);
     this.setState({ isButtonFreeze: true });
     const { user } = this.props;
-    gameStore.addGoal(user.id);
-    setTimeout(() => {
-      this.setState({ isButtonFreeze: false });
-    }, FREEZE_GOALS_BUTTON);
+    await Promise.all(
+      gameStore.addGoal(user.id),
+      this.freezeButton(FREEZE_GOALS_BUTTON)
+    );
   };
 
   addOwnGoal = async () => {
     Vibration.vibrate(DURATION_VIBRATE_OWN_GOAL);
     this.setState({ isButtonFreeze: true });
     const { user } = this.props;
-    gameStore.addOwnGoal(user.id);
-    setTimeout(() => {
-      this.setState({ isButtonFreeze: false });
-    }, FREEZE_GOALS_BUTTON);
+    await Promise.all(
+      gameStore.addOwnGoal(user.id),
+      this.freezeButton(FREEZE_GOALS_BUTTON)
+    );
   };
 
   render() {
@@ -210,10 +219,10 @@ class Player extends Component {
           <View
             style={{
               position: "absolute",
-              left: left ? 72 : null,
-              top: top ? 226 : null,
-              right: right ? 72 : null,
-              bottom: bottom ? 226 : null
+              left: left ? 72 - PADDIND_GOAL_BUTTON : null,
+              top: top ? 226 - PADDIND_GOAL_BUTTON : null,
+              right: right ? 72 - PADDIND_GOAL_BUTTON : null,
+              bottom: bottom ? 226 - PADDIND_GOAL_BUTTON : null
             }}
           >
             <Button
@@ -222,7 +231,7 @@ class Player extends Component {
               onPress={!this.state.isButtonFreeze && this.addGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
               width={240}
-              padding={40}
+              padding={PADDIND_GOAL_BUTTON}
             >
               GOAL
             </Button>
@@ -241,7 +250,8 @@ class Player extends Component {
             <Button
               onPress={!this.state.isButtonFreeze && this.addOwnGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
-              width={320}
+              width={240}
+              padding={40}
             >
               OWN
             </Button>
