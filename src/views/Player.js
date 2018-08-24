@@ -50,7 +50,7 @@ class Player extends Component {
     const { user } = this.props;
     Promise.all(
       await gameStore.addGoal(user.id),
-      await this.freezeButton(FREEZE_GOALS_BUTTON)
+      this.freezeButton(FREEZE_GOALS_BUTTON)
     );
   };
 
@@ -60,7 +60,7 @@ class Player extends Component {
     const { user } = this.props;
     Promise.all(
       await gameStore.addOwnGoal(user.id),
-      await this.freezeButton(FREEZE_GOALS_BUTTON)
+      this.freezeButton(FREEZE_GOALS_BUTTON)
     );
   };
 
