@@ -12,6 +12,7 @@ import UserAvatar from "../components/UserAvatar";
 import Button from "../components/Button";
 import { TEAM_BLUE, POSITION_DEFENDER } from "../constants";
 import { gameStore } from "../store";
+import { playGoalSound, playOwnSound } from "../utils/sounds";
 
 class Player extends Component {
   state = { user: null, userListVisible: false };
@@ -30,11 +31,13 @@ class Player extends Component {
   };
 
   addGoal = async () => {
+    playGoalSound();
     const { user } = this.props;
     gameStore.addGoal(user.id);
   };
 
   addOwnGoal = async () => {
+    playOwnSound();
     const { user } = this.props;
     gameStore.addOwnGoal(user.id);
   };
