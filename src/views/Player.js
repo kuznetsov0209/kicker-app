@@ -232,16 +232,16 @@ class Player extends Component {
           <View
             style={{
               position: "absolute",
-              left: left ? 112 : null,
-              top: top ? 360 : null,
-              right: right ? 112 : null,
-              bottom: bottom ? 360 : null
+              left: left ? 72 : null,
+              top: top ? 320 : null,
+              right: right ? 72 : null,
+              bottom: bottom ? 320 : null
             }}
           >
             <Button
               onPress={!this.state.isButtonFreeze && this.addOwnGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
-              width={240}
+              width={320}
             >
               OWN
             </Button>
