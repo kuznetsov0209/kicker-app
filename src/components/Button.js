@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
   }
 });
 
-const Button = ({ color, onPress, children, primary, width }) => (
-  <TouchableOpacity onPress={onPress}>
+const Button = ({ color, onPress, children, primary, width, padding }) => (
+  <TouchableOpacity onPress={onPress} style={primary && { padding }}>
     <View
       style={{
         width,

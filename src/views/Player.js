@@ -10,11 +10,18 @@ import RightBottomCorner from "./svg/RightBottomCorner";
 import UserListModal from "./UserListModal";
 import UserAvatar from "../components/UserAvatar";
 import Button from "../components/Button";
-import { TEAM_BLUE, POSITION_DEFENDER, DURATION_VIBRATE } from "../constants";
+import {
+  TEAM_BLUE,
+  POSITION_DEFENDER,
+  DURATION_VIBRATE_GOAL,
+  DURATION_VIBRATE_OWN_GOAL,
+  FREEZE_GOALS_BUTTON,
+  PADDIND_GOAL_BUTTON
+} from "../constants";
 import { gameStore } from "../store";
 
 class Player extends Component {
-  state = { user: null, userListVisible: false };
+  state = { user: null, userListVisible: false, isButtonFreeze: false };
 
   selectUser = user => {
     this.setState({ userListVisible: false });
@@ -29,15 +36,30 @@ class Player extends Component {
     this.setState({ userListVisible: true });
   };
 
+  freezeButton = async delay => {
+    return new Promise(resolve => setTimeout(resolve, delay));
+  };
+
   addGoal = async () => {
-    Vibration.vibrate(DURATION_VIBRATE);
+    Vibration.vibrate(DURATION_VIBRATE_GOAL);
+    this.setState({ isButtonFreeze: true });
     const { user } = this.props;
-    gameStore.addGoal(user.id);
+    await Promise.all([
+      gameStore.addGoal(user.id),
+      this.freezeButton(FREEZE_GOALS_BUTTON)
+    ]);
+    this.setState({ isButtonFreeze: false });
   };
 
   addOwnGoal = async () => {
+    Vibration.vibrate(DURATION_VIBRATE_OWN_GOAL);
+    this.setState({ isButtonFreeze: true });
     const { user } = this.props;
-    gameStore.addOwnGoal(user.id);
+    await Promise.all([
+      gameStore.addOwnGoal(user.id),
+      this.freezeButton(FREEZE_GOALS_BUTTON)
+    ]);
+    this.setState({ isButtonFreeze: false });
   };
 
   render() {
@@ -195,17 +217,18 @@ class Player extends Component {
           <View
             style={{
               position: "absolute",
-              left: left ? 72 : null,
-              top: top ? 226 : null,
-              right: right ? 72 : null,
-              bottom: bottom ? 226 : null
+              left: left ? 72 - PADDIND_GOAL_BUTTON : null,
+              top: top ? 226 - PADDIND_GOAL_BUTTON : null,
+              right: right ? 72 - PADDIND_GOAL_BUTTON : null,
+              bottom: bottom ? 226 - PADDIND_GOAL_BUTTON : null
             }}
           >
             <Button
               primary
-              onPress={this.addGoal}
+              onPress={!this.state.isButtonFreeze && this.addGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
               width={240}
+              padding={PADDIND_GOAL_BUTTON}
             >
               GOAL
             </Button>
@@ -222,7 +245,7 @@ class Player extends Component {
             }}
           >
             <Button
-              onPress={this.addOwnGoal}
+              onPress={!this.state.isButtonFreeze && this.addOwnGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
               width={240}
             >
