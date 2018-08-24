@@ -186,7 +186,7 @@ const NewGame = observer(
     };
 
     startGame = async () => {
-      Vibration.vibrate(DURATION_VIBRATE);
+      Vibration.vibrate(DURATION_VIBRATE_START);
       const { player1, player2, player3, player4 } = this.state;
       this.setState({ isStartLoadingGame: true });
       const game = await api.post(`/api/game`);
