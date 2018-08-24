@@ -16,7 +16,14 @@ const StoreStats = types
     return {
       loadStats: flow(function*() {
         const { usersStats } = yield api.get(`/api/stats`);
-        self.usersStats = usersStats;
+        self.usersStats = usersStats.map(item => {
+          return {
+            id: item.id,
+            name: item.name,
+            photoUrl: item.photoUrl,
+            rating: item.rating
+          };
+        });
       })
     };
   });
