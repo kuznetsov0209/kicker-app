@@ -48,9 +48,9 @@ class Player extends Component {
     Vibration.vibrate(DURATION_VIBRATE_GOAL);
     this.setState({ isButtonFreeze: true });
     const { user } = this.props;
-    await Promise.all(
-      gameStore.addGoal(user.id),
-      this.freezeButton(FREEZE_GOALS_BUTTON)
+    Promise.all(
+      await gameStore.addGoal(user.id),
+      await this.freezeButton(FREEZE_GOALS_BUTTON)
     );
   };
 
@@ -58,9 +58,9 @@ class Player extends Component {
     Vibration.vibrate(DURATION_VIBRATE_OWN_GOAL);
     this.setState({ isButtonFreeze: true });
     const { user } = this.props;
-    await Promise.all(
-      gameStore.addOwnGoal(user.id),
-      this.freezeButton(FREEZE_GOALS_BUTTON)
+    Promise.all(
+      await gameStore.addOwnGoal(user.id),
+      await this.freezeButton(FREEZE_GOALS_BUTTON)
     );
   };
 
