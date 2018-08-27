@@ -1388,7 +1388,6 @@
 			};
 			name = Release;
 		};
-<<<<<<< HEAD
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1523,8 +1522,6 @@
 			};
 			name = Release;
 		};
-=======
->>>>>>> upstream/master
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
