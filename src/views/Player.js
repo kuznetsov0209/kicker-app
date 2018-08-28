@@ -19,6 +19,7 @@ import {
   PADDIND_GOAL_BUTTON
 } from "../constants";
 import { gameStore } from "../store";
+import { playGoalSound, playOwnSound } from "../utils/sounds";
 
 class Player extends Component {
   state = { user: null, userListVisible: false, isButtonFreeze: false };
@@ -41,6 +42,7 @@ class Player extends Component {
   };
 
   addGoal = async () => {
+    playGoalSound();
     Vibration.vibrate(DURATION_VIBRATE_GOAL);
     this.setState({ isButtonFreeze: true });
     const { user } = this.props;
@@ -52,6 +54,7 @@ class Player extends Component {
   };
 
   addOwnGoal = async () => {
+    playOwnSound();
     Vibration.vibrate(DURATION_VIBRATE_OWN_GOAL);
     this.setState({ isButtonFreeze: true });
     const { user } = this.props;
