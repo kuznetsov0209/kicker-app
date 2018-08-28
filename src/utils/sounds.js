@@ -1,4 +1,5 @@
 import Sound from "react-native-sound";
+Sound.setCategory("Playback");
 
 const startSound = new Sound(
   "on_press_start_sound.mp3",
