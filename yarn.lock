@@ -5275,9 +5275,9 @@ react-native-safe-area-view@^0.7.0:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-react-native-sound@^0.10.9:
-  version "0.10.9"
-  resolved "https://registry.yarnpkg.com/react-native-sound/-/react-native-sound-0.10.9.tgz#6b00b0f4afd017cde09fbb9d171df1b5d5b851a8"
+react-native-sound@0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/react-native-sound/-/react-native-sound-0.10.2.tgz#053780470fb435264a48f7f15c0e5cebe9cc8a14"
 
 react-native-svg@^6.3.1:
   version "6.3.1"

@@ -5,7 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
-		
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -39,6 +39,9 @@
 		3F665DB43D154EFCADA72620 /* GothamPro-Italic.woff in Resources */ = {isa = PBXBuildFile; fileRef = 95D71D2AECF0490A8AF54AA7 /* GothamPro-Italic.woff */; };
 		521962387E2149229AE6688D /* GothamPro-Light.svg in Resources */ = {isa = PBXBuildFile; fileRef = F88E3974BA7A40D9963FA064 /* GothamPro-Light.svg */; };
 		5221BF7D99DB4E96BF483175 /* GothamPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 654DBAF8C6FE4F4B88E73886 /* GothamPro.otf */; };
+		54076FFC21355CD900DB9BDB /* on_press_goal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54076FF921355CD800DB9BDB /* on_press_goal.mp3 */; };
+		54076FFD21355CD900DB9BDB /* on_press_own.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54076FFA21355CD900DB9BDB /* on_press_own.mp3 */; };
+		54076FFE21355CD900DB9BDB /* on_press_start_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54076FFB21355CD900DB9BDB /* on_press_start_sound.mp3 */; };
 		56858BD6E60146F7A9A51E74 /* GothamPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD74F6329E014E128085FE04 /* GothamPro-Black.ttf */; };
 		56BD68A1D0B04F9F89122822 /* GothamPro-Bold.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6B7FBCF446C048AAA0CC4373 /* GothamPro-Bold.svg */; };
 		5B2A1504AD1B4978B222F82A /* GothamPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7CC97F217D4250B0C6B61F /* GothamPro-LightItalic.ttf */; };
@@ -73,8 +76,8 @@
 		EB2CD7FF2A234DD2A71B45DB /* GothamPro-BlackItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = 01BD4CA30BD9480E9AA9395C /* GothamPro-BlackItalic.woff */; };
 		F053E37B79DA41B2A14FC0B9 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A57706B0ED784EDB89F17402 /* libCodePush.a */; };
 		F1E12CFE082F4F55A004B2CE /* GothamPro-Black.woff in Resources */ = {isa = PBXBuildFile; fileRef = 47AA5392D2834EECA73A73FE /* GothamPro-Black.woff */; };
-		FD1B2864A6C44961BDBD63B3 /* GothamPro.svg in Resources */ = {isa = PBXBuildFile; fileRef = F0C8BB7B83D14B838523D60C /* GothamPro.svg */; };
 		FA70D12927A84531A2C88B65 /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975BBCC76C3041BD913A0242 /* libRNSound.a */; };
+		FD1B2864A6C44961BDBD63B3 /* GothamPro.svg in Resources */ = {isa = PBXBuildFile; fileRef = F0C8BB7B83D14B838523D60C /* GothamPro.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +319,13 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
+		5407700221355D1300DB9BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1715B2422A5C4EE7B7B38002 /* RNSound.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
+			remoteInfo = RNSound;
+		};
 		54FC885220B69BAF00D87D0C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4EC4C2A17B1947D4807AB208 /* CodePush.xcodeproj */;
@@ -375,8 +385,6 @@
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
 		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = "../node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj"; sourceTree = "<group>"; };
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
-		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* kickermasterappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kickermasterappTests.m; sourceTree = "<group>"; };
 		01BD4CA30BD9480E9AA9395C /* GothamPro-BlackItalic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.woff"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.woff"; sourceTree = "<group>"; };
 		01CE26E0E1C9452491946219 /* GothamProNarrow-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Medium.otf"; path = "../assets/fonts/GothamProNarrow-Medium/GothamProNarrow-Medium.otf"; sourceTree = "<group>"; };
 		10D963BF660741F0BB3A7EB0 /* GothamPro-Medium.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.woff"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.woff"; sourceTree = "<group>"; };
@@ -391,6 +399,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = kickermasterapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = kickermasterapp/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		1715B2422A5C4EE7B7B38002 /* RNSound.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		178303023A5041E3B610B275 /* GothamPro-Bold.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Bold.woff"; path = "../assets/fonts/GothamPro-Bold/GothamPro-Bold.woff"; sourceTree = "<group>"; };
 		1EA1BCF8352B49D0BA4BB99A /* GothamPro-Black.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.svg"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.svg"; sourceTree = "<group>"; };
 		20E7E233222B40C7BB8ACB7A /* GothamPro-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Light.ttf"; path = "../assets/fonts/GothamPro-Light/GothamPro-Light.ttf"; sourceTree = "<group>"; };
@@ -406,6 +415,9 @@
 		47AA5392D2834EECA73A73FE /* GothamPro-Black.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.woff"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.woff"; sourceTree = "<group>"; };
 		494FF73E7D114E7E86447A53 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		4EC4C2A17B1947D4807AB208 /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
+		54076FF921355CD800DB9BDB /* on_press_goal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = on_press_goal.mp3; path = ../android/app/src/main/res/raw/on_press_goal.mp3; sourceTree = "<group>"; };
+		54076FFA21355CD900DB9BDB /* on_press_own.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = on_press_own.mp3; path = ../android/app/src/main/res/raw/on_press_own.mp3; sourceTree = "<group>"; };
+		54076FFB21355CD900DB9BDB /* on_press_start_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = on_press_start_sound.mp3; path = ../android/app/src/main/res/raw/on_press_start_sound.mp3; sourceTree = "<group>"; };
 		572C0C81A15346C9AFD0A1F4 /* GothamPro-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.ttf"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5F566C5394E44F649C7A5F3C /* GothamPro-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Bold.ttf"; path = "../assets/fonts/GothamPro-Bold/GothamPro-Bold.ttf"; sourceTree = "<group>"; };
@@ -428,6 +440,7 @@
 		8E7CC97F217D4250B0C6B61F /* GothamPro-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-LightItalic.ttf"; path = "../assets/fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf"; sourceTree = "<group>"; };
 		916DBABBF37340B4B48060EB /* GothamPro-MediumItalic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-MediumItalic.woff"; path = "../assets/fonts/GothamPro-MediumItalic/GothamPro-MediumItalic.woff"; sourceTree = "<group>"; };
 		95D71D2AECF0490A8AF54AA7 /* GothamPro-Italic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Italic.woff"; path = "../assets/fonts/GothamPro-Italic/GothamPro-Italic.woff"; sourceTree = "<group>"; };
+		975BBCC76C3041BD913A0242 /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
 		A196CB93D25C406CACBA6B5B /* GothamPro-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.otf"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.otf"; sourceTree = "<group>"; };
 		A57706B0ED784EDB89F17402 /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 		A75A6D916F844906A5BA77D1 /* GothamPro-MediumItalic.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-MediumItalic.svg"; path = "../assets/fonts/GothamPro-MediumItalic/GothamPro-MediumItalic.svg"; sourceTree = "<group>"; };
@@ -445,8 +458,6 @@
 		F728D7501DEB4F7992CDC2B2 /* GothamPro-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.otf"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.otf"; sourceTree = "<group>"; };
 		F88E3974BA7A40D9963FA064 /* GothamPro-Light.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Light.svg"; path = "../assets/fonts/GothamPro-Light/GothamPro-Light.svg"; sourceTree = "<group>"; };
 		FCB8A42339724D5DB9D259EF /* GothamProNarrow-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Medium.ttf"; path = "../assets/fonts/GothamProNarrow-Medium/GothamProNarrow-Medium.ttf"; sourceTree = "<group>"; };
-		1715B2422A5C4EE7B7B38002 /* RNSound.xcodeproj */ = {isa = PBXFileReference; name = "RNSound.xcodeproj"; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		975BBCC76C3041BD913A0242 /* libRNSound.a */ = {isa = PBXFileReference; name = "libRNSound.a"; path = "libRNSound.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -519,23 +530,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		00E356EF1AD99517003FC87E /* kickermasterappTests */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F21AD99517003FC87E /* kickermasterappTests.m */,
-				00E356F01AD99517003FC87E /* Supporting Files */,
-			);
-			path = kickermasterappTests;
-			sourceTree = "<group>";
-		};
-		00E356F01AD99517003FC87E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F11AD99517003FC87E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +553,9 @@
 		13B07FAE1A68108700A75B9A /* kickermasterapp */ = {
 			isa = PBXGroup;
 			children = (
+				54076FF921355CD800DB9BDB /* on_press_goal.mp3 */,
+				54076FFA21355CD900DB9BDB /* on_press_own.mp3 */,
+				54076FFB21355CD900DB9BDB /* on_press_start_sound.mp3 */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -608,6 +605,7 @@
 				8711858AD39749DE866D4EE9 /* libRNSVG.a */,
 				8B3F5A099BAC4176A936C34A /* libRNSVG-tvOS.a */,
 				A57706B0ED784EDB89F17402 /* libCodePush.a */,
+				975BBCC76C3041BD913A0242 /* libRNSound.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -617,6 +615,14 @@
 			children = (
 				30D9EAEB2079F92000DC328B /* libRNSVG.a */,
 				30D9EAED2079F92000DC328B /* libRNSVG-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54076FFF21355D1300DB9BDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5407700321355D1300DB9BDB /* libRNSound.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -739,7 +745,6 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* kickermasterapp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* kickermasterappTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				30D9EAC02079F91F00DC328B /* Recovered References */,
@@ -798,7 +803,7 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = TZB7824RGX;
+						DevelopmentTeam = Unknown;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -866,6 +871,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 54076FFF21355D1300DB9BDB /* Products */;
+					ProjectRef = 1715B2422A5C4EE7B7B38002 /* RNSound.xcodeproj */;
 				},
 				{
 					ProductGroup = 30D9EAE62079F92000DC328B /* Products */;
@@ -1118,6 +1127,13 @@
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		5407700321355D1300DB9BDB /* libRNSound.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSound.a;
+			remoteRef = 5407700221355D1300DB9BDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		54FC885320B69BAF00D87D0C /* libCodePush.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1187,7 +1203,9 @@
 				CB8D15F7B6134A7194B5B245 /* GothamPro-MediumItalic.svg in Resources */,
 				FD1B2864A6C44961BDBD63B3 /* GothamPro.svg in Resources */,
 				CB46D0BBC8F84A7EB4B0502E /* GothamProNarrow-Bold.svg in Resources */,
+				54076FFE21355CD900DB9BDB /* on_press_start_sound.mp3 in Resources */,
 				C42B42415931438F925632A3 /* GothamProNarrow-Medium.svg in Resources */,
+				54076FFD21355CD900DB9BDB /* on_press_own.mp3 in Resources */,
 				D3C8767DDE5747E6B2DDD949 /* GothamPro-Black.otf in Resources */,
 				56858BD6E60146F7A9A51E74 /* GothamPro-Black.ttf in Resources */,
 				F1E12CFE082F4F55A004B2CE /* GothamPro-Black.woff in Resources */,
@@ -1197,6 +1215,7 @@
 				17EE7CB4BDFA41CB93657BE1 /* GothamPro-Bold.otf in Resources */,
 				DAA7B9E980304494B18FF63E /* GothamPro-Bold.ttf in Resources */,
 				B9C72AB596E946B9B066C152 /* GothamPro-Bold.woff in Resources */,
+				54076FFC21355CD900DB9BDB /* on_press_goal.mp3 in Resources */,
 				0A97F7EA1D904024AEDA9C75 /* GothamPro-BoldItalic.otf in Resources */,
 				1E2D004EFB814A47B4362711 /* GothamPro-BoldItalic.ttf in Resources */,
 				E2D7307477F24E9396B75FCA /* GothamPro-BoldItalic.woff in Resources */,
@@ -1271,71 +1290,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		00E356F61AD99517003FC87E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 9L62D6HWYU;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
-				);
-				INFOPLIST_FILE = kickermasterappTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kickermasterapp.app/kickermasterapp";
-			};
-			name = Debug;
-		};
-		00E356F71AD99517003FC87E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 9L62D6HWYU;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
-				);
-				INFOPLIST_FILE = kickermasterappTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kickermasterapp.app/kickermasterapp";
-			};
-			name = Release;
-		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1347,7 +1301,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 				);
 				INFOPLIST_FILE = kickermasterapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1356,7 +1310,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kickermaster;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker;
 				PRODUCT_NAME = kickermasterapp;
 				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1373,7 +1327,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 				);
 				INFOPLIST_FILE = kickermasterapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1382,144 +1336,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kickermaster;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker;
 				PRODUCT_NAME = kickermasterapp;
 				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
-		2D02E4971E0B4A5E006451C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
-				);
-				INFOPLIST_FILE = "kickermasterapp-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.kickermasterapp-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-			};
-			name = Debug;
-		};
-		2D02E4981E0B4A5E006451C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
-				);
-				INFOPLIST_FILE = "kickermasterapp-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.kickermasterapp-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-			};
-			name = Release;
-		};
-		2D02E4991E0B4A5E006451C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "kickermasterapp-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.kickermasterapp-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kickermasterapp-tvOS.app/kickermasterapp-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
-			};
-			name = Debug;
-		};
-		2D02E49A1E0B4A5E006451C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "kickermasterapp-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.kickermasterapp-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kickermasterapp-tvOS.app/kickermasterapp-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
 		};
