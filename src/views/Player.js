@@ -228,7 +228,8 @@ class Player extends Component {
           >
             <Button
               primary
-              onPress={!this.state.isButtonFreeze && this.addGoal}
+              disabled={this.state.isButtonFreeze}
+              onPress={this.addGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
               width={240}
               padding={PADDIND_GOAL_BUTTON}
@@ -248,7 +249,8 @@ class Player extends Component {
             }}
           >
             <Button
-              onPress={!this.state.isButtonFreeze && this.addOwnGoal}
+              disabled={this.state.isButtonFreeze}
+              onPress={this.addOwnGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
               width={240}
             >
