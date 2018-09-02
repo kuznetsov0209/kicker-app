@@ -352,7 +352,8 @@ const NewGame = observer(
                   ).length
                 }
               />
-              {this.state.player1 &&
+              {!game &&
+                this.state.player1 &&
                 this.state.player2 && (
                   <Button
                     color="white"
@@ -411,7 +412,8 @@ const NewGame = observer(
                   ).length
                 }
               />
-              {this.state.player3 &&
+              {!game &&
+                this.state.player3 &&
                 this.state.player4 && (
                   <Button
                     color="white"
