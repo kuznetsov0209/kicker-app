@@ -244,6 +244,19 @@ const NewGame = observer(
       gameStore.reset();
     };
 
+    switchPlayers = (player1, player2) => () => {
+      this.setState({
+        [player1]: {
+          ...this.state[player2],
+          position: this.state[player1].position
+        },
+        [player2]: {
+          ...this.state[player1],
+          position: this.state[player2].position
+        }
+      });
+    };
+
     render() {
       const { game } = gameStore;
 
@@ -339,6 +352,16 @@ const NewGame = observer(
                   ).length
                 }
               />
+              {this.state.player1 &&
+                this.state.player2 && (
+                  <Button
+                    color="white"
+                    width={100}
+                    onPress={this.switchPlayers("player1", "player2")}
+                  >
+                    SWITCH RED
+                  </Button>
+                )}
               <Player
                 team={TEAM_RED}
                 position={POSITION_FORWARD}
@@ -388,6 +411,16 @@ const NewGame = observer(
                   ).length
                 }
               />
+              {this.state.player3 &&
+                this.state.player4 && (
+                  <Button
+                    color="white"
+                    width={100}
+                    onPress={this.switchPlayers("player3", "player4")}
+                  >
+                    SWITCH BLUE
+                  </Button>
+                )}
               <Player
                 team={TEAM_BLUE}
                 position={POSITION_DEFENDER}
