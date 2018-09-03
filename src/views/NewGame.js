@@ -355,13 +355,15 @@ const NewGame = observer(
               {!game &&
                 this.state.player1 &&
                 this.state.player2 && (
-                  <Button
-                    color="white"
-                    width={100}
-                    onPress={this.switchPlayers("player1", "player2")}
-                  >
-                    SWITCH RED
-                  </Button>
+                  <View style={{ width: 100 }}>
+                    <Button
+                      color="#ff234a"
+                      width={100}
+                      onPress={this.switchPlayers("player1", "player2")}
+                    >
+                      SWITCH RED
+                    </Button>
+                  </View>
                 )}
               <Player
                 team={TEAM_RED}
@@ -415,13 +417,23 @@ const NewGame = observer(
               {!game &&
                 this.state.player3 &&
                 this.state.player4 && (
-                  <Button
-                    color="white"
-                    width={100}
-                    onPress={this.switchPlayers("player3", "player4")}
+                  <View
+                    style={{
+                      flex: 1,
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "flex-end",
+                      width: 100
+                    }}
                   >
-                    SWITCH BLUE
-                  </Button>
+                    <Button
+                      color="#235cff"
+                      width={100}
+                      onPress={this.switchPlayers("player3", "player4")}
+                    >
+                      SWITCH BLUE
+                    </Button>
+                  </View>
                 )}
               <Player
                 team={TEAM_BLUE}
