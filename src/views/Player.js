@@ -15,14 +15,13 @@ import {
   POSITION_DEFENDER,
   DURATION_VIBRATE_GOAL,
   DURATION_VIBRATE_OWN_GOAL,
-  FREEZE_GOALS_BUTTON,
   PADDIND_GOAL_BUTTON
 } from "../constants";
 import { gameStore } from "../store";
 import { playGoalSound, playOwnSound } from "../utils/sounds";
 
 class Player extends Component {
-  state = { user: null, userListVisible: false, isButtonFreeze: false };
+  state = { user: null, userListVisible: false };
 
   selectUser = user => {
     this.setState({ userListVisible: false });
@@ -37,32 +36,20 @@ class Player extends Component {
     this.setState({ userListVisible: true });
   };
 
-  freezeButton = async delay => {
-    return new Promise(resolve => setTimeout(resolve, delay));
-  };
-
   addGoal = async () => {
     playGoalSound();
     Vibration.vibrate(DURATION_VIBRATE_GOAL);
-    this.setState({ isButtonFreeze: true });
+
     const { user } = this.props;
-    await Promise.all([
-      gameStore.addGoal(user.id),
-      this.freezeButton(FREEZE_GOALS_BUTTON)
-    ]);
-    this.setState({ isButtonFreeze: false });
+    gameStore.addGoal(user.id);
   };
 
   addOwnGoal = async () => {
     playOwnSound();
     Vibration.vibrate(DURATION_VIBRATE_OWN_GOAL);
-    this.setState({ isButtonFreeze: true });
+
     const { user } = this.props;
-    await Promise.all([
-      gameStore.addOwnGoal(user.id),
-      this.freezeButton(FREEZE_GOALS_BUTTON)
-    ]);
-    this.setState({ isButtonFreeze: false });
+    gameStore.addOwnGoal(user.id);
   };
 
   render() {
@@ -228,7 +215,6 @@ class Player extends Component {
           >
             <Button
               primary
-              disabled={this.state.isButtonFreeze}
               onPress={this.addGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
               width={240}
@@ -249,7 +235,6 @@ class Player extends Component {
             }}
           >
             <Button
-              disabled={this.state.isButtonFreeze}
               onPress={this.addOwnGoal}
               color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
               width={240}

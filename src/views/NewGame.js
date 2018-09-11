@@ -185,52 +185,25 @@ const NewGame = observer(
     startGame = async () => {
       playStartSound();
       Vibration.vibrate(DURATION_VIBRATE_START);
+
       const { player1, player2, player3, player4 } = this.state;
-      this.setState({ isStartLoadingGame: true });
-      const game = await api.post(`/api/game`);
-      await api.post(`/api/game/join`, {
-        userId: player1.user.id,
-        team: player1.team,
-        position: player1.position,
-        gameId: game.id
+      gameStore.start({
+        GamePlayers: [player1, player2, player3, player4].map(player => ({
+          UserId: player.user.id,
+          team: player.team,
+          position: player.position
+        }))
       });
-      await api.post(`/api/game/join`, {
-        userId: player2.user.id,
-        team: player2.team,
-        position: player2.position,
-        gameId: game.id
-      });
-      await api.post(`/api/game/join`, {
-        userId: player3.user.id,
-        team: player3.team,
-        position: player3.position,
-        gameId: game.id
-      });
-      await api.post(`/api/game/join`, {
-        userId: player4.user.id,
-        team: player4.team,
-        position: player4.position,
-        gameId: game.id
-      });
-
-      await api.post(`/api/game/start`, {
-        gameId: game.id
-      });
-
-      await gameStore.init(game.id);
-
-      this.setState({ isStartLoadingGame: false });
     };
 
     finishGame = async () => {
-      const { game } = gameStore;
-      await api.post(`/api/game/finish`, {
-        gameId: game.id
-      });
+      await gameStore.save();
+    };
 
+    resetGame() {
       this.setState(initialState);
       gameStore.reset();
-    };
+    }
 
     undoGoal = async () => {
       gameStore.removeLastGoal();
