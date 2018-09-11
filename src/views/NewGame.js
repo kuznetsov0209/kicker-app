@@ -422,8 +422,7 @@ const NewGame = observer(
                       flex: 1,
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "flex-end",
-                      width: 100
+                      justifyContent: "flex-end"
                     }}
                   >
                     <Button
