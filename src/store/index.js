@@ -1,124 +1,43 @@
-import { types, flow } from "mobx-state-tree";
+import { types, flow, getSnapshot } from "mobx-state-tree";
 import api from "../api";
-import { TEAM_RED, TEAM_BLUE } from "../constants";
+import User from "./user";
+import Game from "./game";
 
-const GamePlayer = types.model({
-  team: types.number,
-  position: types.maybe(types.number)
-});
-
-const Goal = types.model({
-  id: types.maybe(types.number),
-  ownGoal: types.boolean,
-  createdAt: types.string,
-  UserId: types.number
-});
-
-const User = types
+const GameStore = types
   .model({
-    id: types.number,
-    name: types.string,
-    photoUrl: types.maybe(types.string),
-    GamePlayer: types.maybe(GamePlayer),
-    Goals: types.optional(types.array(Goal), []),
-    games: types.late(() =>
-      types.optional(types.array(types.reference(Game)), [])
-    )
+    game: types.maybe(Game)
   })
-  .views(self => ({
-    get goals() {
-      return self.Goals.filter(goal => !goal.ownGoal);
-    },
-    get ownGoals() {
-      return self.Goals.filter(goal => goal.ownGoal);
-    },
-    get goalsPerMatch() {
-      return self.goals.length / self.games.length;
-    }
-  }));
-
-const MAX_GOALS = 10;
-
-const Game = types
-  .model({
-    id: types.identifier(types.number),
-    createdAt: types.string,
-    Users: types.optional(types.array(User), []),
-    Goals: types.optional(types.array(Goal), [])
-  })
-  .views(self => ({
-    get redUsers() {
-      return self.Users.filter(user => user.GamePlayer.team === TEAM_RED);
-    },
-    get redUserIds() {
-      return self.redUsers.map(user => user.id);
-    },
-    get blueUsers() {
-      return self.Users.filter(user => user.GamePlayer.team === TEAM_BLUE);
-    },
-    get blueUserIds() {
-      return self.blueUsers.map(user => user.id);
-    },
-    get redGoals() {
-      return self.Goals.filter(
-        goal => self.redUserIds.includes(goal.UserId) && !goal.ownGoal
-      );
-    },
-    get redOwnGoals() {
-      return self.Goals.filter(
-        goal => self.redUserIds.includes(goal.UserId) && goal.ownGoal
-      );
-    },
-    get blueGoals() {
-      return self.Goals.filter(
-        goal => self.blueUserIds.includes(goal.UserId) && !goal.ownGoal
-      );
-    },
-    get blueOwnGoals() {
-      return self.Goals.filter(
-        goal => self.blueUserIds.includes(goal.UserId) && goal.ownGoal
-      );
-    },
-    get redScore() {
-      return self.redGoals.length + self.blueOwnGoals.length;
-    },
-    get blueScore() {
-      return self.blueGoals.length + self.redOwnGoals.length;
-    },
-    get completed() {
-      return self.redScore === MAX_GOALS || self.blueScore === MAX_GOALS;
-    },
-    get score() {
-      return `${self.blueScore}:${self.redScore}`;
-    },
-    get winnerTeam() {
-      return self.blueScore > self.redScore ? TEAM_BLUE : TEAM_RED;
-    },
-    get winnerPlayers() {
-      return self.winnerTeam === TEAM_BLUE ? self.blueUsers : self.redUsers;
-    }
-  }))
-  .actions(self => ({
-    addGoal(UserId) {
-      self.Goals.push({
-        UserId,
-        ownGoal: false,
-        createdAt: new Date().toString()
-      });
-    },
-    addOwnGoal(UserId) {
-      self.Goals.push({
-        UserId,
-        ownGoal: true,
-        createdAt: new Date().toString()
-      });
-    }
-  }));
+  .actions(self => {
+    return {
+      start(payload) {
+        self.game = {
+          ...payload,
+          date: new Date().toString()
+        };
+      },
+      reset: () => {
+        self.game = null;
+      },
+      addGoal(userId) {
+        self.game.addGoal(userId);
+      },
+      addOwnGoal(userId) {
+        self.game.addOwnGoal(userId);
+      },
+      removeLastGoal() {
+        self.game.Goals.pop();
+      },
+      save: flow(function*() {
+        api.post("/api/game", getSnapshot(self.game));
+      })
+    };
+  });
 
 const Store = types
   .model({
     users: types.optional(types.array(User), []),
-    games: types.optional(types.array(Game), [])
+    games: types.optional(types.array(Game), []),
+    gameStore: GameStore
   })
   .actions(self => {
     return {
@@ -133,46 +52,8 @@ const Store = types
     };
   });
 
-const GameStore = types
-  .model({
-    game: types.maybe(Game)
-  })
-  .actions(self => {
-    return {
-      init: flow(function*(gameId) {
-        const { game } = yield api.get(`/api/game/${gameId}`);
-        self.game = game;
-      }),
-      reset: () => {
-        self.game = null;
-      },
-      addGoal: flow(function*(userId) {
-        self.game.addGoal(userId);
-        yield api.post(`/api/game/goal`, {
-          gameId: self.game.id,
-          userId
-        });
-      }),
-      addOwnGoal: flow(function*(userId) {
-        self.game.addOwnGoal(userId);
-        yield api.post(`/api/game/goal`, {
-          gameId: self.game.id,
-          userId,
-          ownGoal: true
-        });
-      }),
-      removeLastGoal: flow(function*() {
-        const [lastGoal] = self.game.Goals.sort(
-          (a, b) =>
-            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        );
-        yield api.delete(`/api/game/goal`, {
-          goalId: lastGoal.id
-        });
-        self.game.Goals.remove(lastGoal);
-      })
-    };
-  });
+export const store = Store.create({
+  gameStore: {}
+});
 
-export const gameStore = GameStore.create({});
-export const store = Store.create({});
+export const gameStore = store.gameStore;
