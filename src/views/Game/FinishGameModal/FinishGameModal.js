@@ -8,7 +8,7 @@ import Button from "../../../components/Button";
 const FinishGameModal = observer(
   class FinishModalComponent extends Component {
     render() {
-      const { visible, onRequestClose, onFinish } = this.props;
+      const { visible, onRequestClose, onFinish, onRematch } = this.props;
       return (
         <Modal
           animationType="fade"
@@ -27,7 +27,7 @@ const FinishGameModal = observer(
             <View
               style={{
                 width: 560,
-                height: 548,
+                height: 642,
                 backgroundColor: "#191919",
                 borderRadius: 6,
                 alignItems: "center",
@@ -70,12 +70,31 @@ const FinishGameModal = observer(
                 Are you sure you want to finish game?
               </Text>
               <View style={{ marginTop: 85 }}>
-                <Button primary color="#235cff" width={280} onPress={onFinish}>
+                <Button
+                  primary
+                  color="#235cff"
+                  style={{ width: 280 }}
+                  onPress={onFinish}
+                >
                   FINISH GAME
                 </Button>
               </View>
               <View style={{ marginTop: 30 }}>
-                <Button color="#ff234a" width={280}>
+                <Button
+                  primary
+                  color="#235cff"
+                  style={{ width: 280 }}
+                  onPress={onRematch}
+                >
+                  REMATCH
+                </Button>
+              </View>
+              <View style={{ marginTop: 30 }}>
+                <Button
+                  color="#ff234a"
+                  style={{ width: 280 }}
+                  onPress={onRequestClose}
+                >
                   CANCEL
                 </Button>
               </View>

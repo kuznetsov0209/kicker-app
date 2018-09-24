@@ -225,13 +225,12 @@ const Player = observer(
                   {user && user.name.toUpperCase()}
                 </Text>
               </View>
-              {this.state.userListVisible && (
-                <PlayersModal
-                  visible
-                  onSelect={this.selectUser}
-                  close={this.closeUserList}
-                />
-              )}
+
+              <PlayersModal
+                visible={this.state.userListVisible}
+                onSelect={this.selectUser}
+                close={this.closeUserList}
+              />
             </View>
           </View>
 

@@ -104,6 +104,10 @@ const Game = observer(
       this.setState({ finishModalVisible: true });
     };
 
+    closeFinishGameModal = () => {
+      this.setState({ finishModalVisible: false });
+    };
+
     finishGame = () => {
       this.setState(initialState);
       gameStore.reset();
@@ -112,6 +116,11 @@ const Game = observer(
     saveAndFinishGame = async () => {
       await gameStore.save();
       this.finishGame();
+    };
+
+    rematch = () => {
+      gameStore.reset();
+      this.closeFinishGameModal();
     };
 
     saveAndRematch = async () => {
@@ -208,11 +217,8 @@ const Game = observer(
           <FinishGameModal
             visible={this.state.finishModalVisible}
             onFinish={this.finishGame}
-            onRequestClose={() => {
-              this.setState({
-                finishModalVisible: false
-              });
-            }}
+            onRematch={this.rematch}
+            onRequestClose={this.closeFinishGameModal}
           />
         </View>
       );
