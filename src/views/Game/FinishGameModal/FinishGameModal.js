@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { View, Text, TouchableOpacity, Modal } from "react-native";
 import { observer } from "mobx-react";
 
-import Button from "../components/Button";
-import IconCross from "./svg/IconCross";
+import IconCross from "../../../assets/IconCross";
+import Button from "../../../components/Button";
 
-const FinishModal = observer(
+const FinishGameModal = observer(
   class FinishModalComponent extends Component {
     render() {
-      const { visible, onRequestClose } = this.props;
+      const { visible, onRequestClose, onFinish } = this.props;
       return (
         <Modal
           animationType="fade"
@@ -70,7 +70,7 @@ const FinishModal = observer(
                 Are you sure you want to finish game?
               </Text>
               <View style={{ marginTop: 85 }}>
-                <Button primary color="#235cff" width={280}>
+                <Button primary color="#235cff" width={280} onPress={onFinish}>
                   FINISH GAME
                 </Button>
               </View>
@@ -87,4 +87,4 @@ const FinishModal = observer(
   }
 );
 
-export default FinishModal;
+export default FinishGameModal;

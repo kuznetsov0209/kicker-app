@@ -25,24 +25,21 @@ const Button = ({
   children,
   primary,
   width,
-  padding,
+  style,
   disabled
 }) => (
-  <TouchableOpacity
-    onPress={onPress}
-    style={primary && { padding }}
-    disabled={disabled}
-  >
+  <TouchableOpacity onPress={onPress} style={style} disabled={disabled}>
     <View
-      style={{
-        width,
-        height: 64,
-        borderWidth: primary ? 4 : 0,
-        borderColor: color,
-        borderRadius: 32,
-        alignItems: "center",
-        justifyContent: "center"
-      }}
+      style={[
+        {
+          height: 64,
+          borderWidth: primary ? 4 : 0,
+          borderColor: color,
+          borderRadius: 32,
+          alignItems: "center",
+          justifyContent: "center"
+        }
+      ]}
     >
       <View style={styles.textContainer}>
         {primary && (

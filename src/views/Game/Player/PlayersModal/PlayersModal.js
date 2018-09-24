@@ -9,19 +9,18 @@ import {
 } from "react-native";
 import { observer } from "mobx-react";
 
-import UserAvatar from "../components/UserAvatar";
-import { store } from "../store";
-import IconCross from "./svg/IconCross";
+import UserAvatar from "../../../../components/UserAvatar";
+import { store } from "../../../../store";
+import IconCross from "../../../../assets/IconCross";
 
 const UserListModal = observer(
   class UserListModalComponent extends Component {
     userKeyExtractor = item => item.id.toString();
     renderUser = ({ item }) => {
-      const { selectedUserIds, onSelect } = this.props;
-      const disabled = selectedUserIds.includes(item.id);
+      const { onSelect } = this.props;
       return (
-        <TouchableOpacity disabled={disabled} onPress={() => onSelect(item)}>
-          <View style={{ alignItems: "center", opacity: disabled ? 0.4 : 1 }}>
+        <TouchableOpacity onPress={() => onSelect(item)}>
+          <View style={{ alignItems: "center" }}>
             <View
               style={{
                 flexDirection: "row",

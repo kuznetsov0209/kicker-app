@@ -18,15 +18,6 @@ const GameStore = types
       reset: () => {
         self.game = null;
       },
-      addGoal(userId) {
-        self.game.addGoal(userId);
-      },
-      addOwnGoal(userId) {
-        self.game.addOwnGoal(userId);
-      },
-      removeLastGoal() {
-        self.game.Goals.pop();
-      },
       save: flow(function*() {
         api.post("/api/game", getSnapshot(self.game));
       })

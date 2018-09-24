@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { View, Text, Modal, StyleSheet } from "react-native";
 import { observer } from "mobx-react";
 
-import Button from "../components/Button";
-import UserAvatar from "../components/UserAvatar";
-import Stars from "./svg/Stars";
+import Button from "../../../components/Button";
+import UserAvatar from "../../../components/UserAvatar";
+import { TEAM_BLUE } from "../../../constants";
+import { gameStore } from "../../../store";
 
-import { gameStore } from "../store";
-import { TEAM_BLUE } from "../constants";
+import Stars from "./assets/Stars";
 
 const styles = StyleSheet.create({
   avatar: {
@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
   }
 });
 
-const CongratsModal = observer(
-  class CongratsModalComponent extends Component {
+const CongratulationsModal = observer(
+  class CongratulationsModalComponent extends Component {
     render() {
       const { game } = gameStore;
       const { visible, onRematch, onFinish } = this.props;
@@ -87,12 +87,17 @@ const CongratsModal = observer(
                 </Text>
               </View>
               <View style={{ marginTop: 80 }}>
-                <Button primary color="white" width={280} onPress={onRematch}>
+                <Button
+                  primary
+                  color="white"
+                  style={{ width: 280 }}
+                  onPress={onRematch}
+                >
                   REMATCH
                 </Button>
               </View>
               <View style={{ marginTop: 30 }}>
-                <Button color="white" width={280} onPress={onFinish}>
+                <Button color="white" style={{ width: 280 }} onPress={onFinish}>
                   FINISH GAME
                 </Button>
               </View>
@@ -104,4 +109,4 @@ const CongratsModal = observer(
   }
 );
 
-export default CongratsModal;
+export default CongratulationsModal;

@@ -77,6 +77,14 @@ const Game = types
     },
     get winnerPlayers() {
       return self.winnerTeam === TEAM_BLUE ? self.blueUsers : self.redUsers;
+    },
+    get goalsByUserId() {
+      return self.GamePlayers.reduce((data, gamePlayer) => {
+        data[gamePlayer.UserId.id] = self.Goals.filter(
+          goal => goal.UserId.id == gamePlayer.UserId.id && !goal.ownGoal
+        );
+        return data;
+      }, {});
     }
   }))
   .actions(self => ({
@@ -93,6 +101,9 @@ const Game = types
         ownGoal: true,
         date: new Date().toString()
       });
+    },
+    removeLastGoal() {
+      self.Goals.pop();
     }
   }));
 
