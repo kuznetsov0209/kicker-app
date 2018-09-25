@@ -136,45 +136,33 @@ const Game = observer(
           <View style={{ flex: 1, flexDirection: "row" }}>
             <View style={{ flex: 1 }}>
               <Player
-                style={{ backgroundColor: "#0e0e0e" }}
                 team={TEAM_RED}
                 position={POSITION_DEFENDER}
                 user={this.state.player1 && this.state.player1.user}
                 onSelect={this.selectUser}
-                left
-                top
                 ready={!!game}
               />
               <Player
-                style={{ backgroundColor: "#191919" }}
                 team={TEAM_RED}
                 position={POSITION_FORWARD}
                 user={this.state.player2 && this.state.player2.user}
                 onSelect={this.selectUser}
-                left
-                bottom
                 ready={!!game}
               />
             </View>
             <View style={{ flex: 1 }}>
               <Player
-                style={{ backgroundColor: "#191919" }}
                 team={TEAM_BLUE}
                 position={POSITION_FORWARD}
                 user={this.state.player3 && this.state.player3.user}
                 onSelect={this.selectUser}
-                right
-                top
                 ready={!!game}
               />
               <Player
-                style={{ backgroundColor: "#0e0e0e" }}
                 team={TEAM_BLUE}
                 position={POSITION_DEFENDER}
                 user={this.state.player4 && this.state.player4.user}
                 onSelect={this.selectUser}
-                right
-                bottom
                 ready={!!game}
               />
             </View>
