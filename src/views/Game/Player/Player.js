@@ -32,13 +32,11 @@ const Player = observer(
   class PlayerComponent extends Component {
     state = { userListVisible: false };
 
-    get game() {
-      return gameStore.game;
-    }
-
     get goals() {
       const { user } = this.props;
-      return user && this.game && this.game.goalsByUserId[user.id].length;
+      return (
+        user && gameStore.game && gameStore.game.goalsByUserId[user.id].length
+      );
     }
 
     get isLeft() {
@@ -94,14 +92,14 @@ const Player = observer(
       playGoalSound();
 
       const { user } = this.props;
-      this.game.addGoal(user.id);
+      gameStore.game.addGoal(user.id);
     };
 
     addOwnGoal = async () => {
       playOwnSound();
 
       const { user } = this.props;
-      this.game.addOwnGoal(user.id);
+      gameStore.game.addOwnGoal(user.id);
     };
 
     renderIcon() {
@@ -117,7 +115,7 @@ const Player = observer(
     }
 
     render() {
-      const { user, team, ready } = this.props;
+      const { user, team } = this.props;
 
       return (
         <View
@@ -132,7 +130,7 @@ const Player = observer(
           <PlayerView reverse={this.isBottom}>
             <PlayerContainer reverse={this.isRight}>
               {user ? (
-                ready ? (
+                gameStore.game ? (
                   <PlayerAvatar user={user} team={team} goals={this.goals} />
                 ) : (
                   <ChangePlayerButton
@@ -157,7 +155,7 @@ const Player = observer(
             />
           </PlayerView>
 
-          {ready && (
+          {gameStore.game && (
             <ButtonsContainer reverse={this.isBottom}>
               <GoalButton
                 reverse={this.isBottom}

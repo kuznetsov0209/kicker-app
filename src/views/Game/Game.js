@@ -129,8 +129,6 @@ const Game = observer(
     };
 
     render() {
-      const { game } = gameStore;
-
       return (
         <View style={{ flex: 1 }}>
           <View style={{ flex: 1, flexDirection: "row" }}>
@@ -140,14 +138,12 @@ const Game = observer(
                 position={POSITION_DEFENDER}
                 user={this.state.player1 && this.state.player1.user}
                 onSelect={this.selectUser}
-                ready={!!game}
               />
               <Player
                 team={TEAM_RED}
                 position={POSITION_FORWARD}
                 user={this.state.player2 && this.state.player2.user}
                 onSelect={this.selectUser}
-                ready={!!game}
               />
             </View>
             <View style={{ flex: 1 }}>
@@ -156,26 +152,24 @@ const Game = observer(
                 position={POSITION_FORWARD}
                 user={this.state.player3 && this.state.player3.user}
                 onSelect={this.selectUser}
-                ready={!!game}
               />
               <Player
                 team={TEAM_BLUE}
                 position={POSITION_DEFENDER}
                 user={this.state.player4 && this.state.player4.user}
                 onSelect={this.selectUser}
-                ready={!!game}
               />
             </View>
           </View>
 
           <Score
-            game={game}
+            game={gameStore.game}
             isReadyToStart={this.areAllPlayersSelected}
             onStartRequest={this.startGame}
           />
 
           <Gateway into="navbar">
-            {game ? (
+            {gameStore.game ? (
               <Navbar>
                 <NavbarLink onPress={this.undoGoal} title="UNDO GOAL" />
                 <View style={styles.navbarLogoContainer}>
@@ -194,9 +188,9 @@ const Game = observer(
             )}
           </Gateway>
 
-          {game && (
+          {gameStore.game && (
             <CongratulationsModal
-              visible={game.completed}
+              visible={gameStore.game.completed}
               onRematch={this.saveAndRematch}
               onFinish={this.saveAndFinishGame}
             />
