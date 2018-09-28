@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View } from "react-native";
 import { observer } from "mobx-react";
 import { Gateway } from "react-gateway";
+import Tts from "react-native-tts";
 import Navbar, { NavbarLink } from "../../components/Navbar";
 import {
   TEAM_RED,
@@ -83,9 +84,7 @@ const Game = observer(
       });
     };
 
-    startGame = () => {
-      playStartSound();
-
+    startGame = async () => {
       const { player1, player2, player3, player4 } = this.state;
       gameStore.start({
         GamePlayers: [player1, player2, player3, player4].map(player => ({
@@ -93,6 +92,13 @@ const Game = observer(
           team: player.team,
           position: player.position
         }))
+      });
+
+      await Tts.speak("ПОШУМИМ!", {
+        iosVoiceId: "com.apple.ttsbundle.Milena-compact"
+      });
+      Tts.speak("Кожаные ублюдки", {
+        iosVoiceId: "com.apple.ttsbundle.Milena-compact"
       });
     };
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View } from "react-native";
 import { observer } from "mobx-react";
+import Tts from "react-native-tts";
 
 import LeftTopCorner from "./assets/LeftTopCorner";
 import LeftBottomCorner from "./assets/LeftBottomCorner";
@@ -78,6 +79,7 @@ const Player = observer(
       const { position, team } = this.props;
       this.props.onSelect({ user, position, team });
       this.closeUserList();
+      Tts.speak(user.name);
     };
 
     closeUserList = () => {
@@ -89,17 +91,17 @@ const Player = observer(
     };
 
     addGoal = async () => {
-      playGoalSound();
-
       const { user } = this.props;
       gameStore.game.addGoal(user.id);
+      await Tts.speak("GOAL!!!");
+      Tts.speak(gameStore.game.score);
     };
 
     addOwnGoal = async () => {
-      playOwnSound();
-
       const { user } = this.props;
       gameStore.game.addOwnGoal(user.id);
+      await Tts.speak("OWN GOAL...");
+      Tts.speak(gameStore.game.score);
     };
 
     renderIcon() {

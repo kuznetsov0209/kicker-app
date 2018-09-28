@@ -56,6 +56,7 @@
 		7E4840004B254CD3BF6D0FE1 /* GothamPro-Light.woff in Resources */ = {isa = PBXBuildFile; fileRef = 2BA17A99324D449FAF2C6F14 /* GothamPro-Light.woff */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		9289DC36E5F74714A3558B60 /* GothamPro-Medium.svg in Resources */ = {isa = PBXBuildFile; fileRef = 004A5D6071444E8E84DF2DF8 /* GothamPro-Medium.svg */; };
+		931C4B0B21CB4F4482983408 /* libTextToSpeech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 553A514C6D2D470D8DB47874 /* libTextToSpeech.a */; };
 		999F555709464964ABDAC411 /* GothamPro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C33A0CBD2FE0463DB45209FB /* GothamPro-Italic.otf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		AFDCF927F1AA4AA9B2B14668 /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60506B55278246C9B8CBA064 /* GothamPro.ttf */; };
@@ -326,6 +327,13 @@
 			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
 			remoteInfo = RNSound;
 		};
+		54483DE2215D1E40003D3D7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96A53FB19907479AA363135B /* TextToSpeech.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A6FB2081D99E12200593599;
+			remoteInfo = TextToSpeech;
+		};
 		54FC885220B69BAF00D87D0C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4EC4C2A17B1947D4807AB208 /* CodePush.xcodeproj */;
@@ -418,6 +426,7 @@
 		54076FF921355CD800DB9BDB /* on_press_goal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = on_press_goal.mp3; path = ../android/app/src/main/res/raw/on_press_goal.mp3; sourceTree = "<group>"; };
 		54076FFA21355CD900DB9BDB /* on_press_own.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = on_press_own.mp3; path = ../android/app/src/main/res/raw/on_press_own.mp3; sourceTree = "<group>"; };
 		54076FFB21355CD900DB9BDB /* on_press_start_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = on_press_start_sound.mp3; path = ../android/app/src/main/res/raw/on_press_start_sound.mp3; sourceTree = "<group>"; };
+		553A514C6D2D470D8DB47874 /* libTextToSpeech.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libTextToSpeech.a; sourceTree = "<group>"; };
 		572C0C81A15346C9AFD0A1F4 /* GothamPro-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.ttf"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5F566C5394E44F649C7A5F3C /* GothamPro-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Bold.ttf"; path = "../assets/fonts/GothamPro-Bold/GothamPro-Bold.ttf"; sourceTree = "<group>"; };
@@ -440,6 +449,7 @@
 		8E7CC97F217D4250B0C6B61F /* GothamPro-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-LightItalic.ttf"; path = "../assets/fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf"; sourceTree = "<group>"; };
 		916DBABBF37340B4B48060EB /* GothamPro-MediumItalic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-MediumItalic.woff"; path = "../assets/fonts/GothamPro-MediumItalic/GothamPro-MediumItalic.woff"; sourceTree = "<group>"; };
 		95D71D2AECF0490A8AF54AA7 /* GothamPro-Italic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Italic.woff"; path = "../assets/fonts/GothamPro-Italic/GothamPro-Italic.woff"; sourceTree = "<group>"; };
+		96A53FB19907479AA363135B /* TextToSpeech.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = TextToSpeech.xcodeproj; path = "../node_modules/react-native-tts/ios/TextToSpeech.xcodeproj"; sourceTree = "<group>"; };
 		975BBCC76C3041BD913A0242 /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
 		A196CB93D25C406CACBA6B5B /* GothamPro-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.otf"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.otf"; sourceTree = "<group>"; };
 		A57706B0ED784EDB89F17402 /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
@@ -482,6 +492,7 @@
 				F053E37B79DA41B2A14FC0B9 /* libCodePush.a in Frameworks */,
 				60BB4CC069314BD398DC47D6 /* libz.tbd in Frameworks */,
 				FA70D12927A84531A2C88B65 /* libRNSound.a in Frameworks */,
+				931C4B0B21CB4F4482983408 /* libTextToSpeech.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +617,7 @@
 				8B3F5A099BAC4176A936C34A /* libRNSVG-tvOS.a */,
 				A57706B0ED784EDB89F17402 /* libCodePush.a */,
 				975BBCC76C3041BD913A0242 /* libRNSound.a */,
+				553A514C6D2D470D8DB47874 /* libTextToSpeech.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -623,6 +635,14 @@
 			isa = PBXGroup;
 			children = (
 				5407700321355D1300DB9BDB /* libRNSound.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54483DDF215D1E3F003D3D7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54483DE3215D1E40003D3D7B /* libTextToSpeech.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -727,6 +747,7 @@
 				494FF73E7D114E7E86447A53 /* RNSVG.xcodeproj */,
 				4EC4C2A17B1947D4807AB208 /* CodePush.xcodeproj */,
 				1715B2422A5C4EE7B7B38002 /* RNSound.xcodeproj */,
+				96A53FB19907479AA363135B /* TextToSpeech.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -879,6 +900,10 @@
 				{
 					ProductGroup = 30D9EAE62079F92000DC328B /* Products */;
 					ProjectRef = 494FF73E7D114E7E86447A53 /* RNSVG.xcodeproj */;
+				},
+				{
+					ProductGroup = 54483DDF215D1E3F003D3D7B /* Products */;
+					ProjectRef = 96A53FB19907479AA363135B /* TextToSpeech.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1134,6 +1159,13 @@
 			remoteRef = 5407700221355D1300DB9BDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		54483DE3215D1E40003D3D7B /* libTextToSpeech.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTextToSpeech.a;
+			remoteRef = 54483DE2215D1E40003D3D7B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		54FC885320B69BAF00D87D0C /* libCodePush.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1302,9 +1334,14 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
+					"$(SRCROOT)/../node_modules/react-native-tts/ios/TextToSpeech",
 				);
 				INFOPLIST_FILE = kickermasterapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/kickermasterapp\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1328,9 +1365,14 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
+					"$(SRCROOT)/../node_modules/react-native-tts/ios/TextToSpeech",
 				);
 				INFOPLIST_FILE = kickermasterapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/kickermasterapp\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
