@@ -37,6 +37,7 @@ const Game = observer(
 
     componentDidMount() {
       store.loadUsers();
+      store.loadEventPresets();
     }
 
     get areAllPlayersSelected() {
