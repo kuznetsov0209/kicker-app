@@ -1,8 +1,6 @@
 import { types } from "mobx-state-tree";
 import { TEAM_RED, TEAM_BLUE } from "../constants";
 import User from "./user";
-import { gameStore } from "./index";
-import Tts from "react-native-tts";
 
 const MAX_GOALS = 10;
 
@@ -90,27 +88,12 @@ const Game = types
     }
   }))
   .actions(self => ({
-    runEventHandler() {
-      // const red_team_score = self.redScore;
-      // const blue_team_score = self.blueScore;
-      // const total_score = red_team_score + blue_team_score;
-      //
-      // if (total_score - red_team_score > 5 && red_team_score >= 8) {
-      //   Tts.speak("BLUE");
-      // }
-      //
-      // if (total_score - blue_team_score > 5 && blue_team_score >= 8) {
-      //   Tts.speak("RED");
-      // }
-    },
     addGoal(UserId) {
       self.Goals.push({
         UserId,
         ownGoal: false,
         date: new Date().toString()
       });
-
-      self.runEventHandler();
     },
     addOwnGoal(UserId) {
       self.Goals.push({
@@ -118,8 +101,6 @@ const Game = types
         ownGoal: true,
         date: new Date().toString()
       });
-
-      self.runEventHandler();
     },
     removeLastGoal() {
       self.Goals.pop();
