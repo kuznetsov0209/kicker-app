@@ -3,12 +3,22 @@ import api from "../api";
 import User from "./user";
 import Game from "./game";
 
-const Event = types.model({
-  total_score: types.maybe(types.number),
-  red_score: types.maybe(types.number),
-  blue_score: types.maybe(types.number),
-  event_string: types.string,
+const EventOption = types.model({
+  value: types.number, // should set type string/number
   compare_operator: types.string
+});
+
+const EventOptions = types.model({
+  total_score: types.maybe(EventOption),
+  red_score: types.maybe(EventOption),
+  blue_score: types.maybe(EventOption)
+});
+
+const Event = types.model({
+  options: types.maybe(EventOptions),
+  repeat: types.boolean,
+  id: types.number,
+  event_string: types.string
 });
 
 const GameStore = types
@@ -49,22 +59,29 @@ const Store = types
         // const { events } = yield api.get("/api/events");
         self.events = [
           {
-            total_score: 2,
-            red_score: 2,
-            event_string: "Red team dominate!",
-            compare_operator: "="
-          },
-          {
-            red_score: 3,
-            event_string: "Red team will win!",
-            compare_operator: ">="
+            id: 1,
+            options: {
+              blue_score: {
+                value: 4,
+                compare_operator: "<"
+              },
+              red_score: {
+                value: 8,
+                compare_operator: "="
+              }
+            },
+            repeat: false,
+            event_string: "Красные почувствовали вкус победы"
           }
         ];
       }),
       loadGames: flow(function*() {
         const { games } = yield api.get("/api/games");
         self.games = games;
-      })
+      }),
+      removeEvent(event_id) {
+        self.events = self.events.filter(({ id }) => id !== event_id);
+      }
     };
   });
 

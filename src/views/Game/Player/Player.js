@@ -90,47 +90,12 @@ const Player = observer(
       this.setState({ userListVisible: true });
     };
 
-    callEventOnGoal = () => {
-      const events = store.events;
-
-      const game_events = {
-        red_score: gameStore.game.redScore,
-        blue_score: gameStore.game.blueScore,
-        total_score: gameStore.game.redScore + gameStore.game.blueScore
-      };
-
-      for (let event of events) {
-        let t = Object.keys(event).length;
-
-        for (let eventKey in event) {
-          if (
-            eventKey === "event_string" ||
-            eventKey === "compare_operator" ||
-            event[eventKey] === null ||
-            compare(
-              game_events[eventKey],
-              event[eventKey],
-              event.compare_operator
-            )
-          ) {
-            t -= 1;
-          }
-        }
-
-        if (t === 0) {
-          Tts.speak(event.event_string);
-          break;
-        }
-      }
-    };
-
     addGoal = async () => {
       const { user } = this.props;
       gameStore.game.addGoal(user.id);
       await Tts.speak("GOAL!!!");
       await Tts.speak(gameStore.game.score);
-
-      this.callEventOnGoal();
+      gameStore.game.callEventOnGoal();
     };
 
     addOwnGoal = async () => {
@@ -138,8 +103,7 @@ const Player = observer(
       gameStore.game.addOwnGoal(user.id);
       await Tts.speak("OWN GOAL...");
       await Tts.speak(gameStore.game.score);
-
-      this.callEventOnGoal();
+      gameStore.game.callEventOnGoal();
     };
 
     renderIcon() {

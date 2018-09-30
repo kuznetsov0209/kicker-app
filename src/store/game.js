@@ -1,6 +1,9 @@
 import { types } from "mobx-state-tree";
 import { TEAM_RED, TEAM_BLUE } from "../constants";
 import User from "./user";
+import { store } from "./index";
+import compare from "../utils/compare";
+import Tts from "react-native-tts";
 
 const MAX_GOALS = 10;
 
@@ -104,6 +107,45 @@ const Game = types
     },
     removeLastGoal() {
       self.Goals.pop();
+    },
+    callEventOnGoal() {
+      const events = store.events;
+
+      const game_events = {
+        red_score: self.redScore,
+        blue_score: self.blueScore,
+        total_score: self.redScore + self.blueScore
+      };
+
+      for (let event of events) {
+        const options = event.options;
+        let t = Object.keys(options).length;
+
+        for (let eventKey in options) {
+          if (
+            options[eventKey] === null ||
+            compare(
+              game_events[eventKey],
+              options[eventKey].value,
+              options[eventKey].compare_operator
+            )
+          ) {
+            t -= 1;
+          }
+        }
+
+        if (t === 0) {
+          Tts.speak(event.event_string, {
+            iosVoiceId: "com.apple.ttsbundle.Milena-compact"
+          });
+
+          if (!event.repeat) {
+            store.removeEvent(event.id);
+          }
+
+          break;
+        }
+      }
     }
   }));
 
