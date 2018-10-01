@@ -1,6 +1,15 @@
 import { types } from "mobx-state-tree";
 import { TEAM_RED, TEAM_BLUE } from "../constants";
 import User from "./user";
+import { observe } from "mobx";
+import gameEventEmitter, {
+  EVENT_GOAL,
+  EVENT_OWN_GOAL,
+  EVENT_UNDO_GOAL,
+  EVENT_SCORE_CHANGED,
+  EVENT_GAME_STARTED,
+  EVENT_GAME_FINISHED
+} from "./gameEventEmitter";
 
 const MAX_GOALS = 10;
 
@@ -85,6 +94,11 @@ const Game = types
         );
         return data;
       }, {});
+    },
+    getGamePlayerByUserId(UserId) {
+      return self.GamePlayers.find(
+        gamePlayer => gamePlayer.UserId.id === UserId
+      );
     }
   }))
   .actions(self => ({
@@ -94,6 +108,12 @@ const Game = types
         ownGoal: false,
         date: new Date().toString()
       });
+
+      const gamePlayer = self.getGamePlayerByUserId(UserId);
+      gameEventEmitter.emit(EVENT_GOAL, {
+        team: gamePlayer.team,
+        user: gamePlayer.UserId.toJSON()
+      });
     },
     addOwnGoal(UserId) {
       self.Goals.push({
@@ -101,10 +121,76 @@ const Game = types
         ownGoal: true,
         date: new Date().toString()
       });
+
+      const gamePlayer = self.getGamePlayerByUserId(UserId);
+      gameEventEmitter.emit(EVENT_OWN_GOAL, {
+        team: gamePlayer.team,
+        user: gamePlayer.UserId.toJSON()
+      });
     },
     removeLastGoal() {
       self.Goals.pop();
+
+      gameEventEmitter.emit(EVENT_UNDO_GOAL);
+    },
+    afterCreate() {
+      runGameEventListeners();
+
+      gameEventEmitter.emit(EVENT_GAME_STARTED);
+
+      observe(self, "score", () => {
+        gameEventEmitter.emit(EVENT_SCORE_CHANGED, {
+          redScore: self.redScore,
+          blueScore: self.blueScore
+        });
+      });
+
+      observe(self, "completed", () => {
+        gameEventEmitter.emit(EVENT_GAME_FINISHED);
+      });
     }
   }));
+
+function runGameEventListeners() {
+  gameEventEmitter.addListener(function*({ waitForEvent }) {
+    yield* waitForEvent(EVENT_GAME_STARTED);
+    const timeStart = Date.now();
+
+    yield* waitForEvent(EVENT_GAME_FINISHED);
+    const timeFinish = Date.now();
+
+    console.log("#1 game time: ", timeFinish - timeStart);
+  });
+
+  gameEventEmitter.addListener(function*({ waitForEvent }) {
+    let lastGoalTime = null;
+
+    while (true) {
+      yield* waitForEvent(EVENT_SCORE_CHANGED);
+
+      if (lastGoalTime !== null) {
+        console.log("#2 time from last goal", Date.now() - lastGoalTime);
+      }
+      lastGoalTime = Date.now();
+    }
+  });
+
+  gameEventEmitter.addListener(function*({ waitForEvent }) {
+    let team;
+    let goalsInRow = 1;
+
+    while (true) {
+      const event = yield* waitForEvent(EVENT_GOAL);
+
+      if (team === event.payload.team) {
+        goalsInRow++;
+      } else {
+        team = event.payload.team;
+        goalsInRow = 1;
+      }
+      console.log("#9 team:", team, "goal in a row:", goalsInRow);
+    }
+  });
+}
 
 export default Game;
