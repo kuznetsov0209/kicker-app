@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   Modal,
   FlatList,
-  ActivityIndicator
+  ActivityIndicator,
+  TextInput
 } from "react-native";
 import { observer } from "mobx-react";
 
@@ -15,7 +16,12 @@ import IconCross from "../../../../assets/IconCross";
 
 const UserListModal = observer(
   class UserListModalComponent extends Component {
+    state = {
+      searchStr: ""
+    };
+
     userKeyExtractor = item => item.id.toString();
+
     renderUser = ({ item }) => {
       const { onSelect } = this.props;
       return (
@@ -47,11 +53,29 @@ const UserListModal = observer(
         </TouchableOpacity>
       );
     };
+
+    searchUser = value => {
+      this.setState({ searchStr: value.toLowerCase() });
+    };
+
     render() {
       const { visible, close } = this.props;
+
+      const usersList = store.users
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .filter(
+          ({ name }) => name.toLowerCase().indexOf(this.state.searchStr) >= 0
+        );
+
       return (
         <Modal animationType="fade" transparent={false} visible={visible}>
-          <View style={{ flex: 1, backgroundColor: "#191919" }}>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "#191919",
+              alignItems: "center"
+            }}
+          >
             <TouchableOpacity
               onPress={close}
               style={{
@@ -78,8 +102,20 @@ const UserListModal = observer(
                 <ActivityIndicator />
               </View>
             )}
+            <TextInput
+              style={{
+                height: 40,
+                marginTop: 20,
+                width: "70%",
+                borderColor: "red",
+                borderWidth: 2,
+                color: "white"
+              }}
+              onChangeText={this.searchUser}
+              value={this.state.searchStr}
+            />
             <FlatList
-              data={store.users.sort((a, b) => a.name.localeCompare(b.name))}
+              data={usersList}
               keyExtractor={this.userKeyExtractor}
               renderItem={this.renderUser}
               style={{ flex: 1 }}
