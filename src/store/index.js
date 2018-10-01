@@ -12,7 +12,8 @@ const GameStore = types
       start(payload) {
         self.game = {
           ...payload,
-          date: new Date().toString()
+          createdAt: new Date().toString(),
+          updatedAt: new Date().toString()
         };
       },
       reset: () => {
