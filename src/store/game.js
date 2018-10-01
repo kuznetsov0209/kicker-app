@@ -21,16 +21,18 @@ const GamePlayer = types.model({
 
 const Goal = types.model({
   ownGoal: types.boolean,
-  date: types.string,
-  UserId: types.reference(User)
+  UserId: types.reference(User),
+  createdAt: types.string,
+  updatedAt: types.string
 });
 
 const Game = types
   .model({
     id: types.maybe(types.number),
-    date: types.string,
     GamePlayers: types.optional(types.array(GamePlayer), []),
-    Goals: types.optional(types.array(Goal), [])
+    Goals: types.optional(types.array(Goal), []),
+    createdAt: types.string,
+    updatedAt: types.string
   })
   .views(self => ({
     get redUsers() {
@@ -106,7 +108,8 @@ const Game = types
       self.Goals.push({
         UserId,
         ownGoal: false,
-        date: new Date().toString()
+        createdAt: new Date().toString(),
+        updatedAt: new Date().toString()
       });
 
       const gamePlayer = self.getGamePlayerByUserId(UserId);
@@ -119,7 +122,8 @@ const Game = types
       self.Goals.push({
         UserId,
         ownGoal: true,
-        date: new Date().toString()
+        createdAt: new Date().toString(),
+        updatedAt: new Date().toString()
       });
 
       const gamePlayer = self.getGamePlayerByUserId(UserId);
