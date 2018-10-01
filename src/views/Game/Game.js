@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { View } from "react-native";
 import { observer } from "mobx-react";
 import { Gateway } from "react-gateway";
-import Tts from "react-native-tts";
 import Navbar, { NavbarLink } from "../../components/Navbar";
 import {
   TEAM_RED,
@@ -11,7 +10,6 @@ import {
   POSITION_DEFENDER
 } from "../../constants";
 import { store, gameStore } from "../../store";
-import { playStartSound } from "../../utils/sounds";
 import Logo from "../../assets/Logo";
 
 import CongratulationsModal from "./CongratulationsModal";
@@ -92,13 +90,6 @@ const Game = observer(
           team: player.team,
           position: player.position
         }))
-      });
-
-      await Tts.speak("ПОШУМИМ!", {
-        iosVoiceId: "com.apple.ttsbundle.Milena-compact"
-      });
-      Tts.speak("Кожаные ублюдки", {
-        iosVoiceId: "com.apple.ttsbundle.Milena-compact"
       });
     };
 
