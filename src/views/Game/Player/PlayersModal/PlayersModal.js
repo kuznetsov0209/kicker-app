@@ -59,8 +59,13 @@ const UserListModal = observer(
       this.setState({ searchStr: value });
     };
 
+    resetSearchAndClose = () => {
+      this.setState({ searchStr: "" });
+      this.props.close();
+    };
+
     render() {
-      const { visible, close } = this.props;
+      const { visible } = this.props;
 
       const usersList = store.users
         .sort((a, b) => a.name.localeCompare(b.name))
@@ -79,7 +84,7 @@ const UserListModal = observer(
             }}
           >
             <TouchableOpacity
-              onPress={close}
+              onPress={this.resetSearchAndClose}
               style={{
                 position: "absolute",
                 right: 30,
@@ -106,22 +111,22 @@ const UserListModal = observer(
             )}
             <View
               style={{
-                marginTop: 36,
-                marginBottom: 36,
                 width: 380,
+                height: 100,
+                alignItems: "center",
                 flexDirection: "row"
               }}
             >
               <IconSearch
                 style={{
-                  marginLeft: 15,
-                  marginRight: 35
+                  marginLeft: 15
                 }}
               />
               <TextInput
                 style={{
                   color: "white",
                   fontFamily: "GothamPro-Bold",
+                  paddingLeft: 35,
                   fontSize: 24
                 }}
                 placeholder="SEARCH"
