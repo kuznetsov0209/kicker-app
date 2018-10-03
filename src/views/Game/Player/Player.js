@@ -15,7 +15,6 @@ import {
   POSITION_FORWARD
 } from "../../../constants";
 import { gameStore } from "../../../store";
-import { playGoalSound, playOwnSound } from "../../../utils/sounds";
 import Button from "../../../components/Button";
 import styles, {
   AddPlayerButton,

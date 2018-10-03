@@ -33,15 +33,56 @@
 		278F34B416F749B6AB4579BC /* GothamPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20E7E233222B40C7BB8ACB7A /* GothamPro-Light.ttf */; };
 		286FE9D5951145999B907A72 /* GothamPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 572C0C81A15346C9AFD0A1F4 /* GothamPro-BlackItalic.ttf */; };
 		2E74A41EDBFA48479C8720B3 /* GothamPro-Medium.woff in Resources */ = {isa = PBXBuildFile; fileRef = 10D963BF660741F0BB3A7EB0 /* GothamPro-Medium.woff */; };
+		30025F082164A831006558BF /* goal-human3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EDC2164A82C006558BF /* goal-human3.mp3 */; };
+		30025F092164A831006558BF /* own-human4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EDD2164A82C006558BF /* own-human4.mp3 */; };
+		30025F0A2164A831006558BF /* goal-robot4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EDE2164A82C006558BF /* goal-robot4.mp3 */; };
+		30025F0B2164A831006558BF /* own-human3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EDF2164A82D006558BF /* own-human3.mp3 */; };
+		30025F0C2164A831006558BF /* own-robot2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE02164A82D006558BF /* own-robot2.mp3 */; };
+		30025F0D2164A831006558BF /* goal-human1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE12164A82D006558BF /* goal-human1.mp3 */; };
+		30025F0E2164A831006558BF /* goal-human7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE22164A82D006558BF /* goal-human7.mp3 */; };
+		30025F0F2164A831006558BF /* goal-human6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE32164A82D006558BF /* goal-human6.mp3 */; };
+		30025F102164A831006558BF /* own-robot6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE42164A82D006558BF /* own-robot6.mp3 */; };
+		30025F112164A831006558BF /* goal-human13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE52164A82D006558BF /* goal-human13.mp3 */; };
+		30025F122164A831006558BF /* goal-robot7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE62164A82D006558BF /* goal-robot7.mp3 */; };
+		30025F132164A831006558BF /* own-human5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE72164A82D006558BF /* own-human5.mp3 */; };
+		30025F142164A831006558BF /* own-human2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE82164A82D006558BF /* own-human2.mp3 */; };
+		30025F152164A831006558BF /* own-robot5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EE92164A82D006558BF /* own-robot5.mp3 */; };
+		30025F162164A831006558BF /* finish-robot-lose1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EEA2164A82D006558BF /* finish-robot-lose1.mp3 */; };
+		30025F172164A831006558BF /* goal-human12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EEB2164A82E006558BF /* goal-human12.mp3 */; };
+		30025F182164A831006558BF /* goal-robot1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EEC2164A82E006558BF /* goal-robot1.mp3 */; };
+		30025F192164A831006558BF /* goal-robot9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EED2164A82E006558BF /* goal-robot9.mp3 */; };
+		30025F1A2164A831006558BF /* own-robot1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EEE2164A82E006558BF /* own-robot1.mp3 */; };
+		30025F1B2164A831006558BF /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EEF2164A82E006558BF /* start.mp3 */; };
+		30025F1C2164A831006558BF /* own-human1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF02164A82E006558BF /* own-human1.mp3 */; };
+		30025F1D2164A831006558BF /* goal-human8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF12164A82E006558BF /* goal-human8.mp3 */; };
+		30025F1E2164A831006558BF /* goal-robot2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF22164A82E006558BF /* goal-robot2.mp3 */; };
+		30025F1F2164A831006558BF /* finish-human-lose1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF32164A82E006558BF /* finish-human-lose1.mp3 */; };
+		30025F202164A831006558BF /* goal-human4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF42164A82F006558BF /* goal-human4.mp3 */; };
+		30025F212164A831006558BF /* finish-human-lose3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF52164A82F006558BF /* finish-human-lose3.mp3 */; };
+		30025F222164A831006558BF /* finish-robot-lose2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF62164A82F006558BF /* finish-robot-lose2.mp3 */; };
+		30025F232164A831006558BF /* finish-human-lose2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF72164A82F006558BF /* finish-human-lose2.mp3 */; };
+		30025F242164A831006558BF /* goal-human9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF82164A82F006558BF /* goal-human9.mp3 */; };
+		30025F252164A831006558BF /* finish-robot-lose3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EF92164A82F006558BF /* finish-robot-lose3.mp3 */; };
+		30025F262164A831006558BF /* goal-human10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EFA2164A82F006558BF /* goal-human10.mp3 */; };
+		30025F272164A831006558BF /* goal-robot3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EFB2164A82F006558BF /* goal-robot3.mp3 */; };
+		30025F282164A831006558BF /* goal-robot6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EFC2164A830006558BF /* goal-robot6.mp3 */; };
+		30025F292164A831006558BF /* own-robot3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EFD2164A830006558BF /* own-robot3.mp3 */; };
+		30025F2A2164A831006558BF /* own-robot4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EFE2164A830006558BF /* own-robot4.mp3 */; };
+		30025F2B2164A831006558BF /* finish-robot-lose4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025EFF2164A830006558BF /* finish-robot-lose4.mp3 */; };
+		30025F2C2164A831006558BF /* goal-robot8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F002164A830006558BF /* goal-robot8.mp3 */; };
+		30025F2D2164A831006558BF /* own-human6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F012164A830006558BF /* own-human6.mp3 */; };
+		30025F2E2164A831006558BF /* random2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F022164A830006558BF /* random2.mp3 */; };
+		30025F2F2164A831006558BF /* goal-human11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F032164A830006558BF /* goal-human11.mp3 */; };
+		30025F302164A831006558BF /* goal-human5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F042164A831006558BF /* goal-human5.mp3 */; };
+		30025F312164A831006558BF /* goal-robot5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F052164A831006558BF /* goal-robot5.mp3 */; };
+		30025F322164A831006558BF /* goal-human2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F062164A831006558BF /* goal-human2.mp3 */; };
+		30025F332164A831006558BF /* random1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F072164A831006558BF /* random1.mp3 */; };
 		336F0C1FF8164AC9A6F96E33 /* GothamPro-LightItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = 6567857F89124889982B46C1 /* GothamPro-LightItalic.woff */; };
 		3AE0A01BEBB24AD5A50C3075 /* GothamPro-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 117525DA641E49B1818D1BF6 /* GothamPro-MediumItalic.otf */; };
 		3F505EACB9BE4341ABCC7A3A /* GothamPro-BoldItalic.svg in Resources */ = {isa = PBXBuildFile; fileRef = C5434C06BA0240B884FB1630 /* GothamPro-BoldItalic.svg */; };
 		3F665DB43D154EFCADA72620 /* GothamPro-Italic.woff in Resources */ = {isa = PBXBuildFile; fileRef = 95D71D2AECF0490A8AF54AA7 /* GothamPro-Italic.woff */; };
 		521962387E2149229AE6688D /* GothamPro-Light.svg in Resources */ = {isa = PBXBuildFile; fileRef = F88E3974BA7A40D9963FA064 /* GothamPro-Light.svg */; };
 		5221BF7D99DB4E96BF483175 /* GothamPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 654DBAF8C6FE4F4B88E73886 /* GothamPro.otf */; };
-		54076FFC21355CD900DB9BDB /* on_press_goal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54076FF921355CD800DB9BDB /* on_press_goal.mp3 */; };
-		54076FFD21355CD900DB9BDB /* on_press_own.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54076FFA21355CD900DB9BDB /* on_press_own.mp3 */; };
-		54076FFE21355CD900DB9BDB /* on_press_start_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54076FFB21355CD900DB9BDB /* on_press_start_sound.mp3 */; };
 		56858BD6E60146F7A9A51E74 /* GothamPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD74F6329E014E128085FE04 /* GothamPro-Black.ttf */; };
 		56BD68A1D0B04F9F89122822 /* GothamPro-Bold.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6B7FBCF446C048AAA0CC4373 /* GothamPro-Bold.svg */; };
 		5B2A1504AD1B4978B222F82A /* GothamPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7CC97F217D4250B0C6B61F /* GothamPro-LightItalic.ttf */; };
@@ -416,6 +457,50 @@
 		280218AF72DE4531BC5A92F7 /* GothamProNarrow-Medium.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Medium.woff"; path = "../assets/fonts/GothamProNarrow-Medium/GothamProNarrow-Medium.woff"; sourceTree = "<group>"; };
 		2BA17A99324D449FAF2C6F14 /* GothamPro-Light.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Light.woff"; path = "../assets/fonts/GothamPro-Light/GothamPro-Light.woff"; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		30025EDC2164A82C006558BF /* goal-human3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human3.mp3"; path = "../assets/voices/goal-human3.mp3"; sourceTree = "<group>"; };
+		30025EDD2164A82C006558BF /* own-human4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human4.mp3"; path = "../assets/voices/own-human4.mp3"; sourceTree = "<group>"; };
+		30025EDE2164A82C006558BF /* goal-robot4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot4.mp3"; path = "../assets/voices/goal-robot4.mp3"; sourceTree = "<group>"; };
+		30025EDF2164A82D006558BF /* own-human3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human3.mp3"; path = "../assets/voices/own-human3.mp3"; sourceTree = "<group>"; };
+		30025EE02164A82D006558BF /* own-robot2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot2.mp3"; path = "../assets/voices/own-robot2.mp3"; sourceTree = "<group>"; };
+		30025EE12164A82D006558BF /* goal-human1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human1.mp3"; path = "../assets/voices/goal-human1.mp3"; sourceTree = "<group>"; };
+		30025EE22164A82D006558BF /* goal-human7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human7.mp3"; path = "../assets/voices/goal-human7.mp3"; sourceTree = "<group>"; };
+		30025EE32164A82D006558BF /* goal-human6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human6.mp3"; path = "../assets/voices/goal-human6.mp3"; sourceTree = "<group>"; };
+		30025EE42164A82D006558BF /* own-robot6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot6.mp3"; path = "../assets/voices/own-robot6.mp3"; sourceTree = "<group>"; };
+		30025EE52164A82D006558BF /* goal-human13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human13.mp3"; path = "../assets/voices/goal-human13.mp3"; sourceTree = "<group>"; };
+		30025EE62164A82D006558BF /* goal-robot7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot7.mp3"; path = "../assets/voices/goal-robot7.mp3"; sourceTree = "<group>"; };
+		30025EE72164A82D006558BF /* own-human5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human5.mp3"; path = "../assets/voices/own-human5.mp3"; sourceTree = "<group>"; };
+		30025EE82164A82D006558BF /* own-human2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human2.mp3"; path = "../assets/voices/own-human2.mp3"; sourceTree = "<group>"; };
+		30025EE92164A82D006558BF /* own-robot5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot5.mp3"; path = "../assets/voices/own-robot5.mp3"; sourceTree = "<group>"; };
+		30025EEA2164A82D006558BF /* finish-robot-lose1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-robot-lose1.mp3"; path = "../assets/voices/finish-robot-lose1.mp3"; sourceTree = "<group>"; };
+		30025EEB2164A82E006558BF /* goal-human12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human12.mp3"; path = "../assets/voices/goal-human12.mp3"; sourceTree = "<group>"; };
+		30025EEC2164A82E006558BF /* goal-robot1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot1.mp3"; path = "../assets/voices/goal-robot1.mp3"; sourceTree = "<group>"; };
+		30025EED2164A82E006558BF /* goal-robot9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot9.mp3"; path = "../assets/voices/goal-robot9.mp3"; sourceTree = "<group>"; };
+		30025EEE2164A82E006558BF /* own-robot1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot1.mp3"; path = "../assets/voices/own-robot1.mp3"; sourceTree = "<group>"; };
+		30025EEF2164A82E006558BF /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = start.mp3; path = ../assets/voices/start.mp3; sourceTree = "<group>"; };
+		30025EF02164A82E006558BF /* own-human1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human1.mp3"; path = "../assets/voices/own-human1.mp3"; sourceTree = "<group>"; };
+		30025EF12164A82E006558BF /* goal-human8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human8.mp3"; path = "../assets/voices/goal-human8.mp3"; sourceTree = "<group>"; };
+		30025EF22164A82E006558BF /* goal-robot2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot2.mp3"; path = "../assets/voices/goal-robot2.mp3"; sourceTree = "<group>"; };
+		30025EF32164A82E006558BF /* finish-human-lose1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-human-lose1.mp3"; path = "../assets/voices/finish-human-lose1.mp3"; sourceTree = "<group>"; };
+		30025EF42164A82F006558BF /* goal-human4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human4.mp3"; path = "../assets/voices/goal-human4.mp3"; sourceTree = "<group>"; };
+		30025EF52164A82F006558BF /* finish-human-lose3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-human-lose3.mp3"; path = "../assets/voices/finish-human-lose3.mp3"; sourceTree = "<group>"; };
+		30025EF62164A82F006558BF /* finish-robot-lose2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-robot-lose2.mp3"; path = "../assets/voices/finish-robot-lose2.mp3"; sourceTree = "<group>"; };
+		30025EF72164A82F006558BF /* finish-human-lose2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-human-lose2.mp3"; path = "../assets/voices/finish-human-lose2.mp3"; sourceTree = "<group>"; };
+		30025EF82164A82F006558BF /* goal-human9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human9.mp3"; path = "../assets/voices/goal-human9.mp3"; sourceTree = "<group>"; };
+		30025EF92164A82F006558BF /* finish-robot-lose3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-robot-lose3.mp3"; path = "../assets/voices/finish-robot-lose3.mp3"; sourceTree = "<group>"; };
+		30025EFA2164A82F006558BF /* goal-human10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human10.mp3"; path = "../assets/voices/goal-human10.mp3"; sourceTree = "<group>"; };
+		30025EFB2164A82F006558BF /* goal-robot3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot3.mp3"; path = "../assets/voices/goal-robot3.mp3"; sourceTree = "<group>"; };
+		30025EFC2164A830006558BF /* goal-robot6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot6.mp3"; path = "../assets/voices/goal-robot6.mp3"; sourceTree = "<group>"; };
+		30025EFD2164A830006558BF /* own-robot3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot3.mp3"; path = "../assets/voices/own-robot3.mp3"; sourceTree = "<group>"; };
+		30025EFE2164A830006558BF /* own-robot4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot4.mp3"; path = "../assets/voices/own-robot4.mp3"; sourceTree = "<group>"; };
+		30025EFF2164A830006558BF /* finish-robot-lose4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-robot-lose4.mp3"; path = "../assets/voices/finish-robot-lose4.mp3"; sourceTree = "<group>"; };
+		30025F002164A830006558BF /* goal-robot8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot8.mp3"; path = "../assets/voices/goal-robot8.mp3"; sourceTree = "<group>"; };
+		30025F012164A830006558BF /* own-human6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human6.mp3"; path = "../assets/voices/own-human6.mp3"; sourceTree = "<group>"; };
+		30025F022164A830006558BF /* random2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = random2.mp3; path = ../assets/voices/random2.mp3; sourceTree = "<group>"; };
+		30025F032164A830006558BF /* goal-human11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human11.mp3"; path = "../assets/voices/goal-human11.mp3"; sourceTree = "<group>"; };
+		30025F042164A831006558BF /* goal-human5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human5.mp3"; path = "../assets/voices/goal-human5.mp3"; sourceTree = "<group>"; };
+		30025F052164A831006558BF /* goal-robot5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot5.mp3"; path = "../assets/voices/goal-robot5.mp3"; sourceTree = "<group>"; };
+		30025F062164A831006558BF /* goal-human2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human2.mp3"; path = "../assets/voices/goal-human2.mp3"; sourceTree = "<group>"; };
+		30025F072164A831006558BF /* random1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = random1.mp3; path = ../assets/voices/random1.mp3; sourceTree = "<group>"; };
 		34A07579DFC343FB92247575 /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.ttf"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.ttf"; sourceTree = "<group>"; };
 		3A81D68763324949B27E2E69 /* GothamProNarrow-Bold.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Bold.woff"; path = "../assets/fonts/GothamProNarrow-Bold/GothamProNarrow-Bold.woff"; sourceTree = "<group>"; };
 		450624B14F154DDFB477CDD6 /* GothamPro-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BoldItalic.ttf"; path = "../assets/fonts/GothamPro-BoldItalic/GothamPro-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -423,9 +508,6 @@
 		47AA5392D2834EECA73A73FE /* GothamPro-Black.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.woff"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.woff"; sourceTree = "<group>"; };
 		494FF73E7D114E7E86447A53 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		4EC4C2A17B1947D4807AB208 /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
-		54076FF921355CD800DB9BDB /* on_press_goal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = on_press_goal.mp3; path = ../android/app/src/main/res/raw/on_press_goal.mp3; sourceTree = "<group>"; };
-		54076FFA21355CD900DB9BDB /* on_press_own.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = on_press_own.mp3; path = ../android/app/src/main/res/raw/on_press_own.mp3; sourceTree = "<group>"; };
-		54076FFB21355CD900DB9BDB /* on_press_start_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = on_press_start_sound.mp3; path = ../android/app/src/main/res/raw/on_press_start_sound.mp3; sourceTree = "<group>"; };
 		553A514C6D2D470D8DB47874 /* libTextToSpeech.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libTextToSpeech.a; sourceTree = "<group>"; };
 		572C0C81A15346C9AFD0A1F4 /* GothamPro-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.ttf"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -564,9 +646,50 @@
 		13B07FAE1A68108700A75B9A /* kickermasterapp */ = {
 			isa = PBXGroup;
 			children = (
-				54076FF921355CD800DB9BDB /* on_press_goal.mp3 */,
-				54076FFA21355CD900DB9BDB /* on_press_own.mp3 */,
-				54076FFB21355CD900DB9BDB /* on_press_start_sound.mp3 */,
+				30025EF32164A82E006558BF /* finish-human-lose1.mp3 */,
+				30025EF72164A82F006558BF /* finish-human-lose2.mp3 */,
+				30025EF52164A82F006558BF /* finish-human-lose3.mp3 */,
+				30025EEA2164A82D006558BF /* finish-robot-lose1.mp3 */,
+				30025EF62164A82F006558BF /* finish-robot-lose2.mp3 */,
+				30025EF92164A82F006558BF /* finish-robot-lose3.mp3 */,
+				30025EFF2164A830006558BF /* finish-robot-lose4.mp3 */,
+				30025EE12164A82D006558BF /* goal-human1.mp3 */,
+				30025F062164A831006558BF /* goal-human2.mp3 */,
+				30025EDC2164A82C006558BF /* goal-human3.mp3 */,
+				30025EF42164A82F006558BF /* goal-human4.mp3 */,
+				30025F042164A831006558BF /* goal-human5.mp3 */,
+				30025EE32164A82D006558BF /* goal-human6.mp3 */,
+				30025EE22164A82D006558BF /* goal-human7.mp3 */,
+				30025EF12164A82E006558BF /* goal-human8.mp3 */,
+				30025EF82164A82F006558BF /* goal-human9.mp3 */,
+				30025EFA2164A82F006558BF /* goal-human10.mp3 */,
+				30025F032164A830006558BF /* goal-human11.mp3 */,
+				30025EEB2164A82E006558BF /* goal-human12.mp3 */,
+				30025EE52164A82D006558BF /* goal-human13.mp3 */,
+				30025EEC2164A82E006558BF /* goal-robot1.mp3 */,
+				30025EF22164A82E006558BF /* goal-robot2.mp3 */,
+				30025EFB2164A82F006558BF /* goal-robot3.mp3 */,
+				30025EDE2164A82C006558BF /* goal-robot4.mp3 */,
+				30025F052164A831006558BF /* goal-robot5.mp3 */,
+				30025EFC2164A830006558BF /* goal-robot6.mp3 */,
+				30025EE62164A82D006558BF /* goal-robot7.mp3 */,
+				30025F002164A830006558BF /* goal-robot8.mp3 */,
+				30025EED2164A82E006558BF /* goal-robot9.mp3 */,
+				30025EF02164A82E006558BF /* own-human1.mp3 */,
+				30025EE82164A82D006558BF /* own-human2.mp3 */,
+				30025EDF2164A82D006558BF /* own-human3.mp3 */,
+				30025EDD2164A82C006558BF /* own-human4.mp3 */,
+				30025EE72164A82D006558BF /* own-human5.mp3 */,
+				30025F012164A830006558BF /* own-human6.mp3 */,
+				30025EEE2164A82E006558BF /* own-robot1.mp3 */,
+				30025EE02164A82D006558BF /* own-robot2.mp3 */,
+				30025EFD2164A830006558BF /* own-robot3.mp3 */,
+				30025EFE2164A830006558BF /* own-robot4.mp3 */,
+				30025EE92164A82D006558BF /* own-robot5.mp3 */,
+				30025EE42164A82D006558BF /* own-robot6.mp3 */,
+				30025F072164A831006558BF /* random1.mp3 */,
+				30025F022164A830006558BF /* random2.mp3 */,
+				30025EEF2164A82E006558BF /* start.mp3 */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -1222,57 +1345,98 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30025F2B2164A831006558BF /* finish-robot-lose4.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				30025F212164A831006558BF /* finish-human-lose3.mp3 in Resources */,
+				30025F182164A831006558BF /* goal-robot1.mp3 in Resources */,
+				30025F2F2164A831006558BF /* goal-human11.mp3 in Resources */,
 				07FE05BAF2B4400DB4185E3E /* GothamPro-Black.svg in Resources */,
 				14EBAA839B7E4C2CAB103677 /* GothamPro-BlackItalic.svg in Resources */,
 				56BD68A1D0B04F9F89122822 /* GothamPro-Bold.svg in Resources */,
+				30025F1D2164A831006558BF /* goal-human8.mp3 in Resources */,
 				3F505EACB9BE4341ABCC7A3A /* GothamPro-BoldItalic.svg in Resources */,
+				30025F0E2164A831006558BF /* goal-human7.mp3 in Resources */,
 				7A573C4ADD944204951DC185 /* GothamPro-Italic.svg in Resources */,
+				30025F252164A831006558BF /* finish-robot-lose3.mp3 in Resources */,
 				521962387E2149229AE6688D /* GothamPro-Light.svg in Resources */,
 				0795B6417B8545CE9E82743C /* GothamPro-LightItalic.svg in Resources */,
 				9289DC36E5F74714A3558B60 /* GothamPro-Medium.svg in Resources */,
 				CB8D15F7B6134A7194B5B245 /* GothamPro-MediumItalic.svg in Resources */,
+				30025F1C2164A831006558BF /* own-human1.mp3 in Resources */,
+				30025F0F2164A831006558BF /* goal-human6.mp3 in Resources */,
 				FD1B2864A6C44961BDBD63B3 /* GothamPro.svg in Resources */,
 				CB46D0BBC8F84A7EB4B0502E /* GothamProNarrow-Bold.svg in Resources */,
-				54076FFE21355CD900DB9BDB /* on_press_start_sound.mp3 in Resources */,
 				C42B42415931438F925632A3 /* GothamProNarrow-Medium.svg in Resources */,
-				54076FFD21355CD900DB9BDB /* on_press_own.mp3 in Resources */,
+				30025F1B2164A831006558BF /* start.mp3 in Resources */,
 				D3C8767DDE5747E6B2DDD949 /* GothamPro-Black.otf in Resources */,
+				30025F332164A831006558BF /* random1.mp3 in Resources */,
 				56858BD6E60146F7A9A51E74 /* GothamPro-Black.ttf in Resources */,
 				F1E12CFE082F4F55A004B2CE /* GothamPro-Black.woff in Resources */,
 				7654BB5386C945339111A927 /* GothamPro-BlackItalic.otf in Resources */,
+				30025F272164A831006558BF /* goal-robot3.mp3 in Resources */,
+				30025F092164A831006558BF /* own-human4.mp3 in Resources */,
 				286FE9D5951145999B907A72 /* GothamPro-BlackItalic.ttf in Resources */,
 				EB2CD7FF2A234DD2A71B45DB /* GothamPro-BlackItalic.woff in Resources */,
 				17EE7CB4BDFA41CB93657BE1 /* GothamPro-Bold.otf in Resources */,
+				30025F302164A831006558BF /* goal-human5.mp3 in Resources */,
 				DAA7B9E980304494B18FF63E /* GothamPro-Bold.ttf in Resources */,
 				B9C72AB596E946B9B066C152 /* GothamPro-Bold.woff in Resources */,
-				54076FFC21355CD900DB9BDB /* on_press_goal.mp3 in Resources */,
+				30025F262164A831006558BF /* goal-human10.mp3 in Resources */,
+				30025F1A2164A831006558BF /* own-robot1.mp3 in Resources */,
 				0A97F7EA1D904024AEDA9C75 /* GothamPro-BoldItalic.otf in Resources */,
 				1E2D004EFB814A47B4362711 /* GothamPro-BoldItalic.ttf in Resources */,
 				E2D7307477F24E9396B75FCA /* GothamPro-BoldItalic.woff in Resources */,
 				999F555709464964ABDAC411 /* GothamPro-Italic.otf in Resources */,
+				30025F222164A831006558BF /* finish-robot-lose2.mp3 in Resources */,
 				759A472030E04EDBB8E05E28 /* GothamPro-Italic.ttf in Resources */,
 				3F665DB43D154EFCADA72620 /* GothamPro-Italic.woff in Resources */,
+				30025F142164A831006558BF /* own-human2.mp3 in Resources */,
+				30025F102164A831006558BF /* own-robot6.mp3 in Resources */,
+				30025F1E2164A831006558BF /* goal-robot2.mp3 in Resources */,
+				30025F122164A831006558BF /* goal-robot7.mp3 in Resources */,
 				26D9861E927E4E88A4115C36 /* GothamPro-Light.otf in Resources */,
+				30025F132164A831006558BF /* own-human5.mp3 in Resources */,
+				30025F282164A831006558BF /* goal-robot6.mp3 in Resources */,
+				30025F0D2164A831006558BF /* goal-human1.mp3 in Resources */,
+				30025F112164A831006558BF /* goal-human13.mp3 in Resources */,
+				30025F202164A831006558BF /* goal-human4.mp3 in Resources */,
 				278F34B416F749B6AB4579BC /* GothamPro-Light.ttf in Resources */,
+				30025F152164A831006558BF /* own-robot5.mp3 in Resources */,
 				7E4840004B254CD3BF6D0FE1 /* GothamPro-Light.woff in Resources */,
+				30025F1F2164A831006558BF /* finish-human-lose1.mp3 in Resources */,
 				7801C7B58BE44A53A923DD56 /* GothamPro-LightItalic.otf in Resources */,
+				30025F312164A831006558BF /* goal-robot5.mp3 in Resources */,
 				5B2A1504AD1B4978B222F82A /* GothamPro-LightItalic.ttf in Resources */,
 				336F0C1FF8164AC9A6F96E33 /* GothamPro-LightItalic.woff in Resources */,
 				D21E237D12FF4624B9A4836B /* GothamPro-Medium.otf in Resources */,
 				EAD03994DE80488EA737B96F /* GothamPro-Medium.ttf in Resources */,
+				30025F2C2164A831006558BF /* goal-robot8.mp3 in Resources */,
 				2E74A41EDBFA48479C8720B3 /* GothamPro-Medium.woff in Resources */,
+				30025F0C2164A831006558BF /* own-robot2.mp3 in Resources */,
 				3AE0A01BEBB24AD5A50C3075 /* GothamPro-MediumItalic.otf in Resources */,
 				B578CAF4BB064991BBDED7FC /* GothamPro-MediumItalic.ttf in Resources */,
+				30025F0A2164A831006558BF /* goal-robot4.mp3 in Resources */,
+				30025F2D2164A831006558BF /* own-human6.mp3 in Resources */,
 				5EF8D4A47A524B918014262B /* GothamPro-MediumItalic.woff in Resources */,
+				30025F0B2164A831006558BF /* own-human3.mp3 in Resources */,
 				5221BF7D99DB4E96BF483175 /* GothamPro.otf in Resources */,
 				AFDCF927F1AA4AA9B2B14668 /* GothamPro.ttf in Resources */,
+				30025F292164A831006558BF /* own-robot3.mp3 in Resources */,
+				30025F172164A831006558BF /* goal-human12.mp3 in Resources */,
 				213B69CF824A4C2E9D895742 /* GothamPro.woff in Resources */,
+				30025F2E2164A831006558BF /* random2.mp3 in Resources */,
 				BBB6DE0069094B8EB7C8DC8E /* GothamProNarrow-Bold.otf in Resources */,
+				30025F322164A831006558BF /* goal-human2.mp3 in Resources */,
+				30025F2A2164A831006558BF /* own-robot4.mp3 in Resources */,
+				30025F242164A831006558BF /* goal-human9.mp3 in Resources */,
+				30025F192164A831006558BF /* goal-robot9.mp3 in Resources */,
+				30025F082164A831006558BF /* goal-human3.mp3 in Resources */,
 				E4719A07B54F4E3199D491B4 /* GothamProNarrow-Bold.ttf in Resources */,
 				6A59F7C2ED5045AD913FEBA3 /* GothamProNarrow-Bold.woff in Resources */,
+				30025F162164A831006558BF /* finish-robot-lose1.mp3 in Resources */,
 				CCFEFC7C2B654832A65DF8D5 /* GothamProNarrow-Medium.otf in Resources */,
+				30025F232164A831006558BF /* finish-human-lose2.mp3 in Resources */,
 				B3ACB77706734DEBA34ABF37 /* GothamProNarrow-Medium.ttf in Resources */,
 				07443F2B1EDD48F79E96E0E5 /* GothamProNarrow-Medium.woff in Resources */,
 			);

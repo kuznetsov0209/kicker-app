@@ -1,5 +1,5 @@
 import { types } from "mobx-state-tree";
-import { TEAM_RED, TEAM_BLUE } from "../constants";
+import { TEAM_RED, TEAM_BLUE, TEAM_PEOPLE, TEAM_ROBOTS } from "../constants";
 import User from "./user";
 import { observe } from "mobx";
 import gameEventEmitter, {
@@ -10,6 +10,7 @@ import gameEventEmitter, {
   EVENT_GAME_STARTED,
   EVENT_GAME_FINISHED
 } from "./gameEventEmitter";
+import sounds from "../utils/sounds";
 
 const MAX_GOALS = 10;
 
@@ -150,7 +151,9 @@ const Game = types
       });
 
       observe(self, "completed", () => {
-        gameEventEmitter.emit(EVENT_GAME_FINISHED);
+        gameEventEmitter.emit(EVENT_GAME_FINISHED, {
+          winnerTeam: self.winnerTeam
+        });
       });
     }
   }));
@@ -158,41 +161,39 @@ const Game = types
 function runGameEventListeners() {
   gameEventEmitter.addListener(function*({ waitForEvent }) {
     yield* waitForEvent(EVENT_GAME_STARTED);
-    const timeStart = Date.now();
-
-    yield* waitForEvent(EVENT_GAME_FINISHED);
-    const timeFinish = Date.now();
-
-    console.log("#1 game time: ", timeFinish - timeStart);
+    sounds.start();
   });
 
   gameEventEmitter.addListener(function*({ waitForEvent }) {
-    let lastGoalTime = null;
-
-    while (true) {
-      yield* waitForEvent(EVENT_SCORE_CHANGED);
-
-      if (lastGoalTime !== null) {
-        console.log("#2 time from last goal", Date.now() - lastGoalTime);
-      }
-      lastGoalTime = Date.now();
+    const event = yield* waitForEvent(EVENT_GAME_FINISHED);
+    if (event.winnerTeam === TEAM_PEOPLE) {
+      sounds.finishRobotLose();
+    } else {
+      sounds.finishHumanLose();
     }
   });
 
   gameEventEmitter.addListener(function*({ waitForEvent }) {
-    let team;
-    let goalsInRow = 1;
-
     while (true) {
       const event = yield* waitForEvent(EVENT_GOAL);
 
-      if (team === event.payload.team) {
-        goalsInRow++;
+      if (event.payload.team === TEAM_PEOPLE) {
+        sounds.goalHuman();
       } else {
-        team = event.payload.team;
-        goalsInRow = 1;
+        sounds.goalRobot();
       }
-      console.log("#9 team:", team, "goal in a row:", goalsInRow);
+    }
+  });
+
+  gameEventEmitter.addListener(function*({ waitForEvent }) {
+    while (true) {
+      const event = yield* waitForEvent(EVENT_OWN_GOAL);
+
+      if (event.payload.team === TEAM_PEOPLE) {
+        sounds.ownGoalHuman();
+      } else {
+        sounds.ownGoalRobot();
+      }
     }
   });
 }
