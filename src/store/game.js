@@ -35,6 +35,9 @@ const Game = types
     createdAt: types.string,
     updatedAt: types.string
   })
+  .volatile(() => ({
+    disposeHandlers: []
+  }))
   .views(self => ({
     get redUsers() {
       return self.GamePlayers.filter(
@@ -116,7 +119,8 @@ const Game = types
       const gamePlayer = self.getGamePlayerByUserId(UserId);
       gameEventEmitter.emit(EVENT_GOAL, {
         team: gamePlayer.team,
-        user: gamePlayer.UserId.toJSON()
+        user: gamePlayer.UserId.toJSON(),
+        completed: self.completed
       });
     },
     addOwnGoal(UserId) {
@@ -130,7 +134,8 @@ const Game = types
       const gamePlayer = self.getGamePlayerByUserId(UserId);
       gameEventEmitter.emit(EVENT_OWN_GOAL, {
         team: gamePlayer.team,
-        user: gamePlayer.UserId.toJSON()
+        user: gamePlayer.UserId.toJSON(),
+        completed: self.completed
       });
     },
     removeLastGoal() {
@@ -139,63 +144,66 @@ const Game = types
       gameEventEmitter.emit(EVENT_UNDO_GOAL);
     },
     afterCreate() {
-      runGameEventListeners();
-
       gameEventEmitter.emit(EVENT_GAME_STARTED);
 
-      observe(self, "score", () => {
-        gameEventEmitter.emit(EVENT_SCORE_CHANGED, {
-          redScore: self.redScore,
-          blueScore: self.blueScore
-        });
-      });
-
-      observe(self, "completed", () => {
-        gameEventEmitter.emit(EVENT_GAME_FINISHED, {
-          winnerTeam: self.winnerTeam
-        });
-      });
+      self.disposeHandlers.push(
+        observe(self, "completed", () => {
+          gameEventEmitter.emit(EVENT_GAME_FINISHED, {
+            winnerTeam: self.winnerTeam
+          });
+        })
+      );
+    },
+    beforeDestroy() {
+      self.disposeHandlers.forEach(disposeHandler => disposeHandler());
+      self.disposeHandlers = [];
     }
   }));
 
-function runGameEventListeners() {
-  gameEventEmitter.addListener(function*({ waitForEvent }) {
+gameEventEmitter.addListener(function*({ waitForEvent }) {
+  while (true) {
     yield* waitForEvent(EVENT_GAME_STARTED);
     sounds.start();
-  });
+  }
+});
 
-  gameEventEmitter.addListener(function*({ waitForEvent }) {
+gameEventEmitter.addListener(function*({ waitForEvent }) {
+  while (true) {
     const event = yield* waitForEvent(EVENT_GAME_FINISHED);
     if (event.winnerTeam === TEAM_PEOPLE) {
       sounds.finishRobotLose();
     } else {
       sounds.finishHumanLose();
     }
-  });
+  }
+});
 
-  gameEventEmitter.addListener(function*({ waitForEvent }) {
-    while (true) {
-      const event = yield* waitForEvent(EVENT_GOAL);
+gameEventEmitter.addListener(function*({ waitForEvent }) {
+  while (true) {
+    const event = yield* waitForEvent(EVENT_GOAL);
 
+    if (!event.payload.completed) {
       if (event.payload.team === TEAM_PEOPLE) {
         sounds.goalHuman();
       } else {
         sounds.goalRobot();
       }
     }
-  });
+  }
+});
 
-  gameEventEmitter.addListener(function*({ waitForEvent }) {
-    while (true) {
-      const event = yield* waitForEvent(EVENT_OWN_GOAL);
+gameEventEmitter.addListener(function*({ waitForEvent }) {
+  while (true) {
+    const event = yield* waitForEvent(EVENT_OWN_GOAL);
 
+    if (!event.payload.completed) {
       if (event.payload.team === TEAM_PEOPLE) {
         sounds.ownGoalHuman();
       } else {
         sounds.ownGoalRobot();
       }
     }
-  });
-}
+  }
+});
 
 export default Game;
