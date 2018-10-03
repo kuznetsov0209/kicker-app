@@ -134,6 +134,7 @@ const UserListModal = observer(
                 placeholderTextColor="rgba(255,255,255, .3)"
                 onChangeText={this.searchUser}
                 value={this.state.searchStr}
+                autoFocus
               />
             </View>
             <KeyboardAvoidingView behavior="padding" enabled>
@@ -146,6 +147,7 @@ const UserListModal = observer(
                   paddingTop: 50,
                   paddingBottom: 50
                 }}
+                keyboardShouldPersistTaps="handled"
               />
             </KeyboardAvoidingView>
           </View>
