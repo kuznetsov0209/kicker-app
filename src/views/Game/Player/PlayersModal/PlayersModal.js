@@ -13,6 +13,7 @@ import { observer } from "mobx-react";
 import UserAvatar from "../../../../components/UserAvatar";
 import { store } from "../../../../store";
 import IconCross from "../../../../assets/IconCross";
+import IconSearch from "../../../../assets/IconSearch";
 
 const UserListModal = observer(
   class UserListModalComponent extends Component {
@@ -55,7 +56,7 @@ const UserListModal = observer(
     };
 
     searchUser = value => {
-      this.setState({ searchStr: value.toLowerCase() });
+      this.setState({ searchStr: value });
     };
 
     render() {
@@ -64,7 +65,8 @@ const UserListModal = observer(
       const usersList = store.users
         .sort((a, b) => a.name.localeCompare(b.name))
         .filter(
-          ({ name }) => name.toLowerCase().indexOf(this.state.searchStr) >= 0
+          ({ name }) =>
+            name.toLowerCase().indexOf(this.state.searchStr.toLowerCase()) >= 0
         );
 
       return (
@@ -102,18 +104,32 @@ const UserListModal = observer(
                 <ActivityIndicator />
               </View>
             )}
-            <TextInput
+            <View
               style={{
-                height: 40,
-                marginTop: 20,
-                width: "70%",
-                borderColor: "red",
-                borderWidth: 2,
-                color: "white"
+                marginTop: 36,
+                width: 380,
+                flexDirection: "row",
+                paddingBottom: 10
               }}
-              onChangeText={this.searchUser}
-              value={this.state.searchStr}
-            />
+            >
+              <IconSearch
+                style={{
+                  marginLeft: 15,
+                  marginRight: 35
+                }}
+              />
+              <TextInput
+                style={{
+                  color: "white",
+                  fontFamily: "GothamPro-Bold",
+                  fontSize: 24
+                }}
+                placeholder="SEARCH"
+                placeholderTextColor="rgba(255,255,255, .3)"
+                onChangeText={this.searchUser}
+                value={this.state.searchStr}
+              />
+            </View>
             <FlatList
               data={usersList}
               keyExtractor={this.userKeyExtractor}
