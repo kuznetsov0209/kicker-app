@@ -1,4 +1,4 @@
-const API_HOST = "https://kicker.mercdev.com";
+const API_HOST = "https://kicker404.mercdev.com";
 
 /* global fetch */
 
