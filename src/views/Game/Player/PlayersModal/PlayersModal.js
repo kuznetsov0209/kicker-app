@@ -107,9 +107,9 @@ const UserListModal = observer(
             <View
               style={{
                 marginTop: 36,
+                marginBottom: 36,
                 width: 380,
-                flexDirection: "row",
-                paddingBottom: 10
+                flexDirection: "row"
               }}
             >
               <IconSearch
