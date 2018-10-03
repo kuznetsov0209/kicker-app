@@ -6,7 +6,8 @@ import {
   Modal,
   FlatList,
   ActivityIndicator,
-  TextInput
+  TextInput,
+  KeyboardAvoidingView
 } from "react-native";
 import { observer } from "mobx-react";
 
@@ -135,16 +136,18 @@ const UserListModal = observer(
                 value={this.state.searchStr}
               />
             </View>
-            <FlatList
-              data={usersList}
-              keyExtractor={this.userKeyExtractor}
-              renderItem={this.renderUser}
-              style={{ flex: 1 }}
-              contentContainerStyle={{
-                paddingTop: 50,
-                paddingBottom: 50
-              }}
-            />
+            <KeyboardAvoidingView behavior="padding" enabled>
+              <FlatList
+                data={usersList}
+                keyExtractor={this.userKeyExtractor}
+                renderItem={this.renderUser}
+                style={{ flex: 1 }}
+                contentContainerStyle={{
+                  paddingTop: 50,
+                  paddingBottom: 50
+                }}
+              />
+            </KeyboardAvoidingView>
           </View>
         </Modal>
       );
