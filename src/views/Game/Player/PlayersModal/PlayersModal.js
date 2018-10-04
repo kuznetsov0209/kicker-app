@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import {
   View,
   Text,
@@ -7,34 +7,34 @@ import {
   FlatList,
   ActivityIndicator,
   TextInput,
-  KeyboardAvoidingView
-} from "react-native";
-import { observer } from "mobx-react";
+  KeyboardAvoidingView,
+} from 'react-native'
+import { observer } from 'mobx-react'
 
-import UserAvatar from "../../../../components/UserAvatar";
-import { store } from "../../../../store";
-import IconCross from "../../../../assets/IconCross";
-import IconSearch from "../../../../assets/IconSearch";
+import UserAvatar from '../../../../components/UserAvatar'
+import { store } from '../../../../store'
+import IconCross from '../../../../assets/IconCross'
+import IconSearch from '../../../../assets/IconSearch'
 
 const UserListModal = observer(
   class UserListModalComponent extends Component {
     state = {
-      searchStr: ""
-    };
+      searchStr: '',
+    }
 
-    userKeyExtractor = item => item.id.toString();
+    userKeyExtractor = item => item.id.toString()
 
     renderUser = ({ item }) => {
-      const { onSelect } = this.props;
+      const { onSelect } = this.props
       return (
         <TouchableOpacity onPress={() => onSelect(item)}>
-          <View style={{ alignItems: "center" }}>
+          <View style={{ alignItems: 'center' }}>
             <View
               style={{
-                flexDirection: "row",
-                alignItems: "center",
+                flexDirection: 'row',
+                alignItems: 'center',
                 width: 380,
-                height: 100
+                height: 100,
               }}
             >
               <UserAvatar user={item} size={60} />
@@ -42,9 +42,9 @@ const UserListModal = observer(
                 <Text
                   numberOfLines={2}
                   style={{
-                    fontFamily: "GothamPro-Medium",
+                    fontFamily: 'GothamPro-Medium',
                     fontSize: 18,
-                    color: "white"
+                    color: 'white',
                   }}
                 >
                   {item.name}
@@ -53,44 +53,59 @@ const UserListModal = observer(
             </View>
           </View>
         </TouchableOpacity>
-      );
-    };
+      )
+    }
 
     searchUser = value => {
-      this.setState({ searchStr: value });
-    };
+      this.setState({ searchStr: value })
+    }
 
     resetSearchAndClose = () => {
-      this.setState({ searchStr: "" });
-      this.props.close();
-    };
+      this.setState({ searchStr: '' })
+      this.props.close()
+    }
+
+    reloadUsersList = () => {
+      store.loadUsers(true)
+    }
 
     render() {
-      const { visible } = this.props;
+      const { visible } = this.props
 
       const usersList = store.users
         .sort((a, b) => a.name.localeCompare(b.name))
         .filter(
           ({ name }) =>
-            name.toLowerCase().indexOf(this.state.searchStr.toLowerCase()) >= 0
-        );
+            name.toLowerCase().indexOf(this.state.searchStr.toLowerCase()) >= 0,
+        )
 
       return (
         <Modal animationType="fade" transparent={false} visible={visible}>
           <View
             style={{
               flex: 1,
-              backgroundColor: "#191919",
-              alignItems: "center"
+              backgroundColor: '#191919',
+              alignItems: 'center',
             }}
           >
             <TouchableOpacity
+              onPress={this.reloadUsersList}
+              style={{
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: 40,
+                height: 40,
+                zIndex: 3,
+              }}
+            />
+            <TouchableOpacity
               onPress={this.resetSearchAndClose}
               style={{
-                position: "absolute",
+                position: 'absolute',
                 right: 30,
                 top: 30,
-                zIndex: 2
+                zIndex: 2,
               }}
             >
               <IconCross />
@@ -98,13 +113,13 @@ const UserListModal = observer(
             {store.users.length === 0 && (
               <View
                 style={{
-                  position: "absolute",
+                  position: 'absolute',
                   left: 0,
                   top: 0,
                   right: 0,
                   bottom: 0,
-                  alignItems: "center",
-                  justifyContent: "center"
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
               >
                 <ActivityIndicator />
@@ -114,23 +129,24 @@ const UserListModal = observer(
               style={{
                 width: 380,
                 height: 100,
-                alignItems: "center",
-                flexDirection: "row"
+                alignItems: 'center',
+                flexDirection: 'row',
               }}
             >
               <IconSearch
                 style={{
-                  marginLeft: 15
+                  marginLeft: 15,
                 }}
               />
               <TextInput
                 style={{
-                  color: "white",
-                  fontFamily: "GothamPro-Bold",
+                  color: 'white',
+                  fontFamily: 'GothamPro-Bold',
                   paddingLeft: 35,
-                  fontSize: 24
+                  fontSize: 24,
                 }}
                 placeholder="SEARCH"
+                autoCorrect={false}
                 placeholderTextColor="rgba(255,255,255, .3)"
                 onChangeText={this.searchUser}
                 value={this.state.searchStr}
@@ -145,16 +161,16 @@ const UserListModal = observer(
                 style={{ flex: 1 }}
                 contentContainerStyle={{
                   paddingTop: 50,
-                  paddingBottom: 50
+                  paddingBottom: 50,
                 }}
                 keyboardShouldPersistTaps="handled"
               />
             </KeyboardAvoidingView>
           </View>
         </Modal>
-      );
+      )
     }
-  }
-);
+  },
+)
 
-export default UserListModal;
+export default UserListModal
