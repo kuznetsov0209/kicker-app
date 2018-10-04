@@ -12,7 +12,8 @@ import {
   TEAM_RED,
   TEAM_BLUE,
   POSITION_DEFENDER,
-  POSITION_FORWARD
+  POSITION_FORWARD,
+  TEAM_PEOPLE
 } from "../../../constants";
 import { gameStore } from "../../../store";
 import Button from "../../../components/Button";
@@ -65,11 +66,15 @@ const Player = observer(
     }
 
     get userNameOrPosition() {
-      const { position, user } = this.props;
+      const { position, team, user } = this.props;
       if (user) {
         return user.name.toUpperCase();
       } else {
-        return position === POSITION_DEFENDER ? "DEFENDER" : "FORWARD";
+        const positionText =
+          position === POSITION_DEFENDER ? "DEFENDER" : "FORWARD";
+        const teamText = team === TEAM_PEOPLE ? "HUMAN" : "ROBOT";
+
+        return `${teamText}\n${positionText}`;
       }
     }
 
@@ -110,7 +115,7 @@ const Player = observer(
     }
 
     render() {
-      const { user, team } = this.props;
+      const { user, team, position } = this.props;
 
       return (
         <View
@@ -126,12 +131,18 @@ const Player = observer(
             <PlayerContainer reverse={this.isRight}>
               {user ? (
                 gameStore.game ? (
-                  <PlayerAvatar user={user} team={team} goals={this.goals} />
+                  <PlayerAvatar
+                    user={user}
+                    team={team}
+                    position={position}
+                    goals={this.goals}
+                  />
                 ) : (
                   <ChangePlayerButton
                     user={user}
                     onPress={this.openUserList}
                     team={team}
+                    position={position}
                   />
                 )
               ) : (

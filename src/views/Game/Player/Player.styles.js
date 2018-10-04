@@ -1,9 +1,9 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import IconAdd from "./assets/IconAdd";
 import UserAvatar from "../../../components/UserAvatar";
 import Button from "../../../components/Button";
-import { TEAM_BLUE } from "../../../constants";
+import { TEAM_BLUE, TEAM_PEOPLE, POSITION_FORWARD } from "../../../constants";
 
 const styles = StyleSheet.create({
   container: {
@@ -136,22 +136,40 @@ export const AddPlayerButton = ({ team, onPress }) => (
   </TouchableOpacity>
 );
 
-export const ChangePlayerButton = ({ user, team, onPress }) => (
+export const ChangePlayerButton = ({ user, team, position, onPress }) => (
   <TouchableOpacity onPress={onPress}>
-    <UserAvatar
-      user={user}
-      size={120}
-      color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
+    <Image
+      style={{
+        width: 120,
+        height: 120,
+        borderRadius: 60
+      }}
+      source={
+        team === TEAM_PEOPLE
+          ? position === POSITION_FORWARD
+            ? require("./assets/img-people-1.png")
+            : require("./assets/img-people-2.png")
+          : require("./assets/img-robot-1.png")
+      }
     />
   </TouchableOpacity>
 );
 
-export const PlayerAvatar = ({ user, team, goals }) => (
+export const PlayerAvatar = ({ user, team, position, goals }) => (
   <View>
-    <UserAvatar
-      user={user}
-      size={120}
-      color={team === TEAM_BLUE ? "#235cff" : "#ff234a"}
+    <Image
+      style={{
+        width: 120,
+        height: 120,
+        borderRadius: 60
+      }}
+      source={
+        team === TEAM_PEOPLE
+          ? position === POSITION_FORWARD
+            ? require("./assets/img-people-1.png")
+            : require("./assets/img-people-2.png")
+          : require("./assets/img-robot-1.png")
+      }
     />
     <View style={styles.goalsContainer}>
       <View
