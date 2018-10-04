@@ -101,7 +101,6 @@ class UserListModal extends Component {
 
   render() {
     const { visible } = this.props;
-    console.log("render")
 
     return (
       <Modal animationType="fade" transparent={false} visible={visible}>
