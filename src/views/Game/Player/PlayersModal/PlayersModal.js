@@ -19,15 +19,16 @@ import IconSearch from "../../../../assets/IconSearch";
 const UserListModal = observer(
   class UserListModalComponent extends Component {
     state = {
-      searchStr: ""
-    };
+      searchStr: "",
+      page: 0,
+      offset: 50
+    }
 
     userKeyExtractor = item => item.id.toString();
 
     renderUser = ({ item }) => {
-      const { onSelect } = this.props;
       return (
-        <TouchableOpacity onPress={() => onSelect(item)}>
+        <TouchableOpacity onPress={() => this.resetSearchAndSelectUser(item)}>
           <View style={{ alignItems: "center" }}>
             <View
               style={{
@@ -60,20 +61,47 @@ const UserListModal = observer(
       this.setState({ searchStr: value });
     };
 
+    resetState = () => {
+      this.setState({
+        searchStr: "",
+        page: 0
+      })
+    }
+
+    resetSearchAndSelectUser = (user) => {
+      this.resetState();
+      this.props.onSelect(user)
+    }
+
     resetSearchAndClose = () => {
-      this.setState({ searchStr: "" });
+      this.resetState();
       this.props.close();
     };
+
+    reloadUsersList = () => {
+      this.resetState();
+      store.loadUsers(true)
+    }
+
+    renderMoreUsers = () => {
+      if (this.state.offset * this.state.page < store.users.length) {
+        this.setState(({ page }) => ({ page: page + 1 }))
+      }
+    }
 
     render() {
       const { visible } = this.props;
 
-      const usersList = store.users
+      let usersList = store.users
         .sort((a, b) => a.name.localeCompare(b.name))
         .filter(
           ({ name }) =>
             name.toLowerCase().indexOf(this.state.searchStr.toLowerCase()) >= 0
         );
+
+      if (this.state.offset * this.state.page < store.users.length) {
+        usersList = usersList.slice(0, this.state.offset * this.state.page);
+      }
 
       return (
         <Modal animationType="fade" transparent={false} visible={visible}>
@@ -84,6 +112,17 @@ const UserListModal = observer(
               alignItems: "center"
             }}
           >
+            <TouchableOpacity
+              onPress={this.reloadUsersList}
+              style={{
+                position: "absolute",
+                left: 0,
+                top: 0,
+                width: 40,
+                height: 40,
+                zIndex: 3,
+              }}
+            />
             <TouchableOpacity
               onPress={this.resetSearchAndClose}
               style={{
@@ -131,6 +170,7 @@ const UserListModal = observer(
                   fontSize: 24
                 }}
                 placeholder="SEARCH"
+                autoCorrect={false}
                 placeholderTextColor="rgba(255,255,255, .3)"
                 onChangeText={this.searchUser}
                 value={this.state.searchStr}
@@ -147,6 +187,7 @@ const UserListModal = observer(
                   paddingTop: 50,
                   paddingBottom: 50
                 }}
+                onEndReached={this.renderMoreUsers}
                 keyboardShouldPersistTaps="handled"
               />
             </KeyboardAvoidingView>
