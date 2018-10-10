@@ -1,5 +1,5 @@
 import { types } from "mobx-state-tree";
-import { TEAM_RED, TEAM_BLUE, TEAM_PEOPLE, TEAM_ROBOTS } from "../constants";
+import { TEAM_RED, TEAM_BLUE } from "../constants";
 import User from "./user";
 import { observe } from "mobx";
 import gameEventEmitter, {
@@ -170,10 +170,10 @@ gameEventEmitter.addListener(function*({ waitForEvent }) {
 gameEventEmitter.addListener(function*({ waitForEvent }) {
   while (true) {
     const event = yield* waitForEvent(EVENT_GAME_FINISHED);
-    if (event.winnerTeam === TEAM_PEOPLE) {
-      sounds.finishRobotLose();
+    if (event.winnerTeam === TEAM_RED) {
+      sounds.finishBlueLose();
     } else {
-      sounds.finishHumanLose();
+      sounds.finishRedLose();
     }
   }
 });
@@ -183,10 +183,10 @@ gameEventEmitter.addListener(function*({ waitForEvent }) {
     const event = yield* waitForEvent(EVENT_GOAL);
 
     if (!event.payload.completed) {
-      if (event.payload.team === TEAM_PEOPLE) {
-        sounds.goalHuman();
+      if (event.payload.team === TEAM_RED) {
+        sounds.goalRed();
       } else {
-        sounds.goalRobot();
+        sounds.goalBlue();
       }
     }
   }
@@ -197,10 +197,10 @@ gameEventEmitter.addListener(function*({ waitForEvent }) {
     const event = yield* waitForEvent(EVENT_OWN_GOAL);
 
     if (!event.payload.completed) {
-      if (event.payload.team === TEAM_PEOPLE) {
-        sounds.ownGoalHuman();
+      if (event.payload.team === TEAM_RED) {
+        sounds.ownGoalRed();
       } else {
-        sounds.ownGoalRobot();
+        sounds.ownGoalBlue();
       }
     }
   }

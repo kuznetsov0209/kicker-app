@@ -2,7 +2,7 @@ import Sound from "react-native-sound";
 Sound.setCategory("Playback");
 
 const startSounds = [new Sound("start.mp3", Sound.MAIN_BUNDLE)];
-const goalHumanSounds = [
+const goalRedSounds = [
   new Sound("goal-human1.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human2.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human3.mp3", Sound.MAIN_BUNDLE),
@@ -17,7 +17,7 @@ const goalHumanSounds = [
   new Sound("goal-human12.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human13.mp3", Sound.MAIN_BUNDLE)
 ];
-const goalRobotSounds = [
+const goalBlueSounds = [
   new Sound("goal-robot1.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-robot2.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-robot3.mp3", Sound.MAIN_BUNDLE),
@@ -29,7 +29,7 @@ const goalRobotSounds = [
   new Sound("goal-robot9.mp3", Sound.MAIN_BUNDLE)
 ];
 
-const ownGoalHumanSounds = [
+const ownGoalRedSounds = [
   new Sound("own-human1.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-human2.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-human3.mp3", Sound.MAIN_BUNDLE),
@@ -38,7 +38,7 @@ const ownGoalHumanSounds = [
   new Sound("own-human6.mp3", Sound.MAIN_BUNDLE)
 ];
 
-const ownGoalRobotSounds = [
+const ownGoalBlueSounds = [
   new Sound("own-robot1.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-robot2.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-robot3.mp3", Sound.MAIN_BUNDLE),
@@ -47,13 +47,13 @@ const ownGoalRobotSounds = [
   new Sound("own-robot6.mp3", Sound.MAIN_BUNDLE)
 ];
 
-const finishHumanLoseSounds = [
+const finishRedLoseSounds = [
   new Sound("finish-human-lose1.mp3", Sound.MAIN_BUNDLE),
   new Sound("finish-human-lose2.mp3", Sound.MAIN_BUNDLE),
   new Sound("finish-human-lose3.mp3", Sound.MAIN_BUNDLE)
 ];
 
-const finishRobotLoseSounds = [
+const finishBlueLoseSounds = [
   new Sound("finish-human-lose1.mp3", Sound.MAIN_BUNDLE),
   new Sound("finish-human-lose2.mp3", Sound.MAIN_BUNDLE),
   new Sound("finish-human-lose3.mp3", Sound.MAIN_BUNDLE),
@@ -69,28 +69,28 @@ class Sounds {
     startSounds[getRandomIndex(startSounds.length)].play();
   }
 
-  finishHumanLose() {
-    finishHumanLoseSounds[getRandomIndex(finishHumanLoseSounds.length)].play();
+  finishRedLose() {
+    finishRedLoseSounds[getRandomIndex(finishRedLoseSounds.length)].play();
   }
 
-  finishRobotLose() {
-    finishRobotLoseSounds[getRandomIndex(finishRobotLoseSounds.length)].play();
+  finishBlueLose() {
+    finishBlueLoseSounds[getRandomIndex(finishBlueLoseSounds.length)].play();
   }
 
-  goalHuman() {
-    goalHumanSounds[getRandomIndex(goalHumanSounds.length)].play();
+  goalRed() {
+    goalRedSounds[getRandomIndex(goalRedSounds.length)].play();
   }
 
-  goalRobot() {
-    goalRobotSounds[getRandomIndex(goalRobotSounds.length)].play();
+  goalBlue() {
+    goalBlueSounds[getRandomIndex(goalBlueSounds.length)].play();
   }
 
-  ownGoalHuman() {
-    ownGoalHumanSounds[getRandomIndex(ownGoalHumanSounds.length)].play();
+  ownGoalRed() {
+    ownGoalRedSounds[getRandomIndex(ownGoalRedSounds.length)].play();
   }
 
-  ownGoalRobot() {
-    ownGoalRobotSounds[getRandomIndex(ownGoalRobotSounds.length)].play();
+  ownGoalBlue() {
+    ownGoalBlueSounds[getRandomIndex(ownGoalBlueSounds.length)].play();
   }
 }
 

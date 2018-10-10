@@ -12,8 +12,7 @@ import {
   TEAM_RED,
   TEAM_BLUE,
   POSITION_DEFENDER,
-  POSITION_FORWARD,
-  TEAM_PEOPLE
+  POSITION_FORWARD
 } from "../../../constants";
 import { gameStore } from "../../../store";
 import Button from "../../../components/Button";

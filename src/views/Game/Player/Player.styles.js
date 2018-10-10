@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import IconAdd from "./assets/IconAdd";
 import UserAvatar from "../../../components/UserAvatar";
 import Button from "../../../components/Button";
-import { TEAM_BLUE, TEAM_PEOPLE, POSITION_FORWARD } from "../../../constants";
+import { TEAM_BLUE, POSITION_FORWARD } from "../../../constants";
 
 const styles = StyleSheet.create({
   container: {
