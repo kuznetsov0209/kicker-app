@@ -24,23 +24,18 @@ class UserListModal extends Component {
   @observable
   page = 1;
 
-  @observable
-  searchStr = "";
-
   @computed
-  get filteredUsers() {
+  get users() {
     return store.users
-      .filter(user =>
-        user.name.toLowerCase().includes(this.searchStr.toLowerCase())
-      )
-      .sort((a, b) => a.name.localeCompare(b.name));
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .slice(0, this.offset * this.page);
   }
 
   userKeyExtractor = item => item.id.toString();
 
   renderUser = ({ item }) => {
     return (
-      <TouchableOpacity onPress={() => this.resetSearchAndSelectUser(item)}>
+      <TouchableOpacity onPress={() => this.selectUser(item)}>
         <View style={{ alignItems: "center" }}>
           <View
             style={{
@@ -69,32 +64,22 @@ class UserListModal extends Component {
     );
   };
 
-  searchUser = value => {
-    this.searchStr = value;
-  };
-
   resetState = () => {
-    this.searchStr = "";
     this.page = 1;
   };
 
-  resetSearchAndSelectUser = user => {
+  selectUser = user => {
     this.resetState();
     this.props.onSelect(user);
   };
 
-  resetSearchAndClose = () => {
+  close = () => {
     this.resetState();
     this.props.close();
   };
 
-  reloadUsersList = () => {
-    this.resetState();
-    store.loadUsers(true);
-  };
-
   renderMoreUsers = () => {
-    if (this.offset * this.page < this.filteredUsers.length) {
+    if (this.offset * this.page < this.users.length) {
       this.page++;
     }
   };
@@ -112,18 +97,7 @@ class UserListModal extends Component {
           }}
         >
           <TouchableOpacity
-            onPress={this.reloadUsersList}
-            style={{
-              position: "absolute",
-              left: 0,
-              top: 0,
-              width: 40,
-              height: 40,
-              zIndex: 3
-            }}
-          />
-          <TouchableOpacity
-            onPress={this.resetSearchAndClose}
+            onPress={this.close}
             style={{
               position: "absolute",
               right: 30,
@@ -133,6 +107,7 @@ class UserListModal extends Component {
           >
             <IconCross />
           </TouchableOpacity>
+
           {store.users.length === 0 && (
             <View
               style={{
@@ -148,37 +123,9 @@ class UserListModal extends Component {
               <ActivityIndicator />
             </View>
           )}
-          <View
-            style={{
-              width: 380,
-              height: 100,
-              alignItems: "center",
-              flexDirection: "row"
-            }}
-          >
-            <IconSearch
-              style={{
-                marginLeft: 15
-              }}
-            />
-            <TextInput
-              style={{
-                color: "white",
-                fontFamily: "GothamPro-Bold",
-                paddingLeft: 35,
-                fontSize: 24
-              }}
-              placeholder="SEARCH"
-              autoCorrect={false}
-              placeholderTextColor="rgba(255,255,255, .3)"
-              onChangeText={this.searchUser}
-              value={this.searchStr}
-              autoFocus
-            />
-          </View>
           <KeyboardAvoidingView behavior="padding" enabled>
             <FlatList
-              data={this.filteredUsers.slice(0, this.offset * this.page)}
+              data={this.users}
               keyExtractor={this.userKeyExtractor}
               renderItem={this.renderUser}
               style={{ flex: 1 }}

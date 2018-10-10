@@ -2,7 +2,6 @@ import { types, flow, getSnapshot } from "mobx-state-tree";
 import api from "../api";
 import User from "./user";
 import Game from "./game";
-import { AsyncStorage } from "react-native";
 
 const GameStore = types
   .model({
@@ -35,15 +34,8 @@ const Store = types
   .actions(self => {
     return {
       loadUsers: flow(function*(force) {
-        const cachedUsers = yield AsyncStorage.getItem("USERS");
-
-        if (cachedUsers && !force) {
-          self.users = JSON.parse(cachedUsers);
-        } else {
-          const { users } = yield api.get("/api/users");
-          self.users = users;
-          yield AsyncStorage.setItem("USERS", JSON.stringify(users))
-        }
+        const { users } = yield api.get("/api/users");
+        self.users = users;
       }),
       loadGames: flow(function*() {
         const { games } = yield api.get("/api/games");
