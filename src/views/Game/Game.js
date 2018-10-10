@@ -142,17 +142,6 @@ const Game = observer(
                 user={this.state.player2 && this.state.player2.user}
                 onSelect={this.selectUser}
               />
-              {!gameStore.game && (
-                <View
-                  pointerEvents="none"
-                  style={[styles.teamImageContainer, styles.humanImage]}
-                >
-                  <Image
-                    source={require("./assets/img-human-big.png")}
-                    style={styles.teamImage}
-                  />
-                </View>
-              )}
             </View>
             <View style={{ flex: 1 }}>
               <Player
@@ -167,23 +156,9 @@ const Game = observer(
                 user={this.state.player4 && this.state.player4.user}
                 onSelect={this.selectUser}
               />
-              {!gameStore.game && (
-                <View
-                  pointerEvents="none"
-                  style={[styles.teamImageContainer, styles.robotImage]}
-                >
-                  <Image
-                    source={require("./assets/img-robot-big.png")}
-                    style={styles.teamImage}
-                  />
-                </View>
-              )}
             </View>
           </View>
 
-          <View pointerEvents="none" style={styles.sticker}>
-            <Image source={require("./assets/sticker-18.png")} />
-          </View>
           <Score
             game={gameStore.game}
             isReadyToStart={this.areAllPlayersSelected}
