@@ -136,41 +136,15 @@ export const AddPlayerButton = ({ team, onPress }) => (
   </TouchableOpacity>
 );
 
-export const ChangePlayerButton = ({ user, team, position, onPress }) => (
+export const ChangePlayerButton = ({ user, team, onPress }) => (
   <TouchableOpacity onPress={onPress}>
-    <Image
-      style={{
-        width: 120,
-        height: 120,
-        borderRadius: 60
-      }}
-      source={
-        team === TEAM_PEOPLE
-          ? position === POSITION_FORWARD
-            ? require("./assets/img-people-1.png")
-            : require("./assets/img-people-2.png")
-          : require("./assets/img-robot-1.png")
-      }
-    />
+    <UserAvatar size={120} user={user} team={team} />
   </TouchableOpacity>
 );
 
 export const PlayerAvatar = ({ user, team, position, goals }) => (
   <View>
-    <Image
-      style={{
-        width: 120,
-        height: 120,
-        borderRadius: 60
-      }}
-      source={
-        team === TEAM_PEOPLE
-          ? position === POSITION_FORWARD
-            ? require("./assets/img-people-1.png")
-            : require("./assets/img-people-2.png")
-          : require("./assets/img-robot-1.png")
-      }
-    />
+    <UserAvatar size={120} user={user} team={team} />
     <View style={styles.goalsContainer}>
       <View
         style={[

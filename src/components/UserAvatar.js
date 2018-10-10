@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Image, Text } from "react-native";
+import { TEAM_BLUE } from "../constants";
 
-const UserAvatar = ({ user, size, color, ...rest }) => (
+const UserAvatar = ({ user, size, team, ...rest }) => (
   <View style={{ borderRadius: size / 2, overflow: "hidden" }}>
     {user.photoUrl ? (
       <Image
@@ -14,7 +15,7 @@ const UserAvatar = ({ user, size, color, ...rest }) => (
         style={{
           width: size,
           height: size,
-          backgroundColor: color || "#ff234a",
+          backgroundColor: team === TEAM_BLUE ? "#235cff" : "#ff234a",
           alignItems: "center",
           justifyContent: "center"
         }}

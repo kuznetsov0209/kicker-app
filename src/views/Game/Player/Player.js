@@ -70,11 +70,7 @@ const Player = observer(
       if (user) {
         return user.name.toUpperCase();
       } else {
-        const positionText =
-          position === POSITION_DEFENDER ? "DEFENDER" : "FORWARD";
-        const teamText = team === TEAM_PEOPLE ? "HUMAN" : "ROBOT";
-
-        return `${teamText}\n${positionText}`;
+        return position === POSITION_DEFENDER ? "DEFENDER" : "FORWARD";
       }
     }
 
