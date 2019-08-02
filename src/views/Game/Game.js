@@ -9,7 +9,7 @@ import {
   POSITION_FORWARD,
   POSITION_DEFENDER
 } from "../../constants";
-import { store, gameStore } from "../../store";
+import { store, gameStore, tournamentStore } from "../../store";
 import Logo from "../../assets/Logo";
 
 import CongratulationsModal from "./CongratulationsModal";
@@ -111,7 +111,11 @@ const Game = observer(
     };
 
     saveAndFinishGame = async () => {
-      await gameStore.save();
+      gameStore
+        .save()
+        .then(game => tournamentStore.linkGame(game.id))
+        .catch(error => null);
+
       this.finishGame();
     };
 
@@ -121,7 +125,11 @@ const Game = observer(
     };
 
     saveAndRematch = async () => {
-      await gameStore.save();
+      gameStore
+        .save()
+        .then(game => tournamentStore.linkGame(game.id))
+        .catch(error => null);
+
       gameStore.reset();
     };
 

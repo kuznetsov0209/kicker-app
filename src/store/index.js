@@ -20,8 +20,29 @@ const GameStore = types
         self.game = null;
       },
       save: flow(function*() {
-        api.post("/api/game", getSnapshot(self.game));
+        const { game } = yield api.post("/api/game", getSnapshot(self.game));
+        return game;
       })
+    };
+  });
+
+const TournamentStore = types
+  .model({
+    tournamentId: types.maybe(types.number)
+  })
+  .actions(self => {
+    return {
+      setTournamentId(tournamentId) {
+        self.tournamentId = tournamentId;
+      },
+      resetTournamentId: () => {
+        self.tournamentId = null;
+      },
+      linkGame(gameId) {
+        if (self.tournamentId) {
+          api.post(`/api/tournaments/${self.tournamentId}/games`, { gameId });
+        }
+      }
     };
   });
 
@@ -29,7 +50,8 @@ const Store = types
   .model({
     users: types.optional(types.array(User), []),
     games: types.optional(types.array(Game), []),
-    gameStore: GameStore
+    gameStore: GameStore,
+    tournamentStore: TournamentStore
   })
   .actions(self => {
     return {
@@ -45,7 +67,9 @@ const Store = types
   });
 
 export const store = Store.create({
-  gameStore: {}
+  gameStore: {},
+  tournamentStore: {}
 });
 
 export const gameStore = store.gameStore;
+export const tournamentStore = store.tournamentStore;

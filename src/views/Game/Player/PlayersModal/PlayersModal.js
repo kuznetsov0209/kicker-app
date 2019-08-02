@@ -13,7 +13,7 @@ import { observer } from "mobx-react";
 
 import UserAvatar from "../../../../components/UserAvatar";
 import QRScanner from "../../../../components/QRScanner";
-import { store } from "../../../../store";
+import { store, tournamentStore } from "../../../../store";
 import IconCross from "../../../../assets/IconCross";
 import IconSearch from "../../../../assets/IconSearch";
 import { computed, observable } from "mobx";
@@ -79,6 +79,8 @@ class UserListModal extends Component {
       const qrData = JSON.parse(data);
       const user = this.users.find(user => user.id === qrData.userId);
       this.selectUser(user);
+
+      tournamentStore.setTournamentId(qrData.tournamentId);
     } catch (error) {
       alert("Ooops!");
     }
