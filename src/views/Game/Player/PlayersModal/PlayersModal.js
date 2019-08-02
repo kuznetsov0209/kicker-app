@@ -12,6 +12,7 @@ import {
 import { observer } from "mobx-react";
 
 import UserAvatar from "../../../../components/UserAvatar";
+import QRScanner from "../../../../components/QRScanner";
 import { store } from "../../../../store";
 import IconCross from "../../../../assets/IconCross";
 import IconSearch from "../../../../assets/IconSearch";
@@ -73,6 +74,16 @@ class UserListModal extends Component {
     this.props.onSelect(user);
   };
 
+  selectUserFromQR = ({ data }) => {
+    try {
+      const qrData = JSON.parse(data);
+      const user = this.users.find(user => user.id === qrData.userId);
+      this.selectUser(user);
+    } catch (error) {
+      alert("Ooops!");
+    }
+  };
+
   close = () => {
     this.resetState();
     this.props.close();
@@ -124,6 +135,13 @@ class UserListModal extends Component {
             </View>
           )}
           <KeyboardAvoidingView behavior="padding" enabled>
+            <View
+              style={{
+                flex: 1
+              }}
+            >
+              <QRScanner onSuccess={this.selectUserFromQR} />
+            </View>
             <FlatList
               data={this.users}
               keyExtractor={this.userKeyExtractor}
