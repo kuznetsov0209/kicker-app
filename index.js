@@ -8,6 +8,4 @@ let codePushOptions = {
   installMode: codePush.InstallMode.IMMEDIATE
 };
 
-AppRegistry.registerComponent("kickermasterapp", () =>
-  codePush(codePushOptions)(App)
-);
+AppRegistry.registerComponent("kickermasterapp", () => App);
