@@ -25,6 +25,12 @@ class UserListModal extends Component {
   @observable
   page = 1;
 
+  componentDidUpdate(prevProps) {
+    if (this.props.visible && !prevProps.visible) {
+      store.loadUsers();
+    }
+  }
+
   @computed
   get users() {
     return store.users
@@ -82,7 +88,7 @@ class UserListModal extends Component {
 
       tournamentStore.setTournamentId(qrData.tournamentId);
     } catch (error) {
-      alert("Ooops!");
+      alert("Ooops! " + error.message);
     }
   };
 
