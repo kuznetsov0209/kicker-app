@@ -1,4 +1,8 @@
 rootProject.name = 'kickermasterapp'
+include ':@react-native-community/async-storage'
+project(':@react-native-community/async-storage').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/async-storage/android')
+include ':react-native-camera'
+project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
 include ':react-native-tts'
 project(':react-native-tts').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-tts/android')
 include ':react-native-sound'

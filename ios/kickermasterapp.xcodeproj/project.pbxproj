@@ -90,12 +90,15 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		5EF8D4A47A524B918014262B /* GothamPro-MediumItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = 916DBABBF37340B4B48060EB /* GothamPro-MediumItalic.woff */; };
 		60BB4CC069314BD398DC47D6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCF368ECB3B4BC39E68339E /* libz.tbd */; };
+		69F796871E2D437B908AD1B0 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70325D4620EE41D59F594A02 /* libRNCamera.a */; };
 		6A59F7C2ED5045AD913FEBA3 /* GothamProNarrow-Bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = 3A81D68763324949B27E2E69 /* GothamProNarrow-Bold.woff */; };
 		759A472030E04EDBB8E05E28 /* GothamPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B265C965EB9046D2B4FB0F07 /* GothamPro-Italic.ttf */; };
 		7654BB5386C945339111A927 /* GothamPro-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F728D7501DEB4F7992CDC2B2 /* GothamPro-BlackItalic.otf */; };
+		76BE61F4FFC3448C9750CDB0 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC93656E02B14169ADE28C03 /* libReactNativePermissions.a */; };
 		7801C7B58BE44A53A923DD56 /* GothamPro-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 896FF9A81B0940E3BC502758 /* GothamPro-LightItalic.otf */; };
 		7A573C4ADD944204951DC185 /* GothamPro-Italic.svg in Resources */ = {isa = PBXBuildFile; fileRef = D96DB48CC45C4A4E98B88933 /* GothamPro-Italic.svg */; };
 		7E4840004B254CD3BF6D0FE1 /* GothamPro-Light.woff in Resources */ = {isa = PBXBuildFile; fileRef = 2BA17A99324D449FAF2C6F14 /* GothamPro-Light.woff */; };
+		7E662190C4B0489989CBC423 /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CAC9305FF848F48F8FFE89 /* libRNCAsyncStorage.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		9289DC36E5F74714A3558B60 /* GothamPro-Medium.svg in Resources */ = {isa = PBXBuildFile; fileRef = 004A5D6071444E8E84DF2DF8 /* GothamPro-Medium.svg */; };
 		999F555709464964ABDAC411 /* GothamPro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C33A0CBD2FE0463DB45209FB /* GothamPro-Italic.otf */; };
@@ -375,6 +378,27 @@
 			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
 			remoteInfo = RNSound;
 		};
+		546571B822F038B800CE21A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A9B490E9FE4C74AAB285D1 /* RNCamera.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4107012F1ACB723B00C6AA39;
+			remoteInfo = RNCamera;
+		};
+		5465720B22F0397200CE21A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDE9CB592AC04866A9B5B7E2 /* ReactNativePermissions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D23B34F1C767B80008B4819;
+			remoteInfo = ReactNativePermissions;
+		};
+		5465725122F03AA800CE21A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E03D1515A01644EDBA5476EC /* RNCAsyncStorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNCAsyncStorage;
+		};
 		54FC885220B69BAF00D87D0C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4EC4C2A17B1947D4807AB208 /* CodePush.xcodeproj */;
@@ -436,6 +460,7 @@
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
 		01BD4CA30BD9480E9AA9395C /* GothamPro-BlackItalic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.woff"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.woff"; sourceTree = "<group>"; };
 		01CE26E0E1C9452491946219 /* GothamProNarrow-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Medium.otf"; path = "../assets/fonts/GothamProNarrow-Medium/GothamProNarrow-Medium.otf"; sourceTree = "<group>"; };
+		05A9B490E9FE4C74AAB285D1 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; };
 		10D963BF660741F0BB3A7EB0 /* GothamPro-Medium.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.woff"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.woff"; sourceTree = "<group>"; };
 		117525DA641E49B1818D1BF6 /* GothamPro-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-MediumItalic.otf"; path = "../assets/fonts/GothamPro-MediumItalic/GothamPro-MediumItalic.otf"; sourceTree = "<group>"; };
 		120F202FDFD9495D82500661 /* libTextToSpeech.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libTextToSpeech.a; sourceTree = "<group>"; };
@@ -504,6 +529,7 @@
 		30025F072164A831006558BF /* random1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = random1.mp3; path = ../assets/voices/random1.mp3; sourceTree = "<group>"; };
 		34A07579DFC343FB92247575 /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.ttf"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.ttf"; sourceTree = "<group>"; };
 		3A81D68763324949B27E2E69 /* GothamProNarrow-Bold.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Bold.woff"; path = "../assets/fonts/GothamProNarrow-Bold/GothamProNarrow-Bold.woff"; sourceTree = "<group>"; };
+		43CAC9305FF848F48F8FFE89 /* libRNCAsyncStorage.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCAsyncStorage.a; sourceTree = "<group>"; };
 		450624B14F154DDFB477CDD6 /* GothamPro-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BoldItalic.ttf"; path = "../assets/fonts/GothamPro-BoldItalic/GothamPro-BoldItalic.ttf"; sourceTree = "<group>"; };
 		4757C89F26594A8BBCD222E9 /* GothamPro-LightItalic.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-LightItalic.svg"; path = "../assets/fonts/GothamPro-LightItalic/GothamPro-LightItalic.svg"; sourceTree = "<group>"; };
 		47AA5392D2834EECA73A73FE /* GothamPro-Black.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.woff"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.woff"; sourceTree = "<group>"; };
@@ -516,6 +542,7 @@
 		6567857F89124889982B46C1 /* GothamPro-LightItalic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-LightItalic.woff"; path = "../assets/fonts/GothamPro-LightItalic/GothamPro-LightItalic.woff"; sourceTree = "<group>"; };
 		6B7FBCF446C048AAA0CC4373 /* GothamPro-Bold.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Bold.svg"; path = "../assets/fonts/GothamPro-Bold/GothamPro-Bold.svg"; sourceTree = "<group>"; };
 		6E49725B836A4334A649615B /* GothamProNarrow-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Bold.ttf"; path = "../assets/fonts/GothamProNarrow-Bold/GothamProNarrow-Bold.ttf"; sourceTree = "<group>"; };
+		70325D4620EE41D59F594A02 /* libRNCamera.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCamera.a; sourceTree = "<group>"; };
 		72D8FD4EBFCA40F69D78D18D /* GothamPro-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Bold.otf"; path = "../assets/fonts/GothamPro-Bold/GothamPro-Bold.otf"; sourceTree = "<group>"; };
 		7645A35912D14EB0A177A066 /* GothamProNarrow-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Bold.otf"; path = "../assets/fonts/GothamProNarrow-Bold/GothamProNarrow-Bold.otf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
@@ -537,16 +564,19 @@
 		B02513B1415843EB98F44E1F /* TextToSpeech.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = TextToSpeech.xcodeproj; path = "../node_modules/react-native-tts/ios/TextToSpeech.xcodeproj"; sourceTree = "<group>"; };
 		B265C965EB9046D2B4FB0F07 /* GothamPro-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Italic.ttf"; path = "../assets/fonts/GothamPro-Italic/GothamPro-Italic.ttf"; sourceTree = "<group>"; };
 		B9DDB68369594A648684A136 /* GothamProNarrow-Bold.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Bold.svg"; path = "../assets/fonts/GothamProNarrow-Bold/GothamProNarrow-Bold.svg"; sourceTree = "<group>"; };
+		BDE9CB592AC04866A9B5B7E2 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		C33A0CBD2FE0463DB45209FB /* GothamPro-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Italic.otf"; path = "../assets/fonts/GothamPro-Italic/GothamPro-Italic.otf"; sourceTree = "<group>"; };
 		C5434C06BA0240B884FB1630 /* GothamPro-BoldItalic.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BoldItalic.svg"; path = "../assets/fonts/GothamPro-BoldItalic/GothamPro-BoldItalic.svg"; sourceTree = "<group>"; };
 		CD74F6329E014E128085FE04 /* GothamPro-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.ttf"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.ttf"; sourceTree = "<group>"; };
 		CEBB8E6D059E441F99F969A3 /* GothamPro-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Light.otf"; path = "../assets/fonts/GothamPro-Light/GothamPro-Light.otf"; sourceTree = "<group>"; };
 		CFC7CD6223A84B998EF1B377 /* GothamPro-BoldItalic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BoldItalic.woff"; path = "../assets/fonts/GothamPro-BoldItalic/GothamPro-BoldItalic.woff"; sourceTree = "<group>"; };
 		D96DB48CC45C4A4E98B88933 /* GothamPro-Italic.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Italic.svg"; path = "../assets/fonts/GothamPro-Italic/GothamPro-Italic.svg"; sourceTree = "<group>"; };
+		E03D1515A01644EDBA5476EC /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCAsyncStorage.xcodeproj; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; };
 		F0C8BB7B83D14B838523D60C /* GothamPro.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GothamPro.svg; path = ../assets/fonts/GothamPro/GothamPro.svg; sourceTree = "<group>"; };
 		F17C3E69C33346A29CB648CD /* GothamPro-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.otf"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.otf"; sourceTree = "<group>"; };
 		F728D7501DEB4F7992CDC2B2 /* GothamPro-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.otf"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.otf"; sourceTree = "<group>"; };
 		F88E3974BA7A40D9963FA064 /* GothamPro-Light.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Light.svg"; path = "../assets/fonts/GothamPro-Light/GothamPro-Light.svg"; sourceTree = "<group>"; };
+		FC93656E02B14169ADE28C03 /* libReactNativePermissions.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativePermissions.a; sourceTree = "<group>"; };
 		FCB8A42339724D5DB9D259EF /* GothamProNarrow-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Medium.ttf"; path = "../assets/fonts/GothamProNarrow-Medium/GothamProNarrow-Medium.ttf"; sourceTree = "<group>"; };
 		FE23B25A5C41436E9EA50F8C /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -574,6 +604,9 @@
 				FA70D12927A84531A2C88B65 /* libRNSound.a in Frameworks */,
 				57402258D6BC472082006D01 /* libRNSVG.a in Frameworks */,
 				47E949B8C7CF41989FC2D5AD /* libTextToSpeech.a in Frameworks */,
+				69F796871E2D437B908AD1B0 /* libRNCamera.a in Frameworks */,
+				76BE61F4FFC3448C9750CDB0 /* libReactNativePermissions.a in Frameworks */,
+				7E662190C4B0489989CBC423 /* libRNCAsyncStorage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,6 +789,9 @@
 				975BBCC76C3041BD913A0242 /* libRNSound.a */,
 				85CC9327B7E848C09449FBF9 /* libRNSVG.a */,
 				120F202FDFD9495D82500661 /* libTextToSpeech.a */,
+				70325D4620EE41D59F594A02 /* libRNCamera.a */,
+				FC93656E02B14169ADE28C03 /* libReactNativePermissions.a */,
+				43CAC9305FF848F48F8FFE89 /* libRNCAsyncStorage.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -764,6 +800,30 @@
 			isa = PBXGroup;
 			children = (
 				5407700321355D1300DB9BDB /* libRNSound.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		546571B522F038B800CE21A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				546571B922F038B800CE21A7 /* libRNCamera.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5465720822F0397200CE21A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5465720C22F0397200CE21A7 /* libReactNativePermissions.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5465724E22F03AA800CE21A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5465725222F03AA800CE21A7 /* libRNCAsyncStorage.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -869,6 +929,9 @@
 				1715B2422A5C4EE7B7B38002 /* RNSound.xcodeproj */,
 				FE23B25A5C41436E9EA50F8C /* RNSVG.xcodeproj */,
 				B02513B1415843EB98F44E1F /* TextToSpeech.xcodeproj */,
+				05A9B490E9FE4C74AAB285D1 /* RNCamera.xcodeproj */,
+				BDE9CB592AC04866A9B5B7E2 /* ReactNativePermissions.xcodeproj */,
+				E03D1515A01644EDBA5476EC /* RNCAsyncStorage.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -945,7 +1008,7 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = Unknown;
+						DevelopmentTeam = CKK8NGJBH7;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -955,6 +1018,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1013,6 +1077,18 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 5465720822F0397200CE21A7 /* Products */;
+					ProjectRef = BDE9CB592AC04866A9B5B7E2 /* ReactNativePermissions.xcodeproj */;
+				},
+				{
+					ProductGroup = 546571B522F038B800CE21A7 /* Products */;
+					ProjectRef = 05A9B490E9FE4C74AAB285D1 /* RNCamera.xcodeproj */;
+				},
+				{
+					ProductGroup = 5465724E22F03AA800CE21A7 /* Products */;
+					ProjectRef = E03D1515A01644EDBA5476EC /* RNCAsyncStorage.xcodeproj */;
 				},
 				{
 					ProductGroup = 54076FFF21355D1300DB9BDB /* Products */;
@@ -1287,6 +1363,27 @@
 			remoteRef = 5407700221355D1300DB9BDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		546571B922F038B800CE21A7 /* libRNCamera.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCamera.a;
+			remoteRef = 546571B822F038B800CE21A7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5465720C22F0397200CE21A7 /* libReactNativePermissions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativePermissions.a;
+			remoteRef = 5465720B22F0397200CE21A7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5465725222F03AA800CE21A7 /* libRNCAsyncStorage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCAsyncStorage.a;
+			remoteRef = 5465725122F03AA800CE21A7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		54FC885320B69BAF00D87D0C /* libCodePush.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1490,18 +1587,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = Unknown;
+				DEVELOPMENT_TEAM = CKK8NGJBH7;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-tts/ios/TextToSpeech",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 				INFOPLIST_FILE = kickermasterapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/kickermasterapp\"",
+					"\"$(SRCROOT)/kickermasterapp\"",
+					"\"$(SRCROOT)/kickermasterapp\"",
 					"\"$(SRCROOT)/kickermasterapp\"",
 					"\"$(SRCROOT)/kickermasterapp\"",
 				);
@@ -1510,9 +1613,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker.merc20;
 				PRODUCT_NAME = kickermasterapp;
-				TARGETED_DEVICE_FAMILY = 2;
+				PROVISIONING_PROFILE_SPECIFIER = Mercury_AnyApp_20180907;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1521,19 +1625,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Unknown;
+				DEVELOPMENT_TEAM = CKK8NGJBH7;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-tts/ios/TextToSpeech",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 				INFOPLIST_FILE = kickermasterapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/kickermasterapp\"",
+					"\"$(SRCROOT)/kickermasterapp\"",
+					"\"$(SRCROOT)/kickermasterapp\"",
 					"\"$(SRCROOT)/kickermasterapp\"",
 					"\"$(SRCROOT)/kickermasterapp\"",
 				);
@@ -1542,9 +1653,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker.merc20;
 				PRODUCT_NAME = kickermasterapp;
-				TARGETED_DEVICE_FAMILY = 2;
+				PROVISIONING_PROFILE_SPECIFIER = "Mercury_AnyApp(Dist)_20180820";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
     "dateformat": "^3.0.3",
     "mobx": "^4.1.1",
     "mobx-react": "^5.0.0",
@@ -15,7 +16,9 @@
     "react": "^16.3.0-alpha.1",
     "react-gateway": "^3.0.0",
     "react-native": "0.54.4",
+    "react-native-camera": "^3.0.0",
     "react-native-code-push": "^5.3.3",
+    "react-native-qrcode-scanner": "^1.2.1",
     "react-native-svg": "^6.3.1",
     "react-native-tts": "^2.0.0",
     "react-navigation": "^1.5.11"
