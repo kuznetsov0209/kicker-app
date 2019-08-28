@@ -25,12 +25,6 @@ class UserListModal extends Component {
   @observable
   page = 1;
 
-  componentDidUpdate(prevProps) {
-    if (this.props.visible && !prevProps.visible) {
-      store.loadUsers();
-    }
-  }
-
   @computed
   get users() {
     return store.users
@@ -80,13 +74,14 @@ class UserListModal extends Component {
     this.props.onSelect(user);
   };
 
-  selectUserFromQR = ({ data }) => {
+  selectUserFromQR = async ({ data }) => {
     try {
-      const qrData = JSON.parse(data);
-      const user = this.users.find(user => user.id === qrData.userId);
+      let [, name, externalId] = data.split(",");
+      let user = store.users.find(user => user.externalId === externalId);
+      if (!user) {
+        user = await store.addUserByExternalId({ externalId, name });
+      }
       this.selectUser(user);
-
-      tournamentStore.setTournamentId(qrData.tournamentId);
     } catch (error) {
       alert("Ooops! " + error.message);
     }
@@ -150,18 +145,6 @@ class UserListModal extends Component {
             >
               <QRScanner onSuccess={this.selectUserFromQR} />
             </View>
-            <FlatList
-              data={this.users}
-              keyExtractor={this.userKeyExtractor}
-              renderItem={this.renderUser}
-              style={{ flex: 1 }}
-              contentContainerStyle={{
-                paddingTop: 50,
-                paddingBottom: 50
-              }}
-              onEndReached={this.renderMoreUsers}
-              keyboardShouldPersistTaps="handled"
-            />
           </KeyboardAvoidingView>
         </View>
       </Modal>

@@ -62,6 +62,12 @@ const Store = types
       loadGames: flow(function*() {
         const { games } = yield api.get("/api/games");
         self.games = games;
+      }),
+      addUserByExternalId: flow(function*(payload) {
+        const { user: data } = yield api.post("/404fest/api/user", payload);
+        const user = User.create(data);
+        self.users.push(user);
+        return user;
       })
     };
   });
