@@ -14,6 +14,7 @@ import Logo from "../../assets/Logo";
 
 import CongratulationsModal from "./CongratulationsModal";
 import FinishGameModal from "./FinishGameModal";
+import LeadersModal from "./LeadersModal";
 import Player from "./Player";
 import Score from "./Score";
 import styles from "./Game.styles";
@@ -23,7 +24,8 @@ const initialState = {
   player2: null,
   player3: null,
   player4: null,
-  finishModalVisible: false
+  finishModalVisible: false,
+  leadersModalVisible: false
 };
 
 const Game = observer(
@@ -133,6 +135,14 @@ const Game = observer(
       gameStore.reset();
     };
 
+    openLeadersModal = () => {
+      this.setState({ leadersModalVisible: true });
+    };
+
+    closeLeadersModal = () => {
+      this.setState({ leadersModalVisible: false });
+    };
+
     render() {
       return (
         <View style={{ flex: 1 }}>
@@ -188,7 +198,7 @@ const Game = observer(
             ) : (
               <Navbar>
                 <NavbarLink title="GAME" active />
-                <NavbarLink title="LEADERS" />
+                <NavbarLink title="LEADERS" onPress={this.openLeadersModal} />
               </Navbar>
             )}
           </Gateway>
@@ -206,6 +216,11 @@ const Game = observer(
             onFinish={this.finishGame}
             onRematch={this.rematch}
             onRequestClose={this.closeFinishGameModal}
+          />
+
+          <LeadersModal
+            visible={this.state.leadersModalVisible}
+            onRequestClose={this.closeLeadersModal}
           />
         </View>
       );
