@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Image } from "react-native";
+import { View, Image, TouchableOpacity, Text } from "react-native";
 import { observer } from "mobx-react";
 import { Gateway } from "react-gateway";
 import Navbar, { NavbarLink } from "../../components/Navbar";
@@ -11,6 +11,7 @@ import {
 } from "../../constants";
 import { store, gameStore, tournamentStore } from "../../store";
 import Logo from "../../assets/Logo";
+import sounds from "../../utils/sounds";
 
 import CongratulationsModal from "./CongratulationsModal";
 import FinishGameModal from "./FinishGameModal";
@@ -82,6 +83,8 @@ const Game = observer(
       this.setState({
         [userSlot]: { user, team, position }
       });
+
+      sounds.helloPlayer(user.name);
     };
 
     startGame = async () => {
@@ -154,6 +157,9 @@ const Game = observer(
                 user={this.state.player1 && this.state.player1.user}
                 onSelect={this.selectUser}
               />
+              <TouchableOpacity onPress={() => sounds.helloPlayer("dsa")}>
+                <Text>GOAL</Text>
+              </TouchableOpacity>
               <Player
                 team={TEAM_RED}
                 position={POSITION_FORWARD}

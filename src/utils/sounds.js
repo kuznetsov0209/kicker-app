@@ -60,8 +60,170 @@ const finishBlueLoseSounds = [
   new Sound("finish-human-lose4.mp3", Sound.MAIN_BUNDLE)
 ];
 
+const goalSounds = [
+  new Sound("phrases_2019/goal/goal_1.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/goal/goal_2.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/goal/goal_3.mp3", Sound.MAIN_BUNDLE)
+];
+
+const ownGoalSounds = [
+  new Sound("phrases_2019/own/own_1.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/own/own_2.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/own/own_3.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/own/own_4.mp3", Sound.MAIN_BUNDLE)
+];
+
+const helloPlayerSounds = [
+  new Sound("phrases_2019/add_player/add_player_1.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/add_player/add_player_2.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/add_player/add_player_3.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/add_player/add_player_4.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/add_player/add_player_5.mp3", Sound.MAIN_BUNDLE)
+];
+
+const nameToSoundMappings = [
+  {
+    names: ["alexander", "александр"],
+    files: ["phrases_2019/add_player/add_player_Alexander.mp3"]
+  },
+  {
+    names: ["alexey", "алексей"],
+    files: ["phrases_2019/add_player/add_player_Alexey.mp3"]
+  },
+  {
+    names: ["andrey", "андрей"],
+    files: ["phrases_2019/add_player/add_player_Andrey.mp3"]
+  },
+  {
+    names: ["anastasia", "анастасия"],
+    files: ["phrases_2019/add_player/add_player_Anastasia.mp3"]
+  },
+  {
+    names: ["anna", "анна"],
+    files: [
+      "phrases_2019/add_player/add_player_Anna_1.mp3",
+      "phrases_2019/add_player/add_player_Anna_2.mp3"
+    ]
+  },
+  {
+    names: ["anton", "антон"],
+    files: [
+      "phrases_2019/add_player/add_player_Anton_1.mp3",
+      "phrases_2019/add_player/add_player_Anton_2.mp3"
+    ]
+  },
+  {
+    names: ["artem", "артем", "артём"],
+    files: [
+      "phrases_2019/add_player/add_player_Artem_1.mp3",
+      "phrases_2019/add_player/add_player_Artem_2.mp3"
+    ]
+  },
+  {
+    names: ["daniil", "даниил"],
+    files: ["phrases_2019/add_player/add_player_Daniil.mp3"]
+  },
+  {
+    names: ["denis", "денис"],
+    files: ["phrases_2019/add_player/add_player_Denis.mp3"]
+  },
+  {
+    names: ["dmitriy", "дмитрий"],
+    files: ["phrases_2019/add_player/add_player_Dmitriy.mp3"]
+  },
+  {
+    names: ["egor", "егор"],
+    files: [
+      "phrases_2019/add_player/add_player_Egor_1.mp3",
+      "phrases_2019/add_player/add_player_Egor_2.mp3"
+    ]
+  },
+  {
+    names: ["ekaterina", "екатерина"],
+    files: ["phrases_2019/add_player/add_player_Ekaterina.mp3"]
+  },
+  {
+    names: ["elena", "alena", "елена", "алена", "алёна"],
+    files: ["phrases_2019/add_player/add_player_Elena_Alena.mp3"]
+  },
+  {
+    names: ["evgeny", "евгений"],
+    files: ["phrases_2019/add_player/add_player_Evgeny.mp3"]
+  },
+  {
+    names: ["ivan", "иван"],
+    files: [
+      "phrases_2019/add_player/add_player_Ivan_1.mp3",
+      "phrases_2019/add_player/add_player_Ivan_2.mp3"
+    ]
+  },
+  {
+    names: ["maria", "мария"],
+    files: ["phrases_2019/add_player/add_player_Maria.mp3"]
+  },
+  {
+    names: ["maxim", "максим"],
+    files: ["phrases_2019/add_player/add_player_Maxim.mp3"]
+  },
+  {
+    names: ["mikhail", "михаил"],
+    files: ["phrases_2019/add_player/add_player_Mikhail.mp3"]
+  },
+  {
+    names: ["nikita", "никита"],
+    files: ["phrases_2019/add_player/add_player_Nikita.mp3"]
+  },
+  {
+    names: ["roman", "роман"],
+    files: ["phrases_2019/add_player/add_player_Roman.mp3"]
+  },
+  {
+    names: ["valeriy", "валерий"],
+    files: ["phrases_2019/add_player/add_player_Valeriy.mp3"]
+  },
+  {
+    names: ["viktoria", "виктория"],
+    files: ["phrases_2019/add_player/add_player_Viktoria.mp3"]
+  },
+  {
+    names: ["vladimir", "владимир"],
+    files: [
+      "phrases_2019/add_player/add_player_Vladimir_1.mp3",
+      "phrases_2019/add_player/add_player_Vladimir_2.mp3"
+    ]
+  },
+  {
+    names: ["vyacheslav", "вячеслав"],
+    files: ["phrases_2019/add_player/add_player_Vyacheslav.mp3"]
+  }
+].map(item => ({
+  ...item,
+  sounds: item.files.map(fileName => new Sound(fileName, Sound.MAIN_BUNDLE))
+}));
+
 function getRandomIndex(length) {
   return Math.round(Math.random() * 100) % length;
+}
+
+const notSelectedItemsByScope = new Map();
+
+function getRandomItem(array, { scope = "" }) {
+  let notSelectedItems = notSelectedItemsByScope.get(scope);
+
+  if (!notSelectedItems) {
+    notSelectedItems = [...array];
+  }
+
+  const randomIndex = getRandomIndex(notSelectedItems.length);
+  const randomItem = notSelectedItems[randomIndex];
+
+  notSelectedItems.splice(randomIndex, 1);
+  if (notSelectedItems.length === 0) {
+    notSelectedItems = array;
+  }
+  notSelectedItemsByScope.set(scope, notSelectedItems);
+
+  return randomItem;
 }
 
 class Sounds {
@@ -91,6 +253,27 @@ class Sounds {
 
   ownGoalBlue() {
     ownGoalBlueSounds[getRandomIndex(ownGoalBlueSounds.length)].play();
+  }
+
+  goal() {
+    getRandomItem(goalSounds, { scope: "GOAL" }).play();
+  }
+
+  ownGoal() {
+    getRandomItem(ownGoalSounds, { scope: "OWN_GOAL" }).play();
+  }
+
+  helloPlayer(name) {
+    const personalGreeting = nameToSoundMappings.find(item =>
+      item.names.includes(name.toLowerCase())
+    );
+
+    if (personalGreeting) {
+      const { names, sounds } = personalGreeting;
+      getRandomItem(sounds, { scope: `HELLO_${names[0]}` }).play();
+    } else {
+      getRandomItem(helloPlayerSounds, { scope: "HELLO_PLAYER" }).play();
+    }
   }
 }
 

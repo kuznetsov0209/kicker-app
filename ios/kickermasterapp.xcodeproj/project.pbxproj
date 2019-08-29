@@ -76,6 +76,7 @@
 		30025F312164A831006558BF /* goal-robot5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F052164A831006558BF /* goal-robot5.mp3 */; };
 		30025F322164A831006558BF /* goal-human2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F062164A831006558BF /* goal-human2.mp3 */; };
 		30025F332164A831006558BF /* random1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30025F072164A831006558BF /* random1.mp3 */; };
+		3052BFD023184307007B7512 /* phrases_2019 in Resources */ = {isa = PBXBuildFile; fileRef = 3052BFA123184307007B7512 /* phrases_2019 */; };
 		336F0C1FF8164AC9A6F96E33 /* GothamPro-LightItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = 6567857F89124889982B46C1 /* GothamPro-LightItalic.woff */; };
 		3AE0A01BEBB24AD5A50C3075 /* GothamPro-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 117525DA641E49B1818D1BF6 /* GothamPro-MediumItalic.otf */; };
 		3F505EACB9BE4341ABCC7A3A /* GothamPro-BoldItalic.svg in Resources */ = {isa = PBXBuildFile; fileRef = C5434C06BA0240B884FB1630 /* GothamPro-BoldItalic.svg */; };
@@ -527,6 +528,7 @@
 		30025F052164A831006558BF /* goal-robot5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot5.mp3"; path = "../assets/voices/goal-robot5.mp3"; sourceTree = "<group>"; };
 		30025F062164A831006558BF /* goal-human2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human2.mp3"; path = "../assets/voices/goal-human2.mp3"; sourceTree = "<group>"; };
 		30025F072164A831006558BF /* random1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = random1.mp3; path = ../assets/voices/random1.mp3; sourceTree = "<group>"; };
+		3052BFA123184307007B7512 /* phrases_2019 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = phrases_2019; path = ../assets/phrases_2019; sourceTree = "<group>"; };
 		34A07579DFC343FB92247575 /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.ttf"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.ttf"; sourceTree = "<group>"; };
 		3A81D68763324949B27E2E69 /* GothamProNarrow-Bold.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Bold.woff"; path = "../assets/fonts/GothamProNarrow-Bold/GothamProNarrow-Bold.woff"; sourceTree = "<group>"; };
 		43CAC9305FF848F48F8FFE89 /* libRNCAsyncStorage.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCAsyncStorage.a; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 				30025EF62164A82F006558BF /* finish-robot-lose2.mp3 */,
 				30025EF92164A82F006558BF /* finish-robot-lose3.mp3 */,
 				30025EFF2164A830006558BF /* finish-robot-lose4.mp3 */,
+				3052BFA123184307007B7512 /* phrases_2019 */,
 				30025EE12164A82D006558BF /* goal-human1.mp3 */,
 				30025F062164A831006558BF /* goal-human2.mp3 */,
 				30025EDC2164A82C006558BF /* goal-human3.mp3 */,
@@ -1467,6 +1470,7 @@
 				D3C8767DDE5747E6B2DDD949 /* GothamPro-Black.otf in Resources */,
 				30025F332164A831006558BF /* random1.mp3 in Resources */,
 				56858BD6E60146F7A9A51E74 /* GothamPro-Black.ttf in Resources */,
+				3052BFD023184307007B7512 /* phrases_2019 in Resources */,
 				F1E12CFE082F4F55A004B2CE /* GothamPro-Black.woff in Resources */,
 				7654BB5386C945339111A927 /* GothamPro-BlackItalic.otf in Resources */,
 				30025F272164A831006558BF /* goal-robot3.mp3 in Resources */,
