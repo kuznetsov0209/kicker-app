@@ -1617,9 +1617,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker.merc20;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker.404fest;
 				PRODUCT_NAME = kickermasterapp;
-				PROVISIONING_PROFILE_SPECIFIER = Mercury_AnyApp_20180907;
+				PROVISIONING_PROFILE_SPECIFIER = Mercury_AnyApp_20190820;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1657,9 +1657,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker.merc20;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker.404fest;
 				PRODUCT_NAME = kickermasterapp;
-				PROVISIONING_PROFILE_SPECIFIER = "Mercury_AnyApp(Dist)_20180820";
+				PROVISIONING_PROFILE_SPECIFIER = "Mercury_AnyApp(Dist)_20190820";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
