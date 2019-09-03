@@ -4,46 +4,46 @@ Sound.setCategory("Playback");
 const startSounds = [new Sound("start.mp3", Sound.MAIN_BUNDLE)];
 const goalRedSounds = [
   new Sound("goal-human1.mp3", Sound.MAIN_BUNDLE),
-  new Sound("goal-human2.mp3", Sound.MAIN_BUNDLE),
+  // new Sound("goal-human2.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human3.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human4.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human5.mp3", Sound.MAIN_BUNDLE),
-  new Sound("goal-human6.mp3", Sound.MAIN_BUNDLE),
+  // new Sound("goal-human6.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human7.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human8.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human9.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human10.mp3", Sound.MAIN_BUNDLE),
-  new Sound("goal-human11.mp3", Sound.MAIN_BUNDLE),
-  new Sound("goal-human12.mp3", Sound.MAIN_BUNDLE),
-  new Sound("goal-human13.mp3", Sound.MAIN_BUNDLE)
+  new Sound("goal-human11.mp3", Sound.MAIN_BUNDLE)
+  // new Sound("goal-human12.mp3", Sound.MAIN_BUNDLE),
+  // new Sound("goal-human13.mp3", Sound.MAIN_BUNDLE)
 ];
 const goalBlueSounds = [
   new Sound("goal-robot1.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-robot2.mp3", Sound.MAIN_BUNDLE),
-  new Sound("goal-robot3.mp3", Sound.MAIN_BUNDLE),
+  // new Sound("goal-robot3.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-robot4.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-robot5.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-robot6.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-robot7.mp3", Sound.MAIN_BUNDLE),
-  new Sound("goal-robot8.mp3", Sound.MAIN_BUNDLE),
+  // new Sound("goal-robot8.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-robot9.mp3", Sound.MAIN_BUNDLE)
 ];
 
 const ownGoalRedSounds = [
-  new Sound("own-human1.mp3", Sound.MAIN_BUNDLE),
+  // new Sound("own-human1.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-human2.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-human3.mp3", Sound.MAIN_BUNDLE),
-  new Sound("own-human4.mp3", Sound.MAIN_BUNDLE),
+  // new Sound("own-human4.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-human5.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-human6.mp3", Sound.MAIN_BUNDLE)
 ];
 
 const ownGoalBlueSounds = [
   new Sound("own-robot1.mp3", Sound.MAIN_BUNDLE),
-  new Sound("own-robot2.mp3", Sound.MAIN_BUNDLE),
+  // new Sound("own-robot2.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-robot3.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-robot4.mp3", Sound.MAIN_BUNDLE),
-  new Sound("own-robot5.mp3", Sound.MAIN_BUNDLE),
+  // new Sound("own-robot5.mp3", Sound.MAIN_BUNDLE),
   new Sound("own-robot6.mp3", Sound.MAIN_BUNDLE)
 ];
 
@@ -56,8 +56,8 @@ const finishRedLoseSounds = [
 const finishBlueLoseSounds = [
   new Sound("finish-human-lose1.mp3", Sound.MAIN_BUNDLE),
   new Sound("finish-human-lose2.mp3", Sound.MAIN_BUNDLE),
-  new Sound("finish-human-lose3.mp3", Sound.MAIN_BUNDLE),
-  new Sound("finish-human-lose4.mp3", Sound.MAIN_BUNDLE)
+  new Sound("finish-human-lose3.mp3", Sound.MAIN_BUNDLE)
+  // new Sound("finish-human-lose4.mp3", Sound.MAIN_BUNDLE)
 ];
 
 const goalSounds = [
@@ -79,6 +79,21 @@ const helloPlayerSounds = [
   new Sound("phrases_2019/add_player/add_player_3.mp3", Sound.MAIN_BUNDLE),
   new Sound("phrases_2019/add_player/add_player_4.mp3", Sound.MAIN_BUNDLE),
   new Sound("phrases_2019/add_player/add_player_5.mp3", Sound.MAIN_BUNDLE)
+];
+
+const randomSounds = [
+  new Sound("phrases_2019/random/random_1.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_2.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_3.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_4.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_5.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_6.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_7.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_8.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_9.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_10.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_11.mp3", Sound.MAIN_BUNDLE),
+  new Sound("phrases_2019/random/random_12.mp3", Sound.MAIN_BUNDLE)
 ];
 
 const nameToSoundMappings = [
@@ -228,31 +243,31 @@ function getRandomItem(array, { scope = "" }) {
 
 class Sounds {
   start() {
-    startSounds[getRandomIndex(startSounds.length)].play();
+    getRandomItem(startSounds, { scope: "START" }).play();
   }
 
   finishRedLose() {
-    finishRedLoseSounds[getRandomIndex(finishRedLoseSounds.length)].play();
+    getRandomItem(finishRedLoseSounds, { scope: "FINISH_RED_LOSE" }).play();
   }
 
   finishBlueLose() {
-    finishBlueLoseSounds[getRandomIndex(finishBlueLoseSounds.length)].play();
+    getRandomItem(finishBlueLoseSounds, { scope: "FINISH_BLUE_LOSE" }).play();
   }
 
   goalRed() {
-    goalRedSounds[getRandomIndex(goalRedSounds.length)].play();
+    getRandomItem(goalRedSounds, { scope: "GOAL_RED" }).play();
   }
 
   goalBlue() {
-    goalBlueSounds[getRandomIndex(goalBlueSounds.length)].play();
+    getRandomItem(goalBlueSounds, { scope: "GOAL_BLUE" }).play();
   }
 
   ownGoalRed() {
-    ownGoalRedSounds[getRandomIndex(ownGoalRedSounds.length)].play();
+    getRandomItem(ownGoalRedSounds, { scope: "OWN_GOAL_RED" }).play();
   }
 
   ownGoalBlue() {
-    ownGoalBlueSounds[getRandomIndex(ownGoalBlueSounds.length)].play();
+    getRandomItem(ownGoalBlueSounds, { scope: "OWN_GOAL_BLUE" }).play();
   }
 
   goal() {
@@ -274,6 +289,10 @@ class Sounds {
     } else {
       getRandomItem(helloPlayerSounds, { scope: "HELLO_PLAYER" }).play();
     }
+  }
+
+  random() {
+    getRandomItem(randomSounds, { scope: "RANDOM" }).play();
   }
 }
 
