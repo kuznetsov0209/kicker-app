@@ -280,7 +280,7 @@ class Sounds {
 
   helloPlayer(name) {
     const personalGreeting = nameToSoundMappings.find(item =>
-      item.names.includes(name.toLowerCase())
+      item.names.some(item => name.toLowerCase().includes(item))
     );
 
     if (personalGreeting) {
