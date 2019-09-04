@@ -25,7 +25,7 @@ class LeadersModal extends Component {
               flex: 1,
               backgroundColor: "transparent"
             }}
-            source={{ uri: "http://localhost:8082" }}
+            source={{ uri: "https://kicker.mercdev.com/404fest/" }}
           />
           <Navbar>
             <NavbarLink title="GAME" onPress={onRequestClose} />
