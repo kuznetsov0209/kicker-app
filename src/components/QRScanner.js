@@ -11,7 +11,7 @@ export default class QRScanner extends Component {
         showMarker={true}
         topContent={
           <Text style={styles.centerText}>
-            Можно отсканировать QR-код из раздела Турнир по кикеру!
+            Можно отсканировать QR-код из раздела Профиль в приложении
           </Text>
         }
       />
