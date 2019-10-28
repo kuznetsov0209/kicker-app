@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "precommit": "lint-staged",
     "test": "jest"
   },
   "dependencies": {
@@ -27,9 +26,9 @@
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.8.2",
-    "husky": "^1.0.0-rc.14",
-    "lint-staged": "^7.2.2",
-    "prettier": "1.14.2",
+    "husky": ">=1",
+    "lint-staged": ">=8",
+    "prettier": "1.18.2",
     "react-native-sound": "0.10.2",
     "react-test-renderer": "^16.3.0-alpha.1"
   },
@@ -39,10 +38,14 @@
     ]
   },
   "lint-staged": {
-    "src/**/*.js": [
-      "./node_modules/.bin/prettier --write",
-      "./node_modules/.bin/eslint --fix",
+    "**/*.{js,json,md}": [
+      "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
