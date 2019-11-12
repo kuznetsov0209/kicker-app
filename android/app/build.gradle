@@ -138,6 +138,7 @@ android {
 }
 
 dependencies {
+    compile project(':lottie-react-native')
     compile project(':react-native-tts')
     compile project(':react-native-code-push')
     compile project(':react-native-svg')
