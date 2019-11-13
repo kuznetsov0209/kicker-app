@@ -52,7 +52,13 @@ const CongratulationsModal = observer(
                 alignItems: "center"
               }}
             >
-              <View style={{ marginTop: 40 }}>
+              <View
+                style={{
+                  marginTop: 40,
+                  width: 440,
+                  height: 210
+                }}
+              >
                 <Stars />
               </View>
               <View style={{ flexDirection: "row", marginTop: -80 }}>
