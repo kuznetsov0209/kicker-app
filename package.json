@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "dateformat": "^3.0.3",
+    "lottie-ios": "2.5.3",
+    "lottie-react-native": "2.5.11",
     "mobx": "^4.1.1",
     "mobx-react": "^5.0.0",
     "mobx-state-tree": "^2.0.3",

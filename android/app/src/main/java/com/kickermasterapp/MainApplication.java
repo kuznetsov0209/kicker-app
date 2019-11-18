@@ -3,6 +3,7 @@ package com.kickermasterapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.airbnb.android.react.lottie.LottiePackage;
 import net.no_mad.tts.TextToSpeechPackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.microsoft.codepush.react.CodePush;
@@ -33,6 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new LottiePackage(),
             new TextToSpeechPackage(),
             new RNSoundPackage(),
             new CodePush(null, getApplicationContext(), BuildConfig.DEBUG),
