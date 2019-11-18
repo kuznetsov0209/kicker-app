@@ -86,6 +86,7 @@
 		56858BD6E60146F7A9A51E74 /* GothamPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD74F6329E014E128085FE04 /* GothamPro-Black.ttf */; };
 		56BD68A1D0B04F9F89122822 /* GothamPro-Bold.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6B7FBCF446C048AAA0CC4373 /* GothamPro-Bold.svg */; };
 		57402258D6BC472082006D01 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CC9327B7E848C09449FBF9 /* libRNSVG.a */; };
+		5849718D54AB44CEBB8CEA8E /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E12CF587194825B8B41090 /* Lottie.framework */; };
 		5B2A1504AD1B4978B222F82A /* GothamPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7CC97F217D4250B0C6B61F /* GothamPro-LightItalic.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		5EF8D4A47A524B918014262B /* GothamPro-MediumItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = 916DBABBF37340B4B48060EB /* GothamPro-MediumItalic.woff */; };
@@ -95,26 +96,24 @@
 		7654BB5386C945339111A927 /* GothamPro-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F728D7501DEB4F7992CDC2B2 /* GothamPro-BlackItalic.otf */; };
 		7801C7B58BE44A53A923DD56 /* GothamPro-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 896FF9A81B0940E3BC502758 /* GothamPro-LightItalic.otf */; };
 		7A573C4ADD944204951DC185 /* GothamPro-Italic.svg in Resources */ = {isa = PBXBuildFile; fileRef = D96DB48CC45C4A4E98B88933 /* GothamPro-Italic.svg */; };
+		7DCA4CC805474293BD4B68DD /* libLottie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92440FEDDB4D4AB7BC787B4B /* libLottie.a */; };
 		7E4840004B254CD3BF6D0FE1 /* GothamPro-Light.woff in Resources */ = {isa = PBXBuildFile; fileRef = 2BA17A99324D449FAF2C6F14 /* GothamPro-Light.woff */; };
-		81940BB90ACF5444E21B50E3 /* Pods_kickermasterapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E55D540BA4FD9F48B652CE /* Pods_kickermasterapp.framework */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		9289DC36E5F74714A3558B60 /* GothamPro-Medium.svg in Resources */ = {isa = PBXBuildFile; fileRef = 004A5D6071444E8E84DF2DF8 /* GothamPro-Medium.svg */; };
 		999F555709464964ABDAC411 /* GothamPro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C33A0CBD2FE0463DB45209FB /* GothamPro-Italic.otf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		AF6019B7F1F84D6D98FD8627 /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F04B723387C54C44AB9711DC /* libLottieReactNative.a */; };
 		AFDCF927F1AA4AA9B2B14668 /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60506B55278246C9B8CBA064 /* GothamPro.ttf */; };
 		B3ACB77706734DEBA34ABF37 /* GothamProNarrow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB8A42339724D5DB9D259EF /* GothamProNarrow-Medium.ttf */; };
 		B578CAF4BB064991BBDED7FC /* GothamPro-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2651A077632C4099A6FFCAF4 /* GothamPro-MediumItalic.ttf */; };
 		B9C72AB596E946B9B066C152 /* GothamPro-Bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = 178303023A5041E3B610B275 /* GothamPro-Bold.woff */; };
 		BBB6DE0069094B8EB7C8DC8E /* GothamProNarrow-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7645A35912D14EB0A177A066 /* GothamProNarrow-Bold.otf */; };
 		C42B42415931438F925632A3 /* GothamProNarrow-Medium.svg in Resources */ = {isa = PBXBuildFile; fileRef = 800A906A53A24AB892187B57 /* GothamProNarrow-Medium.svg */; };
-		CA34129C03E94598A7539A05 /* libLottie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 036419D658B64EA9B1A35755 /* libLottie.a */; };
 		CB46D0BBC8F84A7EB4B0502E /* GothamProNarrow-Bold.svg in Resources */ = {isa = PBXBuildFile; fileRef = B9DDB68369594A648684A136 /* GothamProNarrow-Bold.svg */; };
 		CB8D15F7B6134A7194B5B245 /* GothamPro-MediumItalic.svg in Resources */ = {isa = PBXBuildFile; fileRef = A75A6D916F844906A5BA77D1 /* GothamPro-MediumItalic.svg */; };
 		CCFEFC7C2B654832A65DF8D5 /* GothamProNarrow-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 01CE26E0E1C9452491946219 /* GothamProNarrow-Medium.otf */; };
 		D21E237D12FF4624B9A4836B /* GothamPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A196CB93D25C406CACBA6B5B /* GothamPro-Medium.otf */; };
 		D3C8767DDE5747E6B2DDD949 /* GothamPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F17C3E69C33346A29CB648CD /* GothamPro-Black.otf */; };
-		D88CF5D3354043E68182F5AD /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842A85515C5F4CEF8429E6AF /* Lottie.framework */; };
+		D49BC6BB58F7406788803F16 /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B78122766F45299AD06C95 /* libLottieReactNative.a */; };
 		DAA7B9E980304494B18FF63E /* GothamPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F566C5394E44F649C7A5F3C /* GothamPro-Bold.ttf */; };
 		E2D7307477F24E9396B75FCA /* GothamPro-BoldItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = CFC7CD6223A84B998EF1B377 /* GothamPro-BoldItalic.woff */; };
 		E4719A07B54F4E3199D491B4 /* GothamProNarrow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E49725B836A4334A649615B /* GothamProNarrow-Bold.ttf */; };
@@ -176,54 +175,47 @@
 			remoteGlobalIDString = 3C86DF461ADF2C930047B81A;
 			remoteInfo = RCTWebSocket;
 		};
-		1403E0AB237B382300F5061D /* PBXContainerItemProxy */ = {
+		140A5C252383118D0077C8C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DFB8839794874343A952D0C0 /* LottieReactNative.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 11FA5C511C4A1296003AC2EE;
-			remoteInfo = LottieReactNative;
-		};
-		1403E0B4237B382300F5061D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E97BAC24AC6C4C3FBE7EE411 /* Lottie.xcodeproj */;
+			containerPortal = C9A0F4A82EF04100922C50A0 /* Lottie.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 62CA59B81E3C173B002D7188;
 			remoteInfo = Lottie_iOS;
 		};
-		1403E0B6237B382300F5061D /* PBXContainerItemProxy */ = {
+		140A5C272383118D0077C8C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E97BAC24AC6C4C3FBE7EE411 /* Lottie.xcodeproj */;
+			containerPortal = C9A0F4A82EF04100922C50A0 /* Lottie.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = FAE1F7E61E428CBE002E0974;
 			remoteInfo = Lottie_macOS;
 		};
-		1403E0B8237B382300F5061D /* PBXContainerItemProxy */ = {
+		140A5C292383118D0077C8C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E97BAC24AC6C4C3FBE7EE411 /* Lottie.xcodeproj */;
+			containerPortal = C9A0F4A82EF04100922C50A0 /* Lottie.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8C5379761FB471D100C1BC65;
 			remoteInfo = Lottie_tvOS;
 		};
-		1403E0BA237B382300F5061D /* PBXContainerItemProxy */ = {
+		140A5C2B2383118D0077C8C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E97BAC24AC6C4C3FBE7EE411 /* Lottie.xcodeproj */;
+			containerPortal = C9A0F4A82EF04100922C50A0 /* Lottie.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 84FE12EF1E4C1485009B157C;
 			remoteInfo = LottieLibraryIOS;
 		};
-		1403E0BC237B382300F5061D /* PBXContainerItemProxy */ = {
+		140A5C2D2383118D0077C8C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E97BAC24AC6C4C3FBE7EE411 /* Lottie.xcodeproj */;
+			containerPortal = C9A0F4A82EF04100922C50A0 /* Lottie.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6445B0D5207E0D4D00D84F6A;
 			remoteInfo = LottieLibraryMacOS;
 		};
-		1403E0BE237B383B00F5061D /* PBXContainerItemProxy */ = {
+		140A5C732383119A0077C8C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E97BAC24AC6C4C3FBE7EE411 /* Lottie.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 84FE12EE1E4C1485009B157C;
-			remoteInfo = LottieLibraryIOS;
+			containerPortal = 2C9A90A99CD640198E973A2E /* LottieReactNative.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 11FA5C511C4A1296003AC2EE;
+			remoteInfo = LottieReactNative;
 		};
 		146834031AC3E56700842450 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -489,7 +481,6 @@
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
 		01BD4CA30BD9480E9AA9395C /* GothamPro-BlackItalic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.woff"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.woff"; sourceTree = "<group>"; };
 		01CE26E0E1C9452491946219 /* GothamProNarrow-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Medium.otf"; path = "../assets/fonts/GothamProNarrow-Medium/GothamProNarrow-Medium.otf"; sourceTree = "<group>"; };
-		036419D658B64EA9B1A35755 /* libLottie.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottie.a; sourceTree = "<group>"; };
 		10D963BF660741F0BB3A7EB0 /* GothamPro-Medium.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.woff"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.woff"; sourceTree = "<group>"; };
 		117525DA641E49B1818D1BF6 /* GothamPro-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-MediumItalic.otf"; path = "../assets/fonts/GothamPro-MediumItalic/GothamPro-MediumItalic.otf"; sourceTree = "<group>"; };
 		120F202FDFD9495D82500661 /* libTextToSpeech.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libTextToSpeech.a; sourceTree = "<group>"; };
@@ -507,11 +498,11 @@
 		178303023A5041E3B610B275 /* GothamPro-Bold.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Bold.woff"; path = "../assets/fonts/GothamPro-Bold/GothamPro-Bold.woff"; sourceTree = "<group>"; };
 		1EA1BCF8352B49D0BA4BB99A /* GothamPro-Black.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.svg"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.svg"; sourceTree = "<group>"; };
 		20E7E233222B40C7BB8ACB7A /* GothamPro-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Light.ttf"; path = "../assets/fonts/GothamPro-Light/GothamPro-Light.ttf"; sourceTree = "<group>"; };
-		21E55D540BA4FD9F48B652CE /* Pods_kickermasterapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kickermasterapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2651A077632C4099A6FFCAF4 /* GothamPro-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-MediumItalic.ttf"; path = "../assets/fonts/GothamPro-MediumItalic/GothamPro-MediumItalic.ttf"; sourceTree = "<group>"; };
 		26990BC300464B98906BA5F4 /* GothamPro.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GothamPro.woff; path = ../assets/fonts/GothamPro/GothamPro.woff; sourceTree = "<group>"; };
 		280218AF72DE4531BC5A92F7 /* GothamProNarrow-Medium.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Medium.woff"; path = "../assets/fonts/GothamProNarrow-Medium/GothamProNarrow-Medium.woff"; sourceTree = "<group>"; };
 		2BA17A99324D449FAF2C6F14 /* GothamPro-Light.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Light.woff"; path = "../assets/fonts/GothamPro-Light/GothamPro-Light.woff"; sourceTree = "<group>"; };
+		2C9A90A99CD640198E973A2E /* LottieReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = LottieReactNative.xcodeproj; path = "../node_modules/lottie-react-native/src/ios/LottieReactNative.xcodeproj"; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		30025EDC2164A82C006558BF /* goal-human3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human3.mp3"; path = "../assets/voices/goal-human3.mp3"; sourceTree = "<group>"; };
 		30025EDD2164A82C006558BF /* own-human4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human4.mp3"; path = "../assets/voices/own-human4.mp3"; sourceTree = "<group>"; };
@@ -559,11 +550,11 @@
 		30025F072164A831006558BF /* random1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = random1.mp3; path = ../assets/voices/random1.mp3; sourceTree = "<group>"; };
 		34A07579DFC343FB92247575 /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.ttf"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.ttf"; sourceTree = "<group>"; };
 		3A81D68763324949B27E2E69 /* GothamProNarrow-Bold.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Bold.woff"; path = "../assets/fonts/GothamProNarrow-Bold/GothamProNarrow-Bold.woff"; sourceTree = "<group>"; };
-		3C4E5B604E418FC1F8AB0ECC /* Pods-kickermasterapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kickermasterapp.debug.xcconfig"; path = "Target Support Files/Pods-kickermasterapp/Pods-kickermasterapp.debug.xcconfig"; sourceTree = "<group>"; };
 		450624B14F154DDFB477CDD6 /* GothamPro-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BoldItalic.ttf"; path = "../assets/fonts/GothamPro-BoldItalic/GothamPro-BoldItalic.ttf"; sourceTree = "<group>"; };
 		4757C89F26594A8BBCD222E9 /* GothamPro-LightItalic.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-LightItalic.svg"; path = "../assets/fonts/GothamPro-LightItalic/GothamPro-LightItalic.svg"; sourceTree = "<group>"; };
 		47AA5392D2834EECA73A73FE /* GothamPro-Black.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.woff"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.woff"; sourceTree = "<group>"; };
 		4EC4C2A17B1947D4807AB208 /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
+		54E12CF587194825B8B41090 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = System/Library/Frameworks/Lottie.framework; sourceTree = SDKROOT; };
 		572C0C81A15346C9AFD0A1F4 /* GothamPro-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.ttf"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5F566C5394E44F649C7A5F3C /* GothamPro-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Bold.ttf"; path = "../assets/fonts/GothamPro-Bold/GothamPro-Bold.ttf"; sourceTree = "<group>"; };
@@ -578,32 +569,30 @@
 		800A906A53A24AB892187B57 /* GothamProNarrow-Medium.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Medium.svg"; path = "../assets/fonts/GothamProNarrow-Medium/GothamProNarrow-Medium.svg"; sourceTree = "<group>"; };
 		809E88CE57734423935F8065 /* GothamPro-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BoldItalic.otf"; path = "../assets/fonts/GothamPro-BoldItalic/GothamPro-BoldItalic.otf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		842A85515C5F4CEF8429E6AF /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = System/Library/Frameworks/Lottie.framework; sourceTree = SDKROOT; };
 		85CC9327B7E848C09449FBF9 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
 		86C15F2CB2AF4BAAB0DDA19C /* GothamPro-BlackItalic.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.svg"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.svg"; sourceTree = "<group>"; };
 		896FF9A81B0940E3BC502758 /* GothamPro-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-LightItalic.otf"; path = "../assets/fonts/GothamPro-LightItalic/GothamPro-LightItalic.otf"; sourceTree = "<group>"; };
 		8DCF368ECB3B4BC39E68339E /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8E7CC97F217D4250B0C6B61F /* GothamPro-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-LightItalic.ttf"; path = "../assets/fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf"; sourceTree = "<group>"; };
 		916DBABBF37340B4B48060EB /* GothamPro-MediumItalic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-MediumItalic.woff"; path = "../assets/fonts/GothamPro-MediumItalic/GothamPro-MediumItalic.woff"; sourceTree = "<group>"; };
+		92440FEDDB4D4AB7BC787B4B /* libLottie.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottie.a; sourceTree = "<group>"; };
 		95D71D2AECF0490A8AF54AA7 /* GothamPro-Italic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Italic.woff"; path = "../assets/fonts/GothamPro-Italic/GothamPro-Italic.woff"; sourceTree = "<group>"; };
 		975BBCC76C3041BD913A0242 /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
 		A196CB93D25C406CACBA6B5B /* GothamPro-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.otf"; path = "../assets/fonts/GothamPro-Medium/GothamPro-Medium.otf"; sourceTree = "<group>"; };
 		A57706B0ED784EDB89F17402 /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 		A75A6D916F844906A5BA77D1 /* GothamPro-MediumItalic.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-MediumItalic.svg"; path = "../assets/fonts/GothamPro-MediumItalic/GothamPro-MediumItalic.svg"; sourceTree = "<group>"; };
-		A9767DEA5916DE361EF84459 /* Pods-kickermasterapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kickermasterapp.release.xcconfig"; path = "Target Support Files/Pods-kickermasterapp/Pods-kickermasterapp.release.xcconfig"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		B02513B1415843EB98F44E1F /* TextToSpeech.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = TextToSpeech.xcodeproj; path = "../node_modules/react-native-tts/ios/TextToSpeech.xcodeproj"; sourceTree = "<group>"; };
 		B265C965EB9046D2B4FB0F07 /* GothamPro-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Italic.ttf"; path = "../assets/fonts/GothamPro-Italic/GothamPro-Italic.ttf"; sourceTree = "<group>"; };
 		B9DDB68369594A648684A136 /* GothamProNarrow-Bold.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamProNarrow-Bold.svg"; path = "../assets/fonts/GothamProNarrow-Bold/GothamProNarrow-Bold.svg"; sourceTree = "<group>"; };
 		C33A0CBD2FE0463DB45209FB /* GothamPro-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Italic.otf"; path = "../assets/fonts/GothamPro-Italic/GothamPro-Italic.otf"; sourceTree = "<group>"; };
 		C5434C06BA0240B884FB1630 /* GothamPro-BoldItalic.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BoldItalic.svg"; path = "../assets/fonts/GothamPro-BoldItalic/GothamPro-BoldItalic.svg"; sourceTree = "<group>"; };
+		C9A0F4A82EF04100922C50A0 /* Lottie.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = Lottie.xcodeproj; path = "../node_modules/lottie-ios/Lottie.xcodeproj"; sourceTree = "<group>"; };
 		CD74F6329E014E128085FE04 /* GothamPro-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.ttf"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.ttf"; sourceTree = "<group>"; };
 		CEBB8E6D059E441F99F969A3 /* GothamPro-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Light.otf"; path = "../assets/fonts/GothamPro-Light/GothamPro-Light.otf"; sourceTree = "<group>"; };
 		CFC7CD6223A84B998EF1B377 /* GothamPro-BoldItalic.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BoldItalic.woff"; path = "../assets/fonts/GothamPro-BoldItalic/GothamPro-BoldItalic.woff"; sourceTree = "<group>"; };
+		D0B78122766F45299AD06C95 /* libLottieReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottieReactNative.a; sourceTree = "<group>"; };
 		D96DB48CC45C4A4E98B88933 /* GothamPro-Italic.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Italic.svg"; path = "../assets/fonts/GothamPro-Italic/GothamPro-Italic.svg"; sourceTree = "<group>"; };
-		DFB8839794874343A952D0C0 /* LottieReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = LottieReactNative.xcodeproj; path = "../node_modules/lottie-react-native/src/ios/LottieReactNative.xcodeproj"; sourceTree = "<group>"; };
-		E97BAC24AC6C4C3FBE7EE411 /* Lottie.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = Lottie.xcodeproj; path = "../node_modules/lottie-ios/Lottie.xcodeproj"; sourceTree = "<group>"; };
-		F04B723387C54C44AB9711DC /* libLottieReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottieReactNative.a; sourceTree = "<group>"; };
 		F0C8BB7B83D14B838523D60C /* GothamPro.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GothamPro.svg; path = ../assets/fonts/GothamPro/GothamPro.svg; sourceTree = "<group>"; };
 		F17C3E69C33346A29CB648CD /* GothamPro-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.otf"; path = "../assets/fonts/GothamPro-Black/GothamPro-Black.otf"; sourceTree = "<group>"; };
 		F728D7501DEB4F7992CDC2B2 /* GothamPro-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-BlackItalic.otf"; path = "../assets/fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.otf"; sourceTree = "<group>"; };
@@ -635,10 +624,9 @@
 				FA70D12927A84531A2C88B65 /* libRNSound.a in Frameworks */,
 				57402258D6BC472082006D01 /* libRNSVG.a in Frameworks */,
 				47E949B8C7CF41989FC2D5AD /* libTextToSpeech.a in Frameworks */,
-				D88CF5D3354043E68182F5AD /* Lottie.framework in Frameworks */,
-				CA34129C03E94598A7539A05 /* libLottie.a in Frameworks */,
-				AF6019B7F1F84D6D98FD8627 /* libLottieReactNative.a in Frameworks */,
-				81940BB90ACF5444E21B50E3 /* Pods_kickermasterapp.framework in Frameworks */,
+				5849718D54AB44CEBB8CEA8E /* Lottie.framework in Frameworks */,
+				7DCA4CC805474293BD4B68DD /* libLottie.a in Frameworks */,
+				D49BC6BB58F7406788803F16 /* libLottieReactNative.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,22 +753,22 @@
 			name = kickermasterapp;
 			sourceTree = "<group>";
 		};
-		1403E0A8237B382300F5061D /* Products */ = {
+		140A5C1E2383118D0077C8C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1403E0AC237B382300F5061D /* libLottieReactNative.a */,
+				140A5C262383118D0077C8C3 /* Lottie.framework */,
+				140A5C282383118D0077C8C3 /* Lottie.framework */,
+				140A5C2A2383118D0077C8C3 /* Lottie.framework */,
+				140A5C2C2383118D0077C8C3 /* libLottie.a */,
+				140A5C2E2383118D0077C8C3 /* libLottie.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1403E0AD237B382300F5061D /* Products */ = {
+		140A5C702383119A0077C8C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1403E0B5237B382300F5061D /* Lottie.framework */,
-				1403E0B7237B382300F5061D /* Lottie.framework */,
-				1403E0B9237B382300F5061D /* Lottie.framework */,
-				1403E0BB237B382300F5061D /* libLottie.a */,
-				1403E0BD237B382300F5061D /* libLottie.a */,
+				140A5C742383119A0077C8C3 /* libLottieReactNative.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -813,18 +801,8 @@
 			children = (
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				8DCF368ECB3B4BC39E68339E /* libz.tbd */,
-				21E55D540BA4FD9F48B652CE /* Pods_kickermasterapp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2F318DF8E4F78E9FCDF56F4B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3C4E5B604E418FC1F8AB0ECC /* Pods-kickermasterapp.debug.xcconfig */,
-				A9767DEA5916DE361EF84459 /* Pods-kickermasterapp.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		3026ACF921673FE700A62F7F /* Products */ = {
@@ -851,9 +829,9 @@
 				975BBCC76C3041BD913A0242 /* libRNSound.a */,
 				85CC9327B7E848C09449FBF9 /* libRNSVG.a */,
 				120F202FDFD9495D82500661 /* libTextToSpeech.a */,
-				842A85515C5F4CEF8429E6AF /* Lottie.framework */,
-				036419D658B64EA9B1A35755 /* libLottie.a */,
-				F04B723387C54C44AB9711DC /* libLottieReactNative.a */,
+				54E12CF587194825B8B41090 /* Lottie.framework */,
+				92440FEDDB4D4AB7BC787B4B /* libLottie.a */,
+				D0B78122766F45299AD06C95 /* libLottieReactNative.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -967,8 +945,8 @@
 				1715B2422A5C4EE7B7B38002 /* RNSound.xcodeproj */,
 				FE23B25A5C41436E9EA50F8C /* RNSVG.xcodeproj */,
 				B02513B1415843EB98F44E1F /* TextToSpeech.xcodeproj */,
-				E97BAC24AC6C4C3FBE7EE411 /* Lottie.xcodeproj */,
-				DFB8839794874343A952D0C0 /* LottieReactNative.xcodeproj */,
+				C9A0F4A82EF04100922C50A0 /* Lottie.xcodeproj */,
+				2C9A90A99CD640198E973A2E /* LottieReactNative.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -991,7 +969,6 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				30D9EAC02079F91F00DC328B /* Recovered References */,
 				5942CF18301541EDB1816588 /* Resources */,
-				2F318DF8E4F78E9FCDF56F4B /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -1022,7 +999,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "kickermasterapp" */;
 			buildPhases = (
-				8C27F6D93F8B71ECA5D7D2CB /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
@@ -1031,7 +1007,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1403E0BF237B383B00F5061D /* PBXTargetDependency */,
 			);
 			name = kickermasterapp;
 			productName = "Hello World";
@@ -1070,12 +1045,12 @@
 					ProjectRef = 4EC4C2A17B1947D4807AB208 /* CodePush.xcodeproj */;
 				},
 				{
-					ProductGroup = 1403E0AD237B382300F5061D /* Products */;
-					ProjectRef = E97BAC24AC6C4C3FBE7EE411 /* Lottie.xcodeproj */;
+					ProductGroup = 140A5C1E2383118D0077C8C3 /* Products */;
+					ProjectRef = C9A0F4A82EF04100922C50A0 /* Lottie.xcodeproj */;
 				},
 				{
-					ProductGroup = 1403E0A8237B382300F5061D /* Products */;
-					ProjectRef = DFB8839794874343A952D0C0 /* LottieReactNative.xcodeproj */;
+					ProductGroup = 140A5C702383119A0077C8C3 /* Products */;
+					ProjectRef = 2C9A90A99CD640198E973A2E /* LottieReactNative.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -1195,46 +1170,46 @@
 			remoteRef = 139FDEF31B06529B00C62182 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1403E0AC237B382300F5061D /* libLottieReactNative.a */ = {
+		140A5C262383118D0077C8C3 /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = 140A5C252383118D0077C8C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		140A5C282383118D0077C8C3 /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = 140A5C272383118D0077C8C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		140A5C2A2383118D0077C8C3 /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = 140A5C292383118D0077C8C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		140A5C2C2383118D0077C8C3 /* libLottie.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLottie.a;
+			remoteRef = 140A5C2B2383118D0077C8C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		140A5C2E2383118D0077C8C3 /* libLottie.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLottie.a;
+			remoteRef = 140A5C2D2383118D0077C8C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		140A5C742383119A0077C8C3 /* libLottieReactNative.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libLottieReactNative.a;
-			remoteRef = 1403E0AB237B382300F5061D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1403E0B5237B382300F5061D /* Lottie.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Lottie.framework;
-			remoteRef = 1403E0B4237B382300F5061D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1403E0B7237B382300F5061D /* Lottie.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Lottie.framework;
-			remoteRef = 1403E0B6237B382300F5061D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1403E0B9237B382300F5061D /* Lottie.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Lottie.framework;
-			remoteRef = 1403E0B8237B382300F5061D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1403E0BB237B382300F5061D /* libLottie.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libLottie.a;
-			remoteRef = 1403E0BA237B382300F5061D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1403E0BD237B382300F5061D /* libLottie.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libLottie.a;
-			remoteRef = 1403E0BC237B382300F5061D /* PBXContainerItemProxy */;
+			remoteRef = 140A5C732383119A0077C8C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		146834041AC3E56700842450 /* libReact.a */ = {
@@ -1610,24 +1585,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		8C27F6D93F8B71ECA5D7D2CB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-kickermasterapp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1641,14 +1598,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1403E0BF237B383B00F5061D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LottieLibraryIOS;
-			targetProxy = 1403E0BE237B383B00F5061D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
@@ -1665,7 +1614,6 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C4E5B604E418FC1F8AB0ECC /* Pods-kickermasterapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1704,7 +1652,6 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9767DEA5916DE361EF84459 /* Pods-kickermasterapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
