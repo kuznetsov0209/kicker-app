@@ -1,0 +1,674 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		13DDF7DDB0671E1C8054F3A5 /* libPods-KickerApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9BA391577B74D0BDE15198 /* libPods-KickerApp.a */; };
+		30273A2A238341CA0085DEF0 /* KickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30273A29238341CA0085DEF0 /* KickerApp.swift */; };
+		30273A7F238465960085DEF0 /* goal-human6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A53238465930085DEF0 /* goal-human6.mp3 */; };
+		30273A80238465960085DEF0 /* goal-robot5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A54238465930085DEF0 /* goal-robot5.mp3 */; };
+		30273A81238465960085DEF0 /* own-robot1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A55238465930085DEF0 /* own-robot1.mp3 */; };
+		30273A82238465960085DEF0 /* goal-human1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A56238465930085DEF0 /* goal-human1.mp3 */; };
+		30273A83238465960085DEF0 /* goal-robot7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A57238465930085DEF0 /* goal-robot7.mp3 */; };
+		30273A84238465960085DEF0 /* own-human5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A58238465930085DEF0 /* own-human5.mp3 */; };
+		30273A85238465960085DEF0 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A59238465930085DEF0 /* start.mp3 */; };
+		30273A86238465960085DEF0 /* goal-robot4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A5A238465930085DEF0 /* goal-robot4.mp3 */; };
+		30273A87238465960085DEF0 /* goal-human13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A5B238465940085DEF0 /* goal-human13.mp3 */; };
+		30273A88238465960085DEF0 /* goal-robot1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A5C238465940085DEF0 /* goal-robot1.mp3 */; };
+		30273A89238465960085DEF0 /* goal-human3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A5D238465940085DEF0 /* goal-human3.mp3 */; };
+		30273A8A238465960085DEF0 /* goal-human10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A5E238465940085DEF0 /* goal-human10.mp3 */; };
+		30273A8B238465960085DEF0 /* own-human2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A5F238465940085DEF0 /* own-human2.mp3 */; };
+		30273A8C238465960085DEF0 /* own-human3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A60238465940085DEF0 /* own-human3.mp3 */; };
+		30273A8D238465960085DEF0 /* finish-human-lose2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A61238465940085DEF0 /* finish-human-lose2.mp3 */; };
+		30273A8E238465960085DEF0 /* goal-human5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A62238465940085DEF0 /* goal-human5.mp3 */; };
+		30273A8F238465960085DEF0 /* finish-robot-lose3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A63238465940085DEF0 /* finish-robot-lose3.mp3 */; };
+		30273A90238465960085DEF0 /* finish-robot-lose1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A64238465940085DEF0 /* finish-robot-lose1.mp3 */; };
+		30273A91238465960085DEF0 /* finish-robot-lose2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A65238465940085DEF0 /* finish-robot-lose2.mp3 */; };
+		30273A92238465960085DEF0 /* own-robot4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A66238465940085DEF0 /* own-robot4.mp3 */; };
+		30273A93238465960085DEF0 /* goal-human7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A67238465940085DEF0 /* goal-human7.mp3 */; };
+		30273A94238465960085DEF0 /* goal-robot2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A68238465940085DEF0 /* goal-robot2.mp3 */; };
+		30273A95238465960085DEF0 /* random2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A69238465940085DEF0 /* random2.mp3 */; };
+		30273A96238465960085DEF0 /* random1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A6A238465940085DEF0 /* random1.mp3 */; };
+		30273A97238465960085DEF0 /* goal-human4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A6B238465940085DEF0 /* goal-human4.mp3 */; };
+		30273A98238465960085DEF0 /* own-robot5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A6C238465940085DEF0 /* own-robot5.mp3 */; };
+		30273A99238465960085DEF0 /* goal-human2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A6D238465940085DEF0 /* goal-human2.mp3 */; };
+		30273A9A238465960085DEF0 /* own-human1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A6E238465950085DEF0 /* own-human1.mp3 */; };
+		30273A9B238465960085DEF0 /* finish-human-lose3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A6F238465950085DEF0 /* finish-human-lose3.mp3 */; };
+		30273A9C238465960085DEF0 /* goal-robot8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A70238465950085DEF0 /* goal-robot8.mp3 */; };
+		30273A9D238465960085DEF0 /* finish-human-lose1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A71238465950085DEF0 /* finish-human-lose1.mp3 */; };
+		30273A9E238465960085DEF0 /* goal-robot9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A72238465950085DEF0 /* goal-robot9.mp3 */; };
+		30273A9F238465960085DEF0 /* goal-human9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A73238465950085DEF0 /* goal-human9.mp3 */; };
+		30273AA0238465960085DEF0 /* goal-human8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A74238465950085DEF0 /* goal-human8.mp3 */; };
+		30273AA1238465960085DEF0 /* goal-robot3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A75238465950085DEF0 /* goal-robot3.mp3 */; };
+		30273AA2238465960085DEF0 /* finish-robot-lose4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A76238465950085DEF0 /* finish-robot-lose4.mp3 */; };
+		30273AA3238465960085DEF0 /* goal-human12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A77238465950085DEF0 /* goal-human12.mp3 */; };
+		30273AA4238465960085DEF0 /* own-robot6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A78238465950085DEF0 /* own-robot6.mp3 */; };
+		30273AA5238465960085DEF0 /* own-human4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A79238465950085DEF0 /* own-human4.mp3 */; };
+		30273AA6238465960085DEF0 /* own-robot3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A7A238465950085DEF0 /* own-robot3.mp3 */; };
+		30273AA7238465960085DEF0 /* goal-human11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A7B238465950085DEF0 /* goal-human11.mp3 */; };
+		30273AA8238465960085DEF0 /* own-human6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A7C238465950085DEF0 /* own-human6.mp3 */; };
+		30273AA9238465960085DEF0 /* own-robot2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A7D238465960085DEF0 /* own-robot2.mp3 */; };
+		30273AAA238465960085DEF0 /* goal-robot6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A7E238465960085DEF0 /* goal-robot6.mp3 */; };
+		6CDC234995414CF780ECCDA6 /* GothamPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D13705E378264E8D993968B6 /* GothamPro-Black.ttf */; };
+		BDBE9BB89C624733B10B43B4 /* GothamPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C7CF89A5A445DB5137B9A /* GothamPro-Medium.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* KickerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KickerAppTests.m; sourceTree = "<group>"; };
+		07CED2C2A861B25F39777BF7 /* Pods-KickerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-KickerAppTests/Pods-KickerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		08F07D60DE4DD8A9A165E137 /* Pods-KickerApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-KickerApp-tvOSTests/Pods-KickerApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		0DCD4AFCC816349ABE89B671 /* Pods-KickerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerApp.release.xcconfig"; path = "Target Support Files/Pods-KickerApp/Pods-KickerApp.release.xcconfig"; sourceTree = "<group>"; };
+		0E7B12B8E2BE41F245DC5482 /* Pods-KickerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerAppTests.release.xcconfig"; path = "Target Support Files/Pods-KickerAppTests/Pods-KickerAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		124F57DF45B610BE47594F81 /* libPods-KickerApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KickerApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* KickerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KickerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = KickerApp/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = KickerApp/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KickerApp/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KickerApp/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KickerApp/main.m; sourceTree = "<group>"; };
+		1E4C7CF89A5A445DB5137B9A /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Medium.ttf"; path = "../assets/fonts/GothamPro-Medium.ttf"; sourceTree = "<group>"; };
+		30273A2123833B480085DEF0 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		30273A282383413F0085DEF0 /* KickerApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KickerApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		30273A29238341CA0085DEF0 /* KickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickerApp.swift; sourceTree = "<group>"; };
+		30273A53238465930085DEF0 /* goal-human6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human6.mp3"; path = "../assets/voices/goal-human6.mp3"; sourceTree = "<group>"; };
+		30273A54238465930085DEF0 /* goal-robot5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot5.mp3"; path = "../assets/voices/goal-robot5.mp3"; sourceTree = "<group>"; };
+		30273A55238465930085DEF0 /* own-robot1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot1.mp3"; path = "../assets/voices/own-robot1.mp3"; sourceTree = "<group>"; };
+		30273A56238465930085DEF0 /* goal-human1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human1.mp3"; path = "../assets/voices/goal-human1.mp3"; sourceTree = "<group>"; };
+		30273A57238465930085DEF0 /* goal-robot7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot7.mp3"; path = "../assets/voices/goal-robot7.mp3"; sourceTree = "<group>"; };
+		30273A58238465930085DEF0 /* own-human5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human5.mp3"; path = "../assets/voices/own-human5.mp3"; sourceTree = "<group>"; };
+		30273A59238465930085DEF0 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = start.mp3; path = ../assets/voices/start.mp3; sourceTree = "<group>"; };
+		30273A5A238465930085DEF0 /* goal-robot4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot4.mp3"; path = "../assets/voices/goal-robot4.mp3"; sourceTree = "<group>"; };
+		30273A5B238465940085DEF0 /* goal-human13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human13.mp3"; path = "../assets/voices/goal-human13.mp3"; sourceTree = "<group>"; };
+		30273A5C238465940085DEF0 /* goal-robot1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot1.mp3"; path = "../assets/voices/goal-robot1.mp3"; sourceTree = "<group>"; };
+		30273A5D238465940085DEF0 /* goal-human3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human3.mp3"; path = "../assets/voices/goal-human3.mp3"; sourceTree = "<group>"; };
+		30273A5E238465940085DEF0 /* goal-human10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human10.mp3"; path = "../assets/voices/goal-human10.mp3"; sourceTree = "<group>"; };
+		30273A5F238465940085DEF0 /* own-human2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human2.mp3"; path = "../assets/voices/own-human2.mp3"; sourceTree = "<group>"; };
+		30273A60238465940085DEF0 /* own-human3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human3.mp3"; path = "../assets/voices/own-human3.mp3"; sourceTree = "<group>"; };
+		30273A61238465940085DEF0 /* finish-human-lose2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-human-lose2.mp3"; path = "../assets/voices/finish-human-lose2.mp3"; sourceTree = "<group>"; };
+		30273A62238465940085DEF0 /* goal-human5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human5.mp3"; path = "../assets/voices/goal-human5.mp3"; sourceTree = "<group>"; };
+		30273A63238465940085DEF0 /* finish-robot-lose3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-robot-lose3.mp3"; path = "../assets/voices/finish-robot-lose3.mp3"; sourceTree = "<group>"; };
+		30273A64238465940085DEF0 /* finish-robot-lose1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-robot-lose1.mp3"; path = "../assets/voices/finish-robot-lose1.mp3"; sourceTree = "<group>"; };
+		30273A65238465940085DEF0 /* finish-robot-lose2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-robot-lose2.mp3"; path = "../assets/voices/finish-robot-lose2.mp3"; sourceTree = "<group>"; };
+		30273A66238465940085DEF0 /* own-robot4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot4.mp3"; path = "../assets/voices/own-robot4.mp3"; sourceTree = "<group>"; };
+		30273A67238465940085DEF0 /* goal-human7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human7.mp3"; path = "../assets/voices/goal-human7.mp3"; sourceTree = "<group>"; };
+		30273A68238465940085DEF0 /* goal-robot2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot2.mp3"; path = "../assets/voices/goal-robot2.mp3"; sourceTree = "<group>"; };
+		30273A69238465940085DEF0 /* random2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = random2.mp3; path = ../assets/voices/random2.mp3; sourceTree = "<group>"; };
+		30273A6A238465940085DEF0 /* random1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = random1.mp3; path = ../assets/voices/random1.mp3; sourceTree = "<group>"; };
+		30273A6B238465940085DEF0 /* goal-human4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human4.mp3"; path = "../assets/voices/goal-human4.mp3"; sourceTree = "<group>"; };
+		30273A6C238465940085DEF0 /* own-robot5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot5.mp3"; path = "../assets/voices/own-robot5.mp3"; sourceTree = "<group>"; };
+		30273A6D238465940085DEF0 /* goal-human2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human2.mp3"; path = "../assets/voices/goal-human2.mp3"; sourceTree = "<group>"; };
+		30273A6E238465950085DEF0 /* own-human1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human1.mp3"; path = "../assets/voices/own-human1.mp3"; sourceTree = "<group>"; };
+		30273A6F238465950085DEF0 /* finish-human-lose3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-human-lose3.mp3"; path = "../assets/voices/finish-human-lose3.mp3"; sourceTree = "<group>"; };
+		30273A70238465950085DEF0 /* goal-robot8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot8.mp3"; path = "../assets/voices/goal-robot8.mp3"; sourceTree = "<group>"; };
+		30273A71238465950085DEF0 /* finish-human-lose1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-human-lose1.mp3"; path = "../assets/voices/finish-human-lose1.mp3"; sourceTree = "<group>"; };
+		30273A72238465950085DEF0 /* goal-robot9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot9.mp3"; path = "../assets/voices/goal-robot9.mp3"; sourceTree = "<group>"; };
+		30273A73238465950085DEF0 /* goal-human9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human9.mp3"; path = "../assets/voices/goal-human9.mp3"; sourceTree = "<group>"; };
+		30273A74238465950085DEF0 /* goal-human8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human8.mp3"; path = "../assets/voices/goal-human8.mp3"; sourceTree = "<group>"; };
+		30273A75238465950085DEF0 /* goal-robot3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot3.mp3"; path = "../assets/voices/goal-robot3.mp3"; sourceTree = "<group>"; };
+		30273A76238465950085DEF0 /* finish-robot-lose4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "finish-robot-lose4.mp3"; path = "../assets/voices/finish-robot-lose4.mp3"; sourceTree = "<group>"; };
+		30273A77238465950085DEF0 /* goal-human12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human12.mp3"; path = "../assets/voices/goal-human12.mp3"; sourceTree = "<group>"; };
+		30273A78238465950085DEF0 /* own-robot6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot6.mp3"; path = "../assets/voices/own-robot6.mp3"; sourceTree = "<group>"; };
+		30273A79238465950085DEF0 /* own-human4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human4.mp3"; path = "../assets/voices/own-human4.mp3"; sourceTree = "<group>"; };
+		30273A7A238465950085DEF0 /* own-robot3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot3.mp3"; path = "../assets/voices/own-robot3.mp3"; sourceTree = "<group>"; };
+		30273A7B238465950085DEF0 /* goal-human11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-human11.mp3"; path = "../assets/voices/goal-human11.mp3"; sourceTree = "<group>"; };
+		30273A7C238465950085DEF0 /* own-human6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-human6.mp3"; path = "../assets/voices/own-human6.mp3"; sourceTree = "<group>"; };
+		30273A7D238465960085DEF0 /* own-robot2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "own-robot2.mp3"; path = "../assets/voices/own-robot2.mp3"; sourceTree = "<group>"; };
+		30273A7E238465960085DEF0 /* goal-robot6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot6.mp3"; path = "../assets/voices/goal-robot6.mp3"; sourceTree = "<group>"; };
+		43AF5063A70DCC3215EF8E5C /* Pods-KickerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerApp.debug.xcconfig"; path = "Target Support Files/Pods-KickerApp/Pods-KickerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB19E034EBA8C09AA2D831 /* Pods-KickerApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-KickerApp-tvOSTests/Pods-KickerApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB9BA391577B74D0BDE15198 /* libPods-KickerApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KickerApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DACB195FD0DC7A961A2BBC /* Pods-KickerApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-KickerApp-tvOS/Pods-KickerApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		D13705E378264E8D993968B6 /* GothamPro-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamPro-Black.ttf"; path = "../assets/fonts/GothamPro-Black.ttf"; sourceTree = "<group>"; };
+		DAB6D601DBA87BBB0D5F993C /* libPods-KickerAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KickerAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA22512EF704510D1E743D9 /* Pods-KickerApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-KickerApp-tvOS/Pods-KickerApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E5C17ABF1C5C4AA766DF27BA /* libPods-KickerApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KickerApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13DDF7DDB0671E1C8054F3A5 /* libPods-KickerApp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* KickerAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* KickerAppTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = KickerAppTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* KickerApp */ = {
+			isa = PBXGroup;
+			children = (
+				30273A71238465950085DEF0 /* finish-human-lose1.mp3 */,
+				30273A61238465940085DEF0 /* finish-human-lose2.mp3 */,
+				30273A6F238465950085DEF0 /* finish-human-lose3.mp3 */,
+				30273A64238465940085DEF0 /* finish-robot-lose1.mp3 */,
+				30273A65238465940085DEF0 /* finish-robot-lose2.mp3 */,
+				30273A63238465940085DEF0 /* finish-robot-lose3.mp3 */,
+				30273A76238465950085DEF0 /* finish-robot-lose4.mp3 */,
+				30273A56238465930085DEF0 /* goal-human1.mp3 */,
+				30273A6D238465940085DEF0 /* goal-human2.mp3 */,
+				30273A5D238465940085DEF0 /* goal-human3.mp3 */,
+				30273A6B238465940085DEF0 /* goal-human4.mp3 */,
+				30273A62238465940085DEF0 /* goal-human5.mp3 */,
+				30273A53238465930085DEF0 /* goal-human6.mp3 */,
+				30273A67238465940085DEF0 /* goal-human7.mp3 */,
+				30273A74238465950085DEF0 /* goal-human8.mp3 */,
+				30273A73238465950085DEF0 /* goal-human9.mp3 */,
+				30273A5E238465940085DEF0 /* goal-human10.mp3 */,
+				30273A7B238465950085DEF0 /* goal-human11.mp3 */,
+				30273A77238465950085DEF0 /* goal-human12.mp3 */,
+				30273A5B238465940085DEF0 /* goal-human13.mp3 */,
+				30273A5C238465940085DEF0 /* goal-robot1.mp3 */,
+				30273A68238465940085DEF0 /* goal-robot2.mp3 */,
+				30273A75238465950085DEF0 /* goal-robot3.mp3 */,
+				30273A5A238465930085DEF0 /* goal-robot4.mp3 */,
+				30273A54238465930085DEF0 /* goal-robot5.mp3 */,
+				30273A7E238465960085DEF0 /* goal-robot6.mp3 */,
+				30273A57238465930085DEF0 /* goal-robot7.mp3 */,
+				30273A70238465950085DEF0 /* goal-robot8.mp3 */,
+				30273A72238465950085DEF0 /* goal-robot9.mp3 */,
+				30273A6E238465950085DEF0 /* own-human1.mp3 */,
+				30273A5F238465940085DEF0 /* own-human2.mp3 */,
+				30273A60238465940085DEF0 /* own-human3.mp3 */,
+				30273A79238465950085DEF0 /* own-human4.mp3 */,
+				30273A58238465930085DEF0 /* own-human5.mp3 */,
+				30273A7C238465950085DEF0 /* own-human6.mp3 */,
+				30273A55238465930085DEF0 /* own-robot1.mp3 */,
+				30273A7D238465960085DEF0 /* own-robot2.mp3 */,
+				30273A7A238465950085DEF0 /* own-robot3.mp3 */,
+				30273A66238465940085DEF0 /* own-robot4.mp3 */,
+				30273A6C238465940085DEF0 /* own-robot5.mp3 */,
+				30273A78238465950085DEF0 /* own-robot6.mp3 */,
+				30273A6A238465940085DEF0 /* random1.mp3 */,
+				30273A69238465940085DEF0 /* random2.mp3 */,
+				30273A59238465930085DEF0 /* start.mp3 */,
+				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = KickerApp;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
+				30273A2123833B480085DEF0 /* JavaScriptCore.framework */,
+				BB9BA391577B74D0BDE15198 /* libPods-KickerApp.a */,
+				E5C17ABF1C5C4AA766DF27BA /* libPods-KickerApp-tvOS.a */,
+				124F57DF45B610BE47594F81 /* libPods-KickerApp-tvOSTests.a */,
+				DAB6D601DBA87BBB0D5F993C /* libPods-KickerAppTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				30273A29238341CA0085DEF0 /* KickerApp.swift */,
+				30273A282383413F0085DEF0 /* KickerApp-Bridging-Header.h */,
+				13B07FAE1A68108700A75B9A /* KickerApp */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* KickerAppTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				DFE75BAAE9DFD790805D740D /* Pods */,
+				8AFB218593FE4225BBC1E60E /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* KickerApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8AFB218593FE4225BBC1E60E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D13705E378264E8D993968B6 /* GothamPro-Black.ttf */,
+				1E4C7CF89A5A445DB5137B9A /* GothamPro-Medium.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DFE75BAAE9DFD790805D740D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43AF5063A70DCC3215EF8E5C /* Pods-KickerApp.debug.xcconfig */,
+				0DCD4AFCC816349ABE89B671 /* Pods-KickerApp.release.xcconfig */,
+				DCA22512EF704510D1E743D9 /* Pods-KickerApp-tvOS.debug.xcconfig */,
+				C3DACB195FD0DC7A961A2BBC /* Pods-KickerApp-tvOS.release.xcconfig */,
+				81AB19E034EBA8C09AA2D831 /* Pods-KickerApp-tvOSTests.debug.xcconfig */,
+				08F07D60DE4DD8A9A165E137 /* Pods-KickerApp-tvOSTests.release.xcconfig */,
+				07CED2C2A861B25F39777BF7 /* Pods-KickerAppTests.debug.xcconfig */,
+				0E7B12B8E2BE41F245DC5482 /* Pods-KickerAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13B07F861A680F5B00A75B9A /* KickerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "KickerApp" */;
+			buildPhases = (
+				5081A94069D6DAB0C25C5DDF /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KickerApp;
+			productName = KickerApp;
+			productReference = 13B07F961A680F5B00A75B9A /* KickerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 940;
+				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "KickerApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* KickerApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30273A8F238465960085DEF0 /* finish-robot-lose3.mp3 in Resources */,
+				30273A91238465960085DEF0 /* finish-robot-lose2.mp3 in Resources */,
+				30273AA6238465960085DEF0 /* own-robot3.mp3 in Resources */,
+				30273A97238465960085DEF0 /* goal-human4.mp3 in Resources */,
+				30273A9D238465960085DEF0 /* finish-human-lose1.mp3 in Resources */,
+				30273AA7238465960085DEF0 /* goal-human11.mp3 in Resources */,
+				30273A93238465960085DEF0 /* goal-human7.mp3 in Resources */,
+				30273A94238465960085DEF0 /* goal-robot2.mp3 in Resources */,
+				30273AA9238465960085DEF0 /* own-robot2.mp3 in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				30273A84238465960085DEF0 /* own-human5.mp3 in Resources */,
+				30273AA0238465960085DEF0 /* goal-human8.mp3 in Resources */,
+				30273A81238465960085DEF0 /* own-robot1.mp3 in Resources */,
+				30273A9B238465960085DEF0 /* finish-human-lose3.mp3 in Resources */,
+				30273A83238465960085DEF0 /* goal-robot7.mp3 in Resources */,
+				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				30273A80238465960085DEF0 /* goal-robot5.mp3 in Resources */,
+				30273A89238465960085DEF0 /* goal-human3.mp3 in Resources */,
+				30273A8C238465960085DEF0 /* own-human3.mp3 in Resources */,
+				6CDC234995414CF780ECCDA6 /* GothamPro-Black.ttf in Resources */,
+				30273AA1238465960085DEF0 /* goal-robot3.mp3 in Resources */,
+				30273A98238465960085DEF0 /* own-robot5.mp3 in Resources */,
+				30273A8A238465960085DEF0 /* goal-human10.mp3 in Resources */,
+				30273A87238465960085DEF0 /* goal-human13.mp3 in Resources */,
+				30273A88238465960085DEF0 /* goal-robot1.mp3 in Resources */,
+				30273AA8238465960085DEF0 /* own-human6.mp3 in Resources */,
+				30273A9E238465960085DEF0 /* goal-robot9.mp3 in Resources */,
+				30273A9C238465960085DEF0 /* goal-robot8.mp3 in Resources */,
+				30273A7F238465960085DEF0 /* goal-human6.mp3 in Resources */,
+				30273A99238465960085DEF0 /* goal-human2.mp3 in Resources */,
+				30273A92238465960085DEF0 /* own-robot4.mp3 in Resources */,
+				30273A95238465960085DEF0 /* random2.mp3 in Resources */,
+				30273A96238465960085DEF0 /* random1.mp3 in Resources */,
+				30273A9A238465960085DEF0 /* own-human1.mp3 in Resources */,
+				30273AA3238465960085DEF0 /* goal-human12.mp3 in Resources */,
+				30273AA5238465960085DEF0 /* own-human4.mp3 in Resources */,
+				30273A9F238465960085DEF0 /* goal-human9.mp3 in Resources */,
+				30273A85238465960085DEF0 /* start.mp3 in Resources */,
+				30273A8D238465960085DEF0 /* finish-human-lose2.mp3 in Resources */,
+				BDBE9BB89C624733B10B43B4 /* GothamPro-Medium.ttf in Resources */,
+				30273A82238465960085DEF0 /* goal-human1.mp3 in Resources */,
+				30273AAA238465960085DEF0 /* goal-robot6.mp3 in Resources */,
+				30273A86238465960085DEF0 /* goal-robot4.mp3 in Resources */,
+				30273AA4238465960085DEF0 /* own-robot6.mp3 in Resources */,
+				30273AA2238465960085DEF0 /* finish-robot-lose4.mp3 in Resources */,
+				30273A8B238465960085DEF0 /* own-human2.mp3 in Resources */,
+				30273A8E238465960085DEF0 /* goal-human5.mp3 in Resources */,
+				30273A90238465960085DEF0 /* finish-robot-lose1.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		5081A94069D6DAB0C25C5DDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KickerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				30273A2A238341CA0085DEF0 /* KickerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13B07FB21A68108700A75B9A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = KickerApp;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43AF5063A70DCC3215EF8E5C /* Pods-KickerApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = KickerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker;
+				PRODUCT_NAME = KickerApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KickerApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DCD4AFCC816349ABE89B671 /* Pods-KickerApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = KickerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercdev.kicker;
+				PRODUCT_NAME = KickerApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KickerApp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "KickerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "KickerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}

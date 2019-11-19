@@ -42,25 +42,23 @@ const Score = observer(
                 </View>
               </View>
             )}
-            {game &&
-              (game.redScore || game.blueScore) && (
-                <GoalIcon key={game.score} />
-              )}
+            {game && Boolean(game.redScore || game.blueScore) && (
+              <GoalIcon key={game.score} />
+            )}
           </View>
 
-          {isReadyToStart &&
-            !game && (
-              <View style={styles.startButton}>
-                <Button
-                  primary
-                  color="white"
-                  style={{ width: 240 }}
-                  onPress={onStartRequest}
-                >
-                  START
-                </Button>
-              </View>
-            )}
+          {isReadyToStart && !game && (
+            <View style={styles.startButton}>
+              <Button
+                primary
+                color="white"
+                style={{ width: 240 }}
+                onPress={onStartRequest}
+              >
+                START
+              </Button>
+            </View>
+          )}
           {!isReadyToStart && !game && <LogoArea style={styles.logoArea} />}
           {!isReadyToStart && !game && <Logo style={styles.logo} />}
         </React.Fragment>

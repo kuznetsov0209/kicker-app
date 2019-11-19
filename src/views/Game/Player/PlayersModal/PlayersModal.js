@@ -26,9 +26,7 @@ class UserListModal extends Component {
 
   @computed
   get users() {
-    return store.users
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .slice(0, this.offset * this.page);
+    return store.users.slice(0, this.offset * this.page);
   }
 
   userKeyExtractor = item => item.id.toString();
@@ -79,7 +77,7 @@ class UserListModal extends Component {
   };
 
   renderMoreUsers = () => {
-    if (this.offset * this.page < this.users.length) {
+    if (this.offset * this.page < store.users.length) {
       this.page++;
     }
   };

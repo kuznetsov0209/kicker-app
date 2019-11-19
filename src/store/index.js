@@ -5,7 +5,7 @@ import Game from "./game";
 
 const GameStore = types
   .model({
-    game: types.maybe(Game)
+    game: types.maybeNull(Game)
   })
   .actions(self => {
     return {
@@ -35,7 +35,9 @@ const Store = types
     return {
       loadUsers: flow(function*(force) {
         const { users } = yield api.get("/api/users");
-        self.users = users;
+        self.users = users
+          .filter(user => user.email)
+          .sort((a, b) => a.name.localeCompare(b.name));
       }),
       loadGames: flow(function*() {
         const { games } = yield api.get("/api/games");

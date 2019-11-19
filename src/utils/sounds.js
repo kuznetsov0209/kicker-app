@@ -2,6 +2,7 @@ import Sound from "react-native-sound";
 Sound.setCategory("Playback");
 
 const startSounds = [new Sound("start.mp3", Sound.MAIN_BUNDLE)];
+
 const goalRedSounds = [
   new Sound("goal-human1.mp3", Sound.MAIN_BUNDLE),
   new Sound("goal-human2.mp3", Sound.MAIN_BUNDLE),

@@ -1,1 +1,3 @@
-![Screenshot](./screenshot.png)
+# Kicker App
+
+App for iPad that registers kicker match details

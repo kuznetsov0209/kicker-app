@@ -1,53 +1,48 @@
 {
-  "name": "kickermasterapp",
-  "version": "1.7.0",
+  "name": "KickerApp",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
   },
   "dependencies": {
     "dateformat": "^3.0.3",
-    "lottie-ios": "2.5.3",
-    "lottie-react-native": "2.5.11",
-    "mobx": "^4.1.1",
-    "mobx-react": "^5.0.0",
-    "mobx-state-tree": "^2.0.3",
-    "react": "^16.3.0-alpha.1",
+    "lottie-ios": "^3.1.5",
+    "lottie-react-native": "^3.3.2",
+    "mobx": "^5.15.0",
+    "mobx-react": "^6.1.4",
+    "mobx-state-tree": "^3.15.0",
+    "react": "16.9.0",
     "react-gateway": "^3.0.0",
-    "react-native": "0.54.4",
-    "react-native-code-push": "^5.3.3",
-    "react-native-svg": "^6.3.1",
-    "react-native-tts": "^2.0.0",
-    "react-navigation": "^1.5.11"
+    "react-native": "0.61.4",
+    "react-native-sound": "^0.11.0",
+    "react-native-svg": "^9.13.3"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "babel-plugin-transform-decorators-legacy": "^1.3.5",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-prettier": "^2.6.2",
-    "eslint-plugin-react": "^7.8.2",
-    "husky": ">=1",
-    "lint-staged": ">=8",
-    "prettier": "1.18.2",
-    "react-native-sound": "0.10.2",
-    "react-test-renderer": "^16.3.0-alpha.1"
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@babel/runtime": "^7.7.2",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.57.0",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "16.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
   },
   "rnpm": {
     "assets": [
       "./assets/fonts/"
     ]
-  },
-  "lint-staged": {
-    "**/*.{js,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
