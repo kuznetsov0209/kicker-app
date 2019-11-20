@@ -34,20 +34,6 @@ target 'KickerApp' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'KickerAppTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
   use_native_modules!
 end
 
-target 'KickerApp-tvOS' do
-  # Pods for KickerApp-tvOS
-
-  target 'KickerApp-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
