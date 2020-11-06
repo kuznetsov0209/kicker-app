@@ -1,8 +1,17 @@
+import { SnapshotOrInstance, SnapshotOut } from "mobx-state-tree";
 import React from "react";
 import { View, Image, Text } from "react-native";
 import { TEAM_BLUE } from "../constants";
+import User from "../store/user";
 
-const UserAvatar = ({ user, size, team, ...rest }) => (
+// todo: use memo wrapper
+interface UserAvatarProps {
+  user: SnapshotOrInstance<typeof User>;
+  size: number;
+  team: number;
+}
+
+const UserAvatar = ({ user, size, team, ...rest }: UserAvatarProps) => (
   <View style={{ borderRadius: size / 2, overflow: "hidden" }}>
     {user.photoUrl ? (
       <Image

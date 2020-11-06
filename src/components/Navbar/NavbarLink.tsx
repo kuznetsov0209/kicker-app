@@ -2,7 +2,13 @@ import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import styles from "./Navbar.styles";
 
-class NavbarLink extends Component {
+interface NavbarLinkProps {
+  title: string;
+  active?: boolean;
+}
+
+// todo: use PureComponent
+class NavbarLink extends Component<NavbarLinkProps> {
   render() {
     const { title, active, ...props } = this.props;
     return (
