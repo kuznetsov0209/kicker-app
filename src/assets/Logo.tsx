@@ -1,7 +1,7 @@
 import React from "react";
-import { Svg, Path, G } from "react-native-svg";
+import { Svg, Path, G, SvgProps } from "react-native-svg";
 
-const Logo = props => (
+const Logo = (props: SvgProps) => (
   <Svg width="210" height="46" viewBox="0 0 210 46" {...props}>
     <G fill="none" fill-rule="nonzero">
       <Path

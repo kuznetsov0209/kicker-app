@@ -1,7 +1,7 @@
 import React from "react";
-import { Svg, Path } from "react-native-svg";
+import { Svg, Path, SvgProps } from "react-native-svg";
 
-const IconSearch = props => (
+const IconSearch = (props: SvgProps) => (
   <Svg width="28" height="28" viewBox="0 0 612 612" {...props}>
     <Path
       fill="#FFFFFF"
