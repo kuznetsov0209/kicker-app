@@ -1,7 +1,13 @@
-function createGameEventEmitter() {
-  const eventListeners = [];
+type WaitForEventGenerator = Generator<
+  void,
+  { type: string; payload: any },
+  { type: string; payload: any }
+>;
 
-  function* waitForEvent(type, payload = {}) {
+function createGameEventEmitter() {
+  const eventListeners: Generator[] = [];
+
+  function* waitForEvent(type: string): WaitForEventGenerator {
     while (true) {
       const event = yield;
       if (!type || event.type === type) {
@@ -11,13 +17,17 @@ function createGameEventEmitter() {
   }
 
   class GameEventEmitter {
-    emit(type, payload) {
+    emit(type: string, payload?: Object) {
       eventListeners.forEach(eventListener =>
         eventListener.next({ type, payload })
       );
     }
 
-    addListener(generatorFunc) {
+    addListener(
+      generatorFunc: (payload: {
+        waitForEvent: (type: string) => WaitForEventGenerator;
+      }) => Generator
+    ) {
       const generator = generatorFunc({ waitForEvent });
       generator.next();
       eventListeners.push(generator);

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import NavbarLink from "./NavbarLink";
 import styles from "./Navbar.styles";
 
 class Navbar extends Component {

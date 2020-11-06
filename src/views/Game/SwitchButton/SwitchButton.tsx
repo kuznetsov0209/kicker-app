@@ -1,8 +1,22 @@
 import React from "react";
 import { Svg, Path, G } from "react-native-svg";
-import { View, TouchableOpacity } from "react-native";
+import {
+  View,
+  TouchableOpacity,
+  GestureResponderEvent,
+  StyleProp,
+  ViewStyle
+} from "react-native";
 
-const SwitchButton = ({ onPress, color, style }) => (
+const SwitchButton = ({
+  onPress,
+  color,
+  style
+}: {
+  onPress: (event: GestureResponderEvent) => void;
+  color: string;
+  style: StyleProp<ViewStyle>;
+}) => (
   <TouchableOpacity onPress={onPress} style={style}>
     <View
       style={{
@@ -26,7 +40,7 @@ const SwitchButton = ({ onPress, color, style }) => (
           ]
         }}
       >
-        <G xmlns="http://www.w3.org/2000/svg" fill={color}>
+        <G fill={color}>
           <Path
             d="M15.6384317,5.8496588 C14.3415936,4.08874297 12.2688117,3 10,3 C6.50598355,3 3.55977802,5.57605706 3.07073095,9.00020403 C2.99264436,9.54694065 2.48612508,9.92685657 1.93938846,9.84876998 C1.39265184,9.7706834 1.01273592,9.26416412 1.09082251,8.7174275 C1.7201169,4.31131485 5.50722793,1 10,1 C12.9478143,1 15.6390156,2.43038039 17.3021281,4.73676631 L18.2673005,4.09113589 C18.6616227,3.82736282 18.9816769,4.00755725 18.9821519,4.48419091 L18.9861301,8.47547317 C18.9866094,8.95632453 18.6282601,9.19181376 18.1943114,9.00514258 L14.5604687,7.44197691 C14.12268,7.25365389 14.09391,6.88283196 14.4817658,6.62338453 L15.6384317,5.8496588 Z"
             id="Combined-Shape"

@@ -2,7 +2,7 @@ const API_HOST = "https://kicker.mercdev.com";
 
 /* global fetch */
 
-async function request(path, options = {}) {
+async function request(path: string, options = {}) {
   const url = `${API_HOST}${path}`;
   const json = await fetch(url, {
     credentials: "include",
@@ -17,16 +17,16 @@ async function request(path, options = {}) {
 }
 
 const api = {
-  get: path => {
+  get: (path: string) => {
     return request(path);
   },
-  post: (path, body) => {
+  post: (path: string, body?: Object) => {
     return request(path, {
       method: "post",
       body: JSON.stringify(body)
     });
   },
-  delete: (path, body) => {
+  delete: (path: string, body?: Object) => {
     return request(path, {
       method: "delete",
       body: JSON.stringify(body)

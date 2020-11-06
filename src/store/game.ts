@@ -1,4 +1,4 @@
-import { types } from "mobx-state-tree";
+import { Instance, types } from "mobx-state-tree";
 import { TEAM_RED, TEAM_BLUE } from "../constants";
 import User from "./user";
 import { observe } from "mobx";
@@ -6,7 +6,6 @@ import gameEventEmitter, {
   EVENT_GOAL,
   EVENT_OWN_GOAL,
   EVENT_UNDO_GOAL,
-  EVENT_SCORE_CHANGED,
   EVENT_GAME_STARTED,
   EVENT_GAME_FINISHED
 } from "./gameEventEmitter";
@@ -14,7 +13,7 @@ import sounds from "../utils/sounds";
 
 const MAX_GOALS = 10;
 
-const GamePlayer = types.model({
+export const GamePlayer = types.model({
   team: types.number,
   position: types.number,
   UserId: types.reference(User)
@@ -26,6 +25,10 @@ const Goal = types.model({
   createdAt: types.string,
   updatedAt: types.string
 });
+
+interface GoalByUserMap {
+  [userId: number]: Instance<typeof Goal>[];
+}
 
 const Game = types
   .model({
@@ -44,17 +47,21 @@ const Game = types
         gamePlayer => gamePlayer.team === TEAM_RED
       ).map(gamePlayer => gamePlayer.UserId);
     },
-    get redUserIds() {
-      return self.redUsers.map(user => user.id);
-    },
     get blueUsers() {
       return self.GamePlayers.filter(
         gamePlayer => gamePlayer.team === TEAM_BLUE
       ).map(gamePlayer => gamePlayer.UserId);
+    }
+  }))
+  .views(self => ({
+    get redUserIds() {
+      return self.redUsers.map(user => user.id);
     },
     get blueUserIds() {
       return self.blueUsers.map(user => user.id);
-    },
+    }
+  }))
+  .views(self => ({
     get redGoals() {
       return self.Goals.filter(
         goal => self.redUserIds.includes(goal.UserId.id) && !goal.ownGoal
@@ -74,13 +81,17 @@ const Game = types
       return self.Goals.filter(
         goal => self.blueUserIds.includes(goal.UserId.id) && goal.ownGoal
       );
-    },
+    }
+  }))
+  .views(self => ({
     get redScore() {
       return self.redGoals.length + self.blueOwnGoals.length;
     },
     get blueScore() {
       return self.blueGoals.length + self.redOwnGoals.length;
-    },
+    }
+  }))
+  .views(self => ({
     get completed() {
       return self.redScore === MAX_GOALS || self.blueScore === MAX_GOALS;
     },
@@ -90,25 +101,27 @@ const Game = types
     get winnerTeam() {
       return self.blueScore > self.redScore ? TEAM_BLUE : TEAM_RED;
     },
-    get winnerPlayers() {
-      return self.winnerTeam === TEAM_BLUE ? self.blueUsers : self.redUsers;
-    },
-    get goalsByUserId() {
-      return self.GamePlayers.reduce((data, gamePlayer) => {
-        data[gamePlayer.UserId.id] = self.Goals.filter(
-          goal => goal.UserId.id == gamePlayer.UserId.id && !goal.ownGoal
-        );
-        return data;
-      }, {});
-    },
-    getGamePlayerByUserId(UserId) {
+    getGamePlayerByUserId(UserId: number) {
       return self.GamePlayers.find(
         gamePlayer => gamePlayer.UserId.id === UserId
       );
     }
   }))
+  .views(self => ({
+    get winnerPlayers() {
+      return self.winnerTeam === TEAM_BLUE ? self.blueUsers : self.redUsers;
+    },
+    get goalsByUserId() {
+      return self.GamePlayers.reduce((data: GoalByUserMap, gamePlayer) => {
+        data[gamePlayer.UserId.id] = self.Goals.filter(
+          goal => goal.UserId.id == gamePlayer.UserId.id && !goal.ownGoal
+        );
+        return data;
+      }, {});
+    }
+  }))
   .actions(self => ({
-    addGoal(UserId) {
+    addGoal(UserId: number) {
       self.Goals.push({
         UserId,
         ownGoal: false,
@@ -117,13 +130,16 @@ const Game = types
       });
 
       const gamePlayer = self.getGamePlayerByUserId(UserId);
-      gameEventEmitter.emit(EVENT_GOAL, {
-        team: gamePlayer.team,
-        user: gamePlayer.UserId.toJSON(),
-        completed: self.completed
-      });
+      if (gamePlayer) {
+        gameEventEmitter.emit(EVENT_GOAL, {
+          team: gamePlayer.team,
+          // @ts-ignore
+          user: gamePlayer.UserId.toJSON(),
+          completed: self.completed
+        });
+      }
     },
-    addOwnGoal(UserId) {
+    addOwnGoal(UserId: number) {
       self.Goals.push({
         UserId,
         ownGoal: true,
@@ -132,11 +148,14 @@ const Game = types
       });
 
       const gamePlayer = self.getGamePlayerByUserId(UserId);
-      gameEventEmitter.emit(EVENT_OWN_GOAL, {
-        team: gamePlayer.team,
-        user: gamePlayer.UserId.toJSON(),
-        completed: self.completed
-      });
+      if (gamePlayer) {
+        gameEventEmitter.emit(EVENT_OWN_GOAL, {
+          team: gamePlayer.team,
+          // @ts-ignore
+          user: gamePlayer.UserId.toJSON(),
+          completed: self.completed
+        });
+      }
     },
     removeLastGoal() {
       self.Goals.pop();
@@ -147,6 +166,7 @@ const Game = types
       gameEventEmitter.emit(EVENT_GAME_STARTED);
 
       self.disposeHandlers.push(
+        // @ts-ignore
         observe(self, "completed", () => {
           gameEventEmitter.emit(EVENT_GAME_FINISHED, {
             winnerTeam: self.winnerTeam
@@ -155,6 +175,8 @@ const Game = types
       );
     },
     beforeDestroy() {
+      // todo: add types
+      // @ts-ignore
       self.disposeHandlers.forEach(disposeHandler => disposeHandler());
       self.disposeHandlers = [];
     }
@@ -170,7 +192,7 @@ gameEventEmitter.addListener(function*({ waitForEvent }) {
 gameEventEmitter.addListener(function*({ waitForEvent }) {
   while (true) {
     const event = yield* waitForEvent(EVENT_GAME_FINISHED);
-    if (event.winnerTeam === TEAM_RED) {
+    if (event.payload.winnerTeam === TEAM_RED) {
       sounds.finishBlueLose();
     } else {
       sounds.finishRedLose();

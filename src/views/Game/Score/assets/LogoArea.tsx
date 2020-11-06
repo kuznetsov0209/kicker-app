@@ -1,7 +1,7 @@
 import React from "react";
-import { Svg, Path } from "react-native-svg";
+import { Svg, Path, SvgProps } from "react-native-svg";
 
-const LogoArea = props => (
+const LogoArea = (props: SvgProps) => (
   <Svg width="302" height="92" viewBox="0 0 302 92" {...props}>
     <Path
       fill="#191919"

@@ -1,3 +1,4 @@
+import { SnapshotOrInstance } from "mobx-state-tree";
 import React, { Component } from "react";
 import {
   View,
@@ -16,9 +17,18 @@ import { store } from "../../../../store";
 import IconCross from "../../../../assets/IconCross";
 import IconSearch from "../../../../assets/IconSearch";
 import { computed, observable } from "mobx";
+import User from "../../../../store/user";
+
+type UserType = SnapshotOrInstance<typeof User>;
+
+interface UserListModalProps {
+  onSelect: (user: UserType) => void;
+  close: () => void;
+  visible: boolean;
+}
 
 @observer
-class UserListModal extends Component {
+class UserListModal extends Component<UserListModalProps> {
   offset = 50;
 
   @observable
@@ -29,9 +39,9 @@ class UserListModal extends Component {
     return store.users.slice(0, this.offset * this.page);
   }
 
-  userKeyExtractor = item => item.id.toString();
+  userKeyExtractor = (item: UserType) => item.id.toString();
 
-  renderUser = ({ item }) => {
+  renderUser = ({ item }: { item: UserType }) => {
     return (
       <TouchableOpacity onPress={() => this.selectUser(item)}>
         <View style={{ alignItems: "center" }}>
@@ -66,7 +76,7 @@ class UserListModal extends Component {
     this.page = 1;
   };
 
-  selectUser = user => {
+  selectUser = (user: UserType) => {
     this.resetState();
     this.props.onSelect(user);
   };

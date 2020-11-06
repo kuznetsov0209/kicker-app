@@ -1,5 +1,13 @@
-import React from "react";
-import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
+import React, { ReactNode } from "react";
+import {
+  TouchableOpacity,
+  View,
+  Text,
+  StyleSheet,
+  GestureResponderEvent,
+  StyleProp,
+  ViewStyle
+} from "react-native";
 
 const styles = StyleSheet.create({
   textContainer: {
@@ -19,15 +27,24 @@ const styles = StyleSheet.create({
   }
 });
 
+interface ButtonProps {
+  color?: string;
+  onPress?: (event: GestureResponderEvent) => void;
+  children: ReactNode;
+  primary?: boolean;
+  style?: StyleProp<ViewStyle>;
+  disabled?: boolean;
+}
+
+// todo: use memo wrapper
 const Button = ({
   color,
   onPress,
   children,
   primary,
-  width,
   style,
   disabled
-}) => (
+}: ButtonProps) => (
   <TouchableOpacity onPress={onPress} style={style} disabled={disabled}>
     <View
       style={[

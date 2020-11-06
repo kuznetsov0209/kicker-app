@@ -1,7 +1,7 @@
 import React from "react";
-import { Svg, Path } from "react-native-svg";
+import { Svg, Path, SvgProps } from "react-native-svg";
 
-const IconCross = props => (
+const IconCross = (props: SvgProps) => (
   <Svg width="40" height="40" viewBox="0 0 40 40" {...props}>
     <Path
       fill="#FF234A"
