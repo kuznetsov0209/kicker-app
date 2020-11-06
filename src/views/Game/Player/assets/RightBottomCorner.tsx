@@ -1,14 +1,8 @@
 import React from "react";
-import { Svg, G, Path } from "react-native-svg";
+import { Svg, G, Path, SvgProps } from "react-native-svg";
 
-const RightBottomCorner = ({ style }) => (
-  <Svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="280"
-    height="280"
-    viewBox="0 0 280 280"
-    style={style}
-  >
+const RightBottomCorner = (props: SvgProps) => (
+  <Svg width="280" height="280" viewBox="0 0 280 280" style={props.style}>
     <G fill="none" fillRule="evenodd">
       <Path fill="#235CFF" d="M104 280h176V46L104 280z" opacity=".2" />
       <Path fill="#235CFF" d="M46 280h234V104z" opacity=".2" />

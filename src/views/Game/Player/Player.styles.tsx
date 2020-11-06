@@ -1,9 +1,19 @@
-import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
-import IconAdd from "./assets/IconAdd";
+import { SnapshotOrInstance } from "mobx-state-tree";
+import React, { ReactNode } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  GestureResponderEvent,
+  ViewProps
+} from "react-native";
+import User from "../../../store/user";
 import UserAvatar from "../../../components/UserAvatar";
 import Button from "../../../components/Button";
 import { TEAM_BLUE, POSITION_FORWARD } from "../../../constants";
+import IconAdd from "./assets/IconAdd";
 
 const styles = StyleSheet.create({
   container: {
@@ -102,14 +112,28 @@ const styles = StyleSheet.create({
   }
 });
 
-export const PlayerContainer = ({ reverse, ...props }) => (
+export const PlayerContainer = ({
+  reverse,
+  ...props
+}: ViewProps & {
+  children?: React.ReactNode;
+  reverse: boolean;
+}) => (
   <View
     style={reverse ? styles.userContainerReverse : styles.userContainer}
     {...props}
   />
 );
 
-export const PlayerName = ({ alignRight, team, ...props }) => (
+export const PlayerName = ({
+  alignRight,
+  team,
+  ...props
+}: {
+  alignRight: boolean;
+  team: number;
+  children: string;
+}) => (
   <Text
     numberOfLines={2}
     style={[
@@ -121,28 +145,52 @@ export const PlayerName = ({ alignRight, team, ...props }) => (
   />
 );
 
-export const AddPlayerButton = ({ team, onPress }) => (
-  <TouchableOpacity onPress={onPress}>
-    <View
-      style={[
-        {
-          backgroundColor: team === TEAM_BLUE ? "#235cff" : "#ff234a"
-        },
-        styles.addButton
-      ]}
-    >
-      <IconAdd />
-    </View>
-  </TouchableOpacity>
-);
+export function AddPlayerButton({
+  team,
+  onPress
+}: {
+  team: number;
+  onPress: (event: GestureResponderEvent) => void;
+}) {
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <View
+        style={[
+          {
+            backgroundColor: team === TEAM_BLUE ? "#235cff" : "#ff234a"
+          },
+          styles.addButton
+        ]}
+      >
+        <IconAdd />
+      </View>
+    </TouchableOpacity>
+  );
+}
 
-export const ChangePlayerButton = ({ user, team, onPress }) => (
+export const ChangePlayerButton = ({
+  user,
+  team,
+  onPress
+}: {
+  user: SnapshotOrInstance<typeof User>;
+  team: number;
+  onPress: (event: GestureResponderEvent) => void;
+}) => (
   <TouchableOpacity onPress={onPress}>
     <UserAvatar size={120} user={user} team={team} />
   </TouchableOpacity>
 );
 
-export const PlayerAvatar = ({ user, team, position, goals }) => (
+export const PlayerAvatar = ({
+  user,
+  team,
+  goals
+}: {
+  user: SnapshotOrInstance<typeof User>;
+  team: number;
+  goals?: number;
+}) => (
   <View>
     <UserAvatar size={120} user={user} team={team} />
     <View style={styles.goalsContainer}>
@@ -160,7 +208,13 @@ export const PlayerAvatar = ({ user, team, position, goals }) => (
   </View>
 );
 
-export const ButtonsContainer = ({ reverse, ...props }) => (
+export const ButtonsContainer = ({
+  reverse,
+  ...props
+}: {
+  children: ReactNode;
+  reverse: boolean;
+}) => (
   <View
     style={{
       ...StyleSheet.absoluteFillObject,
@@ -171,7 +225,16 @@ export const ButtonsContainer = ({ reverse, ...props }) => (
   />
 );
 
-export const GoalButton = ({ reverse, team, onPress, ...props }) => (
+export const GoalButton = ({
+  reverse,
+  team,
+  onPress,
+  ...props
+}: {
+  reverse: boolean;
+  team: number;
+  onPress: (event: GestureResponderEvent) => void;
+}) => (
   <View
     style={{
       height: 320,
@@ -194,7 +257,10 @@ export const GoalButton = ({ reverse, team, onPress, ...props }) => (
   </View>
 );
 
-export const PlayerView = ({ reverse, ...props }) => (
+export const PlayerView = ({
+  reverse,
+  ...props
+}: ViewProps & { children: React.ReactNode; reverse: boolean }) => (
   <View
     style={[styles.playerView, reverse ? styles.playerViewReverse : null]}
     {...props}

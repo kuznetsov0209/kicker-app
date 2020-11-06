@@ -8,7 +8,7 @@ import User from "../store/user";
 interface UserAvatarProps {
   user: SnapshotOrInstance<typeof User>;
   size: number;
-  team: number;
+  team?: number;
 }
 
 const UserAvatar = ({ user, size, team, ...rest }: UserAvatarProps) => (

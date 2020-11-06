@@ -1,8 +1,13 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps
+} from "react-native";
 import styles from "./Navbar.styles";
 
-interface NavbarLinkProps {
+interface NavbarLinkProps extends TouchableOpacityProps {
   title: string;
   active?: boolean;
 }

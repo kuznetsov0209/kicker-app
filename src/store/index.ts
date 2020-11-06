@@ -1,7 +1,13 @@
-import { types, flow, getSnapshot, SnapshotIn } from "mobx-state-tree";
+import {
+  types,
+  flow,
+  getSnapshot,
+  SnapshotIn,
+  Instance
+} from "mobx-state-tree";
 import api from "../api";
 import User from "./user";
-import Game from "./game";
+import Game, { GamePlayer } from "./game";
 
 const GameStore = types
   .model({
@@ -9,7 +15,7 @@ const GameStore = types
   })
   .actions(self => {
     return {
-      start(payload: SnapshotIn<typeof Game>) {
+      start(payload: { GamePlayers: SnapshotIn<typeof GamePlayer>[] }) {
         self.game = Game.create({
           ...payload,
           createdAt: new Date().toString(),
@@ -35,7 +41,7 @@ const Store = types
   })
   .actions(self => {
     return {
-      loadUsers: flow(function*(force) {
+      loadUsers: flow(function*() {
         const { users } = yield api.get("/api/users");
         // todo: add types
         self.users = users
@@ -53,4 +59,4 @@ export const store = Store.create({
   gameStore: {}
 });
 
-export const gameStore = store.gameStore;
+export const gameStore: Instance<typeof GameStore> = store.gameStore;

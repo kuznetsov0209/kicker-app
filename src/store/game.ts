@@ -13,7 +13,7 @@ import sounds from "../utils/sounds";
 
 const MAX_GOALS = 10;
 
-const GamePlayer = types.model({
+export const GamePlayer = types.model({
   team: types.number,
   position: types.number,
   UserId: types.reference(User)
