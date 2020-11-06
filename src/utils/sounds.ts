@@ -61,7 +61,7 @@ const finishBlueLoseSounds = [
   new Sound("finish-human-lose4.mp3", Sound.MAIN_BUNDLE)
 ];
 
-function getRandomIndex(length) {
+function getRandomIndex(length: number) {
   return Math.round(Math.random() * 100) % length;
 }
 

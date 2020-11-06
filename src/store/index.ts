@@ -1,4 +1,4 @@
-import { types, flow, getSnapshot } from "mobx-state-tree";
+import { types, flow, getSnapshot, SnapshotIn } from "mobx-state-tree";
 import api from "../api";
 import User from "./user";
 import Game from "./game";
@@ -9,18 +9,20 @@ const GameStore = types
   })
   .actions(self => {
     return {
-      start(payload) {
-        self.game = {
+      start(payload: SnapshotIn<typeof Game>) {
+        self.game = Game.create({
           ...payload,
           createdAt: new Date().toString(),
           updatedAt: new Date().toString()
-        };
+        });
       },
       reset: () => {
         self.game = null;
       },
       save: flow(function*() {
-        api.post("/api/game", getSnapshot(self.game));
+        if (self.game) {
+          api.post("/api/game", getSnapshot(self.game));
+        }
       })
     };
   });
@@ -35,9 +37,10 @@ const Store = types
     return {
       loadUsers: flow(function*(force) {
         const { users } = yield api.get("/api/users");
+        // todo: add types
         self.users = users
-          .filter(user => user.email)
-          .sort((a, b) => a.name.localeCompare(b.name));
+          .filter((user: any) => user.email)
+          .sort((a: any, b: any) => a.name.localeCompare(b.name));
       }),
       loadGames: flow(function*() {
         const { games } = yield api.get("/api/games");
