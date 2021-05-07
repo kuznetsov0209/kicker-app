@@ -1,3 +1,3 @@
 # Kicker App
 
-App for iPad that registers kicker match details
+App for iPad to track a match statistics
