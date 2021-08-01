@@ -1,4 +1,4 @@
-import { SnapshotOrInstance } from "mobx-state-tree";
+import { cast, SnapshotOrInstance } from "mobx-state-tree";
 import React, { Component } from "react";
 import {
   View,
@@ -8,11 +8,14 @@ import {
   FlatList,
   ActivityIndicator,
   TextInput,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  Alert
 } from "react-native";
+import { BarCodeReadEvent } from "react-native-camera";
 import { observer } from "mobx-react";
 
 import UserAvatar from "../../../../components/UserAvatar";
+import QRScanner from "../../../../components/QRScanner";
 import { store } from "../../../../store";
 import IconCross from "../../../../assets/IconCross";
 import IconSearch from "../../../../assets/IconSearch";
@@ -81,6 +84,18 @@ class UserListModal extends Component<UserListModalProps> {
     this.props.onSelect(user);
   };
 
+  selectUserFromQR = ({ data }: BarCodeReadEvent) => {
+    try {
+      const qrData = JSON.parse(data);
+      const user = this.users.find(user => user.id === qrData.userId);
+      if (user) {
+        this.selectUser(cast(user));
+      }
+    } catch (error) {
+      Alert.alert("Ooops!");
+    }
+  };
+
   close = () => {
     this.resetState();
     this.props.close();
@@ -132,6 +147,13 @@ class UserListModal extends Component<UserListModalProps> {
             </View>
           )}
           <KeyboardAvoidingView behavior="padding" enabled>
+            <View
+              style={{
+                flex: 1
+              }}
+            >
+              <QRScanner onRead={this.selectUserFromQR} />
+            </View>
             <FlatList
               data={this.users}
               keyExtractor={this.userKeyExtractor}
