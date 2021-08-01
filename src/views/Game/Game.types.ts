@@ -16,4 +16,5 @@ export interface GameComponentState {
   player3: GamePlayerType | null;
   player4: GamePlayerType | null;
   finishModalVisible: boolean;
+  leadersModalVisible: boolean;
 }

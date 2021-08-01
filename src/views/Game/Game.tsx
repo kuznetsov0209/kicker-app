@@ -14,6 +14,7 @@ import { gameStore, store } from "../../store";
 
 import CongratulationsModal from "./CongratulationsModal";
 import FinishGameModal from "./FinishGameModal";
+import LeadersModal from "./LeadersModal";
 import styles from "./Game.styles";
 import {
   GameComponentProps,
@@ -29,7 +30,8 @@ const initialState: GameComponentState = {
   player2: null,
   player3: null,
   player4: null,
-  finishModalVisible: false
+  finishModalVisible: false,
+  leadersModalVisible: false
 };
 
 @observer
@@ -141,6 +143,14 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
     gameStore.reset();
   };
 
+  openLeadersModal = () => {
+    this.setState({ leadersModalVisible: true });
+  };
+
+  closeLeadersModal = () => {
+    this.setState({ leadersModalVisible: false });
+  };
+
   render() {
     return (
       <View style={{ flex: 1 }}>
@@ -193,7 +203,7 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
           ) : (
             <Navbar>
               <NavbarLink title="GAME" active />
-              <NavbarLink title="LEADERS" />
+              <NavbarLink title="LEADERS" onPress={this.openLeadersModal} />
             </Navbar>
           )}
         </Gateway>
@@ -211,6 +221,11 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
           onFinish={this.finishGame}
           onRematch={this.rematch}
           onRequestClose={this.closeFinishGameModal}
+        />
+
+        <LeadersModal
+          visible={this.state.leadersModalVisible}
+          onRequestClose={this.closeLeadersModal}
         />
       </View>
     );
