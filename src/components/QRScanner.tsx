@@ -12,7 +12,7 @@ export default class QRScanner extends Component<Props> {
         showMarker={true}
         topContent={
           <Text style={styles.centerText}>
-            Можно отсканировать QR-код из раздела Турнир по кикеру!
+            Можно отсканировать QR-код из приложения Mercury Team
           </Text>
         }
         {...this.props}

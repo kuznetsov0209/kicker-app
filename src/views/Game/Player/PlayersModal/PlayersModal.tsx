@@ -84,15 +84,18 @@ class UserListModal extends Component<UserListModalProps> {
     this.props.onSelect(user);
   };
 
-  selectUserFromQR = ({ data }: BarCodeReadEvent) => {
+  selectUserFromQR = async ({ data }: BarCodeReadEvent) => {
     try {
-      const qrData = JSON.parse(data);
-      const user = this.users.find(user => user.id === qrData.userId);
+      let [, name, externalId] = data.split(",");
+      let user = store.users.find(user => user.externalId === externalId);
+      if (!user) {
+        user = await store.addUserByExternalId({ externalId, name });
+      }
       if (user) {
-        this.selectUser(cast(user));
+        this.selectUser(user);
       }
     } catch (error) {
-      Alert.alert("Ooops!");
+      Alert.alert("Ooops! " + error.message);
     }
   };
 
@@ -154,7 +157,7 @@ class UserListModal extends Component<UserListModalProps> {
             >
               <QRScanner onRead={this.selectUserFromQR} />
             </View>
-            <FlatList
+            {/* <FlatList
               data={this.users}
               keyExtractor={this.userKeyExtractor}
               renderItem={this.renderUser}
@@ -165,7 +168,7 @@ class UserListModal extends Component<UserListModalProps> {
               }}
               onEndReached={this.renderMoreUsers}
               keyboardShouldPersistTaps="handled"
-            />
+            /> */}
           </KeyboardAvoidingView>
         </View>
       </Modal>
