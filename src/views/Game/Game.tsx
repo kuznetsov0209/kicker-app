@@ -23,13 +23,16 @@ import {
 } from "./Game.types";
 import Player from "./Player";
 import Score from "./Score";
+import EventSource, { MessageEvent } from "react-native-sse";
+import api, { API_HOST } from "../../api";
 
 const initialState: GameComponentState = {
   player1: null,
   player2: null,
   player3: null,
   player4: null,
-  finishModalVisible: false
+  finishModalVisible: false,
+  gameSlots: null
 };
 
 @observer
@@ -41,6 +44,27 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
 
   componentDidMount() {
     store.loadUsers();
+
+    const eventSourceMessageHandler = (event: MessageEvent) => {
+      const messageEvent = event;
+      const data = messageEvent.data ? JSON.parse(messageEvent.data) : null;
+      if (data.type === "update-all-players") {
+        this.setState({ gameSlots: data.payload.gameSlots });
+        this.state.gameSlots?.map(gameSlot => {
+          this.selectUser({
+            user: gameSlot.user,
+            position: gameSlot.position,
+            team: gameSlot.team
+          });
+        });
+      }
+    };
+    const gameEventSource = new EventSource(
+      `${API_HOST}/api/active-game/events`
+    );
+    gameEventSource.addEventListener("message", eventSourceMessageHandler);
+    return () =>
+      gameEventSource.removeEventListener("message", eventSourceMessageHandler);
   }
 
   get areAllPlayersSelected(): boolean {
@@ -92,6 +116,17 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
     this.setState({
       // @ts-ignore
       [userSlot]: { user, team, position }
+    });
+  };
+
+  handleGameSlotSelect = ({ user, team, position }: GamePlayerType) => {
+    api.post("/api/active-game/events", {
+      type: "select-player",
+      payload: {
+        team: team,
+        position: position,
+        user: user
+      }
     });
   };
 
@@ -150,13 +185,13 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
               team={TEAM_RED}
               position={POSITION_DEFENDER}
               user={this.state.player1?.user}
-              onSelect={this.selectUser}
+              onSelect={this.selectUser && this.handleGameSlotSelect}
             />
             <Player
               team={TEAM_RED}
               position={POSITION_FORWARD}
               user={this.state.player2?.user}
-              onSelect={this.selectUser}
+              onSelect={this.selectUser && this.handleGameSlotSelect}
             />
           </View>
           <View style={{ flex: 1 }}>
@@ -164,13 +199,13 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
               team={TEAM_BLUE}
               position={POSITION_FORWARD}
               user={this.state.player3?.user}
-              onSelect={this.selectUser}
+              onSelect={this.selectUser && this.handleGameSlotSelect}
             />
             <Player
               team={TEAM_BLUE}
               position={POSITION_DEFENDER}
               user={this.state.player4?.user}
-              onSelect={this.selectUser}
+              onSelect={this.selectUser && this.handleGameSlotSelect}
             />
           </View>
         </View>
