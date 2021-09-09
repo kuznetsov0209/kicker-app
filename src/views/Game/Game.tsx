@@ -50,7 +50,7 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
       const data = messageEvent.data ? JSON.parse(messageEvent.data) : null;
       if (data.type === "update-all-players") {
         this.setState({ gameSlots: data.payload.gameSlots });
-        this.state.gameSlots?.map(gameSlot => {
+        this.state.gameSlots?.forEach(gameSlot => {
           this.selectUser({
             user: gameSlot.user,
             position: gameSlot.position,
@@ -63,8 +63,19 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
       `${API_HOST}/api/active-game/events`
     );
     gameEventSource.addEventListener("message", eventSourceMessageHandler);
-    return () =>
-      gameEventSource.removeEventListener("message", eventSourceMessageHandler);
+  }
+
+  componentWillUnmount() {
+    const eventSourceMessageHandler = (event: MessageEvent) => {
+      const gameEventSource = new EventSource(
+        `${API_HOST}/api/active-game/events`
+      );
+      return () =>
+        gameEventSource.removeEventListener(
+          "message",
+          eventSourceMessageHandler
+        );
+    };
   }
 
   get areAllPlayersSelected(): boolean {
@@ -185,13 +196,13 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
               team={TEAM_RED}
               position={POSITION_DEFENDER}
               user={this.state.player1?.user}
-              onSelect={this.selectUser && this.handleGameSlotSelect}
+              onSelect={this.handleGameSlotSelect}
             />
             <Player
               team={TEAM_RED}
               position={POSITION_FORWARD}
               user={this.state.player2?.user}
-              onSelect={this.selectUser && this.handleGameSlotSelect}
+              onSelect={this.handleGameSlotSelect}
             />
           </View>
           <View style={{ flex: 1 }}>
@@ -199,13 +210,13 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
               team={TEAM_BLUE}
               position={POSITION_FORWARD}
               user={this.state.player3?.user}
-              onSelect={this.selectUser && this.handleGameSlotSelect}
+              onSelect={this.handleGameSlotSelect}
             />
             <Player
               team={TEAM_BLUE}
               position={POSITION_DEFENDER}
               user={this.state.player4?.user}
-              onSelect={this.selectUser && this.handleGameSlotSelect}
+              onSelect={this.handleGameSlotSelect}
             />
           </View>
         </View>
