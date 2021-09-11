@@ -42,40 +42,35 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
     this.state = initialState;
   }
 
+  eventSourceMessageHandler = (event: MessageEvent) => {
+    const messageEvent = event;
+    const data = messageEvent.data ? JSON.parse(messageEvent.data) : null;
+    if (data.type === "update-all-players") {
+      this.setState({ gameSlots: data.payload.gameSlots });
+      this.state.gameSlots?.forEach(gameSlot => {
+        this.selectUser({
+          user: gameSlot.user,
+          position: gameSlot.position,
+          team: gameSlot.team
+        });
+      });
+    }
+  };
+  gameEventSource = new EventSource(`${API_HOST}/api/active-game/events`);
+
   componentDidMount() {
     store.loadUsers();
-
-    const eventSourceMessageHandler = (event: MessageEvent) => {
-      const messageEvent = event;
-      const data = messageEvent.data ? JSON.parse(messageEvent.data) : null;
-      if (data.type === "update-all-players") {
-        this.setState({ gameSlots: data.payload.gameSlots });
-        this.state.gameSlots?.forEach(gameSlot => {
-          this.selectUser({
-            user: gameSlot.user,
-            position: gameSlot.position,
-            team: gameSlot.team
-          });
-        });
-      }
-    };
-    const gameEventSource = new EventSource(
-      `${API_HOST}/api/active-game/events`
+    this.gameEventSource.addEventListener(
+      "message",
+      this.eventSourceMessageHandler
     );
-    gameEventSource.addEventListener("message", eventSourceMessageHandler);
   }
 
   componentWillUnmount() {
-    const eventSourceMessageHandler = (event: MessageEvent) => {
-      const gameEventSource = new EventSource(
-        `${API_HOST}/api/active-game/events`
-      );
-      return () =>
-        gameEventSource.removeEventListener(
-          "message",
-          eventSourceMessageHandler
-        );
-    };
+    this.gameEventSource.removeEventListener(
+      "message",
+      this.eventSourceMessageHandler
+    );
   }
 
   get areAllPlayersSelected(): boolean {
