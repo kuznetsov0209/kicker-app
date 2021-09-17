@@ -5,6 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "ios-tablet": "react-native run-ios --simulator='iPad Pro (12.9-inch) (5th generation)'",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
@@ -21,7 +22,8 @@
     "react-native": "0.61.4",
     "react-native-sound": "^0.11.0",
     "react-native-sse": "^1.1.0",
-    "react-native-svg": "^9.13.3"
+    "react-native-svg": "^9.13.3",
+    "react-qr-code": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",

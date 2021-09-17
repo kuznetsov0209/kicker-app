@@ -60,19 +60,16 @@ const styles = StyleSheet.create({
   spinner: {
     marginLeft: 100
   },
-  logoArea: {
+  qrcode: {
     position: "absolute",
     left: "50%",
     top: "50%",
-    marginLeft: -151,
-    marginTop: -46
-  },
-  logo: {
-    position: "absolute",
-    left: "50%",
-    top: "50%",
-    marginLeft: -105,
-    marginTop: -23
+    marginLeft: -110,
+    marginTop: -110,
+    borderRadius: 10,
+    padding: 8,
+    backgroundColor: "#ed4159",
+    overflow: "hidden"
   }
 });
 

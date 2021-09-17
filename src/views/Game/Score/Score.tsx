@@ -2,14 +2,14 @@ import { observer } from "mobx-react";
 import { Instance, SnapshotOrInstance } from "mobx-state-tree";
 import React, { Component } from "react";
 import { Text, View } from "react-native";
-import Logo from "../../../assets/Logo";
+import QRCode from "react-qr-code";
 import Button from "../../../components/Button";
 import Game from "../../../store/game";
 import GoalIcon from "./assets/GoalIcon";
-import LogoArea from "./assets/LogoArea";
 import ScoreIcon from "./assets/ScoreIcon";
 import styles from "./Score.styles";
 
+const QR_LINK = "https://kicker.mercdev.com/player-selection";
 interface ScoreProps {
   game?: Instance<typeof Game> | null;
   isReadyToStart: boolean;
@@ -61,8 +61,16 @@ class Score extends Component<ScoreProps> {
             </Button>
           </View>
         )}
-        {!isReadyToStart && !game && <LogoArea style={styles.logoArea} />}
-        {!isReadyToStart && !game && <Logo style={styles.logo} />}
+        {!isReadyToStart && !game && (
+          <View style={styles.qrcode}>
+            <QRCode
+              value={QR_LINK}
+              size={210}
+              bgColor="#fff"
+              fgColor="#191919"
+            />
+          </View>
+        )}
       </React.Fragment>
     );
   }
