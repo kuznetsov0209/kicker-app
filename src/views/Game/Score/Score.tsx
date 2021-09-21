@@ -11,7 +11,7 @@ import LogoArea from "./assets/LogoArea";
 import ScoreIcon from "./assets/ScoreIcon";
 import styles from "./Score.styles";
 
-const QR_LINK = "http://192.168.1.103:3000/player-selection";
+const QR_LINK = "http://192.168.1.103/player-selection";
 interface ScoreProps {
   game?: Instance<typeof Game> | null;
   isReadyToStart: boolean;
@@ -26,15 +26,7 @@ class Score extends Component<ScoreProps> {
     return (
       <React.Fragment>
         <View style={styles.score} pointerEvents="none">
-          <View
-            style={{
-              width: 440,
-              height: 520,
-              transform: [{ rotate: "180deg" }]
-            }}
-          >
-            <ScoreIcon />
-          </View>
+          <ScoreIcon />
         </View>
         <View style={styles.score} pointerEvents="none">
           {game && (
