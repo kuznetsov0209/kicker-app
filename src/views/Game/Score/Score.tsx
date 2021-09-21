@@ -24,7 +24,15 @@ class Score extends Component<ScoreProps> {
     return (
       <React.Fragment>
         <View style={styles.score} pointerEvents="none">
-          <ScoreIcon />
+          <View
+            style={{
+              width: 440,
+              height: 520,
+              transform: [{ rotate: "180deg" }]
+            }}
+          >
+            <ScoreIcon />
+          </View>
         </View>
         <View style={styles.score} pointerEvents="none">
           {game && (
