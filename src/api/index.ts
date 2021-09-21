@@ -1,5 +1,5 @@
-export const API_HOST = "https://api.kicker.mercdev.com";
-
+// export const API_HOST = "https://api.kicker.mercdev.com";
+export const API_HOST = "http://localhost:3020";
 /* global fetch */
 
 async function request(path: string, options = {}) {

@@ -43,9 +43,12 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
   }
 
   eventSourceMessageHandler = (event: MessageEvent) => {
+    if (gameStore.game) return;
+
     const messageEvent = event;
     const data = messageEvent.data ? JSON.parse(messageEvent.data) : null;
     if (data.type === "update-all-players") {
+      store.loadUsers();
       this.setState({ gameSlots: data.payload.gameSlots });
       this.state.gameSlots?.forEach(gameSlot => {
         this.selectUser({
