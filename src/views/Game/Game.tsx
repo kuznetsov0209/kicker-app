@@ -25,6 +25,7 @@ import Player from "./Player";
 import Score from "./Score";
 import EventSource, { MessageEvent } from "react-native-sse";
 import api, { API_HOST } from "../../api";
+import LeadersModal from "./LeadersModal";
 
 const initialState: GameComponentState = {
   player1: null,
@@ -32,7 +33,8 @@ const initialState: GameComponentState = {
   player3: null,
   player4: null,
   finishModalVisible: false,
-  gameSlots: null
+  gameSlots: null,
+  leadersModalVisible: false
 };
 
 @observer
@@ -185,6 +187,14 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
     gameStore.reset();
   };
 
+  openLeadersModal = () => {
+    this.setState({ leadersModalVisible: true });
+  };
+
+  closeLeadersModal = () => {
+    this.setState({ leadersModalVisible: false });
+  };
+
   render() {
     return (
       <View style={{ flex: 1 }}>
@@ -237,7 +247,7 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
           ) : (
             <Navbar>
               <NavbarLink title="GAME" active />
-              <NavbarLink title="LEADERS" />
+              <NavbarLink title="LEADERS" onPress={this.openLeadersModal} />
             </Navbar>
           )}
         </Gateway>
@@ -255,6 +265,11 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
           onFinish={this.finishGame}
           onRematch={this.rematch}
           onRequestClose={this.closeFinishGameModal}
+        />
+
+        <LeadersModal
+          visible={this.state.leadersModalVisible}
+          onRequestClose={this.closeLeadersModal}
         />
       </View>
     );

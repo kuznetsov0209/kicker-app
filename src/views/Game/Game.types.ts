@@ -17,6 +17,7 @@ export interface GameComponentState {
   player4: GamePlayerType | null;
   finishModalVisible: boolean;
   gameSlots: GameSlot[] | null;
+  leadersModalVisible: boolean;
 }
 
 export interface Game {
@@ -57,12 +58,12 @@ export interface User {
 
 export enum TeamPosition {
   Red = 0,
-  Blue = 1,
+  Blue = 1
 }
 
 export enum PlayerPosition {
   Forward = 0,
-  Defender = 1,
+  Defender = 1
 }
 
 export interface GameSlot {
