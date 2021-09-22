@@ -8,6 +8,7 @@ import RightTopCorner from "./assets/RightTopCorner";
 import RightBottomCorner from "./assets/RightBottomCorner";
 
 import PlayersModal from "./PlayersModal";
+import QRCodeModal from "./QRCodeModal";
 import {
   TEAM_RED,
   TEAM_BLUE,
@@ -153,10 +154,16 @@ class Player extends Component<PlayerProps> {
             </PlayerName>
           </PlayerContainer>
 
-          <PlayersModal
+          {/* <PlayersModal
             visible={this.state.userListVisible}
             onSelect={this.selectUser}
             close={this.closeUserList}
+          /> */}
+          <QRCodeModal
+            visible={this.state.userListVisible}
+            close={this.closeUserList}
+            team={team}
+            position={position}
           />
         </PlayerView>
 
