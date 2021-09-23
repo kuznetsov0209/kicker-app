@@ -7,7 +7,8 @@ import gameEventEmitter, {
   EVENT_OWN_GOAL,
   EVENT_UNDO_GOAL,
   EVENT_GAME_STARTED,
-  EVENT_GAME_FINISHED
+  EVENT_GAME_FINISHED,
+  EVENT_GAME_CLOSED
 } from "./gameEventEmitter";
 import sounds from "../utils/sounds";
 
@@ -179,6 +180,10 @@ const Game = types
       // @ts-ignore
       self.disposeHandlers.forEach(disposeHandler => disposeHandler());
       self.disposeHandlers = [];
+
+      if (!self.completed) {
+        gameEventEmitter.emit(EVENT_GAME_CLOSED);
+      }
     }
   }));
 
@@ -224,6 +229,40 @@ gameEventEmitter.addListener(function*({ waitForEvent }) {
       } else {
         sounds.ownGoalBlue();
       }
+    }
+  }
+});
+// @ts-ignore
+let randomSoundsInterval;
+
+function startRandomSoundsInterval() {
+  // @ts-ignore
+  clearInterval(randomSoundsInterval);
+  randomSoundsInterval = setInterval(() => {
+    // @ts-ignore
+    sounds.random();
+  }, 5 * 60 * 1000);
+}
+
+function stopRandomSoundsInterval() {
+  // @ts-ignore
+  clearInterval(randomSoundsInterval);
+}
+
+gameEventEmitter.addListener(function*({ waitForEvent }) {
+  startRandomSoundsInterval();
+
+  while (true) {
+    // @ts-ignore
+    const event = yield* waitForEvent();
+
+    if (event.type === EVENT_GAME_STARTED) {
+      stopRandomSoundsInterval();
+    } else if (
+      event.type === EVENT_GAME_FINISHED ||
+      event.type === EVENT_GAME_CLOSED
+    ) {
+      startRandomSoundsInterval();
     }
   }
 });

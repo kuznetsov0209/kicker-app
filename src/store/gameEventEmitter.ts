@@ -41,6 +41,7 @@ export default createGameEventEmitter();
 
 export const EVENT_GAME_STARTED = "EVENT_GAME_STARTED";
 export const EVENT_GAME_FINISHED = "EVENT_GAME_FINISHED";
+export const EVENT_GAME_CLOSED = "EVENT_GAME_CLOSED";
 export const EVENT_SCORE_CHANGED = "EVENT_SCORE_CHANGED";
 export const EVENT_GOAL = "EVENT_GOAL";
 export const EVENT_OWN_GOAL = "EVENT_OWN_GOAL";

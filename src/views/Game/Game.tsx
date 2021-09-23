@@ -67,6 +67,7 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
     store.loadUsers();
     this.gameEventSource.addEventListener(
       "message",
+      // @ts-ignore
       this.eventSourceMessageHandler
     );
   }
@@ -74,6 +75,7 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
   componentWillUnmount() {
     this.gameEventSource.removeEventListener(
       "message",
+      // @ts-ignore
       this.eventSourceMessageHandler
     );
   }

@@ -154,17 +154,17 @@ class Player extends Component<PlayerProps> {
             </PlayerName>
           </PlayerContainer>
 
-          {/* <PlayersModal
+          <PlayersModal
             visible={this.state.userListVisible}
             onSelect={this.selectUser}
             close={this.closeUserList}
-          /> */}
-          <QRCodeModal
+          />
+          {/* <QRCodeModal
             visible={this.state.userListVisible}
             close={this.closeUserList}
             team={team}
             position={position}
-          />
+          /> */}
         </PlayerView>
 
         {gameStore.game && (
