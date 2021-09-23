@@ -100,12 +100,12 @@ class Player extends Component<PlayerProps> {
 
   addGoal = async () => {
     const { user } = this.props;
-    gameStore.game?.addGoal(user.id);
+    gameStore.game?.addGoal(user);
   };
 
   addOwnGoal = async () => {
     const { user } = this.props;
-    gameStore.game?.addOwnGoal(user.id);
+    gameStore.game?.addOwnGoal(user);
   };
 
   renderIcon() {

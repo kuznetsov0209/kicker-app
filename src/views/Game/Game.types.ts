@@ -20,42 +20,6 @@ export interface GameComponentState {
   leadersModalVisible: boolean;
 }
 
-export interface Game {
-  id: number;
-  ball: null;
-  status: null;
-  createdAt: string;
-  updatedAt: string;
-  Users: User[];
-  Goals: Goal[];
-}
-export interface Goal {
-  id: number;
-  ownGoal: boolean;
-  createdAt: string;
-  updatedAt: string;
-  GameId: Game["id"];
-  UserId: User["id"];
-}
-export interface GamePlayer {
-  team: number;
-  position: number;
-  createdAt: string;
-  updatedAt: string;
-  GameId: Game["id"];
-  UserId: User["id"];
-}
-export interface User {
-  id: number;
-  name: string;
-  photoUrl: string;
-  email: string;
-  rating: number;
-  createdAt: string;
-  updatedAt: string;
-  GamePlayer?: GamePlayer;
-}
-
 export enum TeamPosition {
   Red = 0,
   Blue = 1

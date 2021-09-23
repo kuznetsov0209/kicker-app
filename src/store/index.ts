@@ -27,7 +27,24 @@ const GameStore = types
       },
       save: flow(function*() {
         if (self.game) {
-          api.post("/api/game", getSnapshot(self.game));
+          api
+            .post("/api/game", {
+              id: self.game.id,
+              GamePlayers: self.game.GamePlayers.map(gamePlayer => ({
+                team: gamePlayer.team,
+                position: gamePlayer.position,
+                UserId: gamePlayer.user.id
+              })),
+              Goals: self.game.Goals.map(goal => ({
+                ownGoal: goal.ownGoal,
+                UserId: goal.user.id,
+                createdAt: goal.createdAt,
+                updatedAt: goal.updatedAt
+              })),
+              createdAt: self.game.createdAt,
+              updatedAt: self.game.updatedAt
+            })
+            .catch(err => console.log(err));
         }
       })
     };

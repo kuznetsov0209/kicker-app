@@ -50,7 +50,6 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
     const messageEvent = event;
     const data = messageEvent.data ? JSON.parse(messageEvent.data) : null;
     if (data.type === "update-all-players") {
-      store.loadUsers();
       this.setState({ gameSlots: data.payload.gameSlots });
       this.state.gameSlots?.forEach(gameSlot => {
         this.selectUser({
@@ -64,7 +63,6 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
   gameEventSource = new EventSource(`${API_HOST}/api/active-game/events`);
 
   componentDidMount() {
-    store.loadUsers();
     this.gameEventSource.addEventListener(
       "message",
       // @ts-ignore
@@ -149,7 +147,7 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
       GamePlayers: [player1, player2, player3, player4].map(
         // @ts-ignore
         (player: GamePlayerType) => ({
-          UserId: player.user.id,
+          user: player.user,
           team: player.team,
           position: player.position
         })
@@ -171,6 +169,9 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
 
   finishGame = () => {
     this.setState(initialState);
+    api.post("/api/active-game/events", {
+      type: "reset-players"
+    });
     gameStore.reset();
   };
 
