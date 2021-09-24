@@ -1,5 +1,5 @@
 // export const API_HOST = "https://api.kicker.mercdev.com";
-export const API_HOST = "http://localhost:3020";
+export const API_HOST = "http://localhost:3000";
 /* global fetch */
 
 async function request(path: string, options = {}) {
@@ -23,7 +23,7 @@ const api = {
   post: (path: string, body?: Object) => {
     return request(path, {
       method: "post",
-      body: JSON.stringify(body)
+      body: body && JSON.stringify(body)
     });
   },
   delete: (path: string, body?: Object) => {

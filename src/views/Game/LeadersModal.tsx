@@ -21,7 +21,7 @@ class LeadersModal extends Component<Props> {
               flex: 1,
               backgroundColor: "transparent"
             }}
-            source={{ uri: "https://kicker.mercdev.com/" }}
+            source={{ uri: "https://api.kicker.mercdev.com/leaderboard" }}
           />
           <Navbar>
             <NavbarLink title="GAME" onPress={this.props.onRequestClose} />

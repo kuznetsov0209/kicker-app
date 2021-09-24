@@ -17,12 +17,12 @@ const MAX_GOALS = 10;
 export const GamePlayer = types.model({
   team: types.number,
   position: types.number,
-  UserId: types.reference(User)
+  user: User
 });
 
 const Goal = types.model({
   ownGoal: types.boolean,
-  UserId: types.reference(User),
+  user: User,
   createdAt: types.string,
   updatedAt: types.string
 });
@@ -46,12 +46,12 @@ const Game = types
     get redUsers() {
       return self.GamePlayers.filter(
         gamePlayer => gamePlayer.team === TEAM_RED
-      ).map(gamePlayer => gamePlayer.UserId);
+      ).map(gamePlayer => gamePlayer.user);
     },
     get blueUsers() {
       return self.GamePlayers.filter(
         gamePlayer => gamePlayer.team === TEAM_BLUE
-      ).map(gamePlayer => gamePlayer.UserId);
+      ).map(gamePlayer => gamePlayer.user);
     }
   }))
   .views(self => ({
@@ -65,22 +65,22 @@ const Game = types
   .views(self => ({
     get redGoals() {
       return self.Goals.filter(
-        goal => self.redUserIds.includes(goal.UserId.id) && !goal.ownGoal
+        goal => self.redUserIds.includes(goal.user.id) && !goal.ownGoal
       );
     },
     get redOwnGoals() {
       return self.Goals.filter(
-        goal => self.redUserIds.includes(goal.UserId.id) && goal.ownGoal
+        goal => self.redUserIds.includes(goal.user.id) && goal.ownGoal
       );
     },
     get blueGoals() {
       return self.Goals.filter(
-        goal => self.blueUserIds.includes(goal.UserId.id) && !goal.ownGoal
+        goal => self.blueUserIds.includes(goal.user.id) && !goal.ownGoal
       );
     },
     get blueOwnGoals() {
       return self.Goals.filter(
-        goal => self.blueUserIds.includes(goal.UserId.id) && goal.ownGoal
+        goal => self.blueUserIds.includes(goal.user.id) && goal.ownGoal
       );
     }
   }))
@@ -102,9 +102,9 @@ const Game = types
     get winnerTeam() {
       return self.blueScore > self.redScore ? TEAM_BLUE : TEAM_RED;
     },
-    getGamePlayerByUserId(UserId: number) {
+    getGamePlayerByUser(user: Instance<typeof User>) {
       return self.GamePlayers.find(
-        gamePlayer => gamePlayer.UserId.id === UserId
+        gamePlayer => gamePlayer.user.id === user.id
       );
     }
   }))
@@ -114,46 +114,46 @@ const Game = types
     },
     get goalsByUserId() {
       return self.GamePlayers.reduce((data: GoalByUserMap, gamePlayer) => {
-        data[gamePlayer.UserId.id] = self.Goals.filter(
-          goal => goal.UserId.id == gamePlayer.UserId.id && !goal.ownGoal
+        data[gamePlayer.user.id] = self.Goals.filter(
+          goal => goal.user.id == gamePlayer.user.id && !goal.ownGoal
         );
         return data;
       }, {});
     }
   }))
   .actions(self => ({
-    addGoal(UserId: number) {
+    addGoal(user: Instance<typeof User>) {
       self.Goals.push({
-        UserId,
+        user,
         ownGoal: false,
         createdAt: new Date().toString(),
         updatedAt: new Date().toString()
       });
 
-      const gamePlayer = self.getGamePlayerByUserId(UserId);
+      const gamePlayer = self.getGamePlayerByUser(user);
       if (gamePlayer) {
         gameEventEmitter.emit(EVENT_GOAL, {
           team: gamePlayer.team,
           // @ts-ignore
-          user: gamePlayer.UserId.toJSON(),
+          user: gamePlayer.user.toJSON(),
           completed: self.completed
         });
       }
     },
-    addOwnGoal(UserId: number) {
+    addOwnGoal(user: Instance<typeof User>) {
       self.Goals.push({
-        UserId,
+        user,
         ownGoal: true,
         createdAt: new Date().toString(),
         updatedAt: new Date().toString()
       });
 
-      const gamePlayer = self.getGamePlayerByUserId(UserId);
+      const gamePlayer = self.getGamePlayerByUser(user);
       if (gamePlayer) {
         gameEventEmitter.emit(EVENT_OWN_GOAL, {
           team: gamePlayer.team,
           // @ts-ignore
-          user: gamePlayer.UserId.toJSON(),
+          user: gamePlayer.user.toJSON(),
           completed: self.completed
         });
       }
