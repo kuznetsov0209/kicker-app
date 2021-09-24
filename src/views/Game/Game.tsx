@@ -26,6 +26,7 @@ import Score from "./Score";
 import EventSource, { MessageEvent } from "react-native-sse";
 import api, { API_HOST } from "../../api";
 import LeadersModal from "./LeadersModal";
+import sounds from "../../utils/sounds";
 
 const initialState: GameComponentState = {
   player1: null,
@@ -70,6 +71,37 @@ class GameComponent extends Component<GameComponentProps, GameComponentState> {
       // @ts-ignore
       this.eventSourceMessageHandler
     );
+  }
+
+  componentDidUpdate(
+    _prevProps: GameComponentProps,
+    prevState: GameComponentState
+  ) {
+    const newPlayers = new Set(
+      [
+        this.state?.player1?.user?.name,
+        this.state?.player2?.user?.name,
+        this.state?.player3?.user?.name,
+        this.state?.player4?.user?.name
+      ].filter(item => item)
+    );
+
+    const oldPlayers = new Set(
+      [
+        prevState?.player1?.user?.name,
+        prevState?.player2?.user?.name,
+        prevState?.player3?.user?.name,
+        prevState?.player4?.user?.name
+      ].filter(item => item)
+    );
+
+    if (newPlayers.size === 4 && oldPlayers.size === 4) {
+      const diff = Array.from(newPlayers).filter(
+        item => !Array.from(oldPlayers).includes(item)
+      );
+
+      if (diff[0]) sounds.helloPlayer(diff[0]);
+    }
   }
 
   componentWillUnmount() {

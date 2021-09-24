@@ -28,6 +28,7 @@ class QRCodeModal extends Component<QRCodeModalProps> {
   componentDidMount() {
     this.gameEventSource.addEventListener(
       "message",
+      // @ts-ignore
       this.eventSourceMessageHandler
     );
   }
@@ -35,6 +36,7 @@ class QRCodeModal extends Component<QRCodeModalProps> {
   componentWillUnmount() {
     this.gameEventSource.removeEventListener(
       "message",
+      // @ts-ignore
       this.eventSourceMessageHandler
     );
   }

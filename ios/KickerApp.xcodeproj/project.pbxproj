@@ -58,6 +58,7 @@
 		30273AA9238465960085DEF0 /* own-robot2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A7D238465960085DEF0 /* own-robot2.mp3 */; };
 		30273AAA238465960085DEF0 /* goal-robot6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30273A7E238465960085DEF0 /* goal-robot6.mp3 */; };
 		6CDC234995414CF780ECCDA6 /* GothamPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D13705E378264E8D993968B6 /* GothamPro-Black.ttf */; };
+		94C0389126FDBDE60012928C /* phrases_2019 in Resources */ = {isa = PBXBuildFile; fileRef = 94C0389026FDBDE60012928C /* phrases_2019 */; };
 		94C51A8526FC7D6F006E66E6 /* phrases_2019 in Resources */ = {isa = PBXBuildFile; fileRef = 94C51A8426FC7D6F006E66E6 /* phrases_2019 */; };
 		BDBE9BB89C624733B10B43B4 /* GothamPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C7CF89A5A445DB5137B9A /* GothamPro-Medium.ttf */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		30273A7E238465960085DEF0 /* goal-robot6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goal-robot6.mp3"; path = "../assets/voices/goal-robot6.mp3"; sourceTree = "<group>"; };
 		43AF5063A70DCC3215EF8E5C /* Pods-KickerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerApp.debug.xcconfig"; path = "Target Support Files/Pods-KickerApp/Pods-KickerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB19E034EBA8C09AA2D831 /* Pods-KickerApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-KickerApp-tvOSTests/Pods-KickerApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		94C0389026FDBDE60012928C /* phrases_2019 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = phrases_2019; path = ../assets/phrases_2019; sourceTree = "<group>"; };
 		94C51A8426FC7D6F006E66E6 /* phrases_2019 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = phrases_2019; path = ../assets/phrases_2019; sourceTree = "<group>"; };
 		BB9BA391577B74D0BDE15198 /* libPods-KickerApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KickerApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DACB195FD0DC7A961A2BBC /* Pods-KickerApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KickerApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-KickerApp-tvOS/Pods-KickerApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				94C51A8426FC7D6F006E66E6 /* phrases_2019 */,
+				94C0389026FDBDE60012928C /* phrases_2019 */,
 				30273A29238341CA0085DEF0 /* KickerApp.swift */,
 				30273A282383413F0085DEF0 /* KickerApp-Bridging-Header.h */,
 				13B07FAE1A68108700A75B9A /* KickerApp */,
@@ -397,6 +400,7 @@
 				30273A9A238465960085DEF0 /* own-human1.mp3 in Resources */,
 				30273AA3238465960085DEF0 /* goal-human12.mp3 in Resources */,
 				30273AA5238465960085DEF0 /* own-human4.mp3 in Resources */,
+				94C0389126FDBDE60012928C /* phrases_2019 in Resources */,
 				30273A9F238465960085DEF0 /* goal-human9.mp3 in Resources */,
 				30273A85238465960085DEF0 /* start.mp3 in Resources */,
 				30273A8D238465960085DEF0 /* finish-human-lose2.mp3 in Resources */,
